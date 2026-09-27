@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лор Death Stranding</title>
+    <style>
+        /* Перенесенный и исправленный CSS из вашего файла style.css */
+        :root {
+            --bg-color: #2b2f36;
+            --card-bg: #3a3f4a;
+            --text-main: #e0e2e5;
+            --text-muted: #a1a5ad;
+            --accent: #ff6b6b;
+            --border-radius: 12px;
+            --max-width: 1400px; /* Увеличили, чтобы 6 карточек красиво влезали в ряд */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 12px;
+            font-size: 1rem;
+        }
+
+        /* ИСПРАВЛЕННАЯ СЕТКА: Карточки теперь могут переноситься и имеют отступы со всех сторон */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px; /* Задает отступ 25px и по горизонтали, и по вертикали */
+            padding: 40px 20px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ИСПРАВЛЕННАЯ КАРТОЧКА: Теперь каждая карточка — это отдельный независимый блок */
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            box-sizing: border-box; /* Чтобы внутренние отступы не распирали карточку */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border-color: var(--accent);
+        }
+
+        .card h2 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #444;
+        }
+
+        /* Адаптив для маленьких экранов */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .grid-container {
+                padding: 20px 15px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Лор Death Stranding</h1>
+        <p>Разбираем мир, персонажей и тайны</p>
+    </header>
+
+    <!-- Правильная структура: все карточки лежат строго друг за другом -->
+    <main class="grid-container">
+
+        <!-- Карточка 1 -->
+        <a href="ka_and_dead_world.html" class="card-link">
+            <div class="card">
+                <h2>Ка и мир мёртвых</h2>
+                <p>Пуповина, Берег, BT. Как устроен путь души и что сломал Выход смерти.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 2 -->
+        <a href="beach_and_seam.html" class="card-link">
+            <div class="card">
+                <h2>Берег и Шов</h2>
+                <p>Полная картина: Берег, Шов, Хартман, Амелия, Сэм и войд‑ауты.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 3 -->
+        <a href="seam_subtext.html" class="card-link">
+            <div class="card">
+                <h2>Шов: подтекст названия</h2>
+                <p>Пять смыслов слова Seam: строчка, граница, рана, фонетика, нить.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 4 -->
+        <a href="seam_rupture.html" class="card-link">
+            <div class="card">
+                <h2>Разрыв Шова</h2>
+                <p>Как Берег просачивается в реальность: BT, хираль, темпоральный дождь, войд‑аут.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 5 -->
+        <a href="BT.html" class="card-link">
+            <div class="card">
+                <h2>БТ</h2>
+                <p>БТ, классы, описание, выход смерти, почему BT важны для темы игры.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 6 -->
+        <a href="BB_seam.html" class="card-link">
+            <div class="card">
+                <h2>ББ и истончение Шва</h2>
+                <p>Как именно ББ создает канал через Шов, исторические прецеденты: когда ББ рвал Шов.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 7 (Теперь она полностью независима и перенесется вниз с отступом) -->
+        <a href="voidaut.html" class="card-link">
+            <div class="card">
+                <h2>Выход смерти</h2>
+                <p>Почему происходит взрыв, цепочка: от смерти до войдаута, нюанс: возвращенцы и размер кратера.</p>
+            </div>
+        </a>
+
+        <!-- Карточка 8 (Теперь она полностью независима и перенесется вниз с отступом) -->
+        <a href="DS1_to_2.html" class="card-link">
+            <div class="card">
+                <h2>От DS1 к DS2</h2>
+                <p>Шов и увеличение сети, суть проблемы,что происходит с миром в DS2 </p>
+            </div>
+        </a>
+
+    </main>
+
+    <footer>
+        <p>© Разбираем лор ДС | Сайт свидетелей творчества Кожимы</p>
+    </footer>
+
+</body>
+</html>

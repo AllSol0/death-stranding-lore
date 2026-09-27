@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>BB и истончение Шова — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --accent-2: #4ecdc4;
+        --accent-3: #f9c74f;
+        --accent-soft: rgba(255, 107, 107, 0.08);
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        color: var(--accent-2);
+        margin-top: 2rem;
+        font-size: 1.2rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      ul { list-style: none; padding-left: 0; }
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: var(--accent-soft);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .note-box-2 {
+        background: rgba(78, 205, 196, 0.08);
+        border-left: 4px solid var(--accent-2);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .note-box-3 {
+        background: rgba(249, 199, 79, 0.08);
+        border-left: 4px solid var(--accent-3);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .layer-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-card-2 {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-card-3 {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-3);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .layer-title-2 {
+        color: var(--accent-2);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .layer-title-3 {
+        color: var(--accent-3);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      .quote-box {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        font-style: italic;
+        color: var(--text-muted);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .quote-author {
+        text-align: right;
+        font-style: normal;
+        color: var(--accent);
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(255, 107, 107, 0.15);
+        color: var(--accent);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .tag-2 {
+        display: inline-block;
+        background: rgba(78, 205, 196, 0.15);
+        color: var(--accent-2);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .tag-3 {
+        display: inline-block;
+        background: rgba(249, 199, 79, 0.15);
+        color: var(--accent-3);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BB и истончение Шова</h1>
+      <p class="subtitle">«Каждый младенец в капсуле — игла, протыкающая границу между мирами.»</p>
+
+      <!-- Иконка: Пуповина сквозь Шов -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="42" width="80" height="16" fill="#3a3f4a" stroke="#ff6b6b" stroke-width="2" opacity="0.4"/>
+          <path d="M50 20 Q45 30 50 42" stroke="#ff6b6b" stroke-width="2.5" fill="none" opacity="0.7"/>
+          <path d="M50 58 Q55 70 50 80" stroke="#4ecdc4" stroke-width="2.5" fill="none" opacity="0.7"/>
+          <circle cx="50" cy="20" r="7" fill="#ff6b6b" opacity="0.5"/>
+          <circle cx="50" cy="80" r="7" fill="#4ecdc4" opacity="0.5"/>
+          <line x1="15" y1="50" x2="85" y2="50" stroke="#f9c74f" stroke-width="1" stroke-dasharray="3 2" opacity="0.3"/>
+        </svg>
+        <div>
+          <div class="icon-label">Пуповина сквозь Шов</div>
+          <div class="icon-desc">Мёртвая мать (Берег) — пуповина (канал) — живой ребёнок (мир живых). Одна нить сквозь границу.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Да, ББ истончают Шов</h2>
+        <p>
+          Каждый ББ — это <strong>микромост</strong> между миром живых и Берегом. Принцип тот же, что у хиральной сети, но масштаб принципиально другой. Хиральная сеть — это сотни терминалов, каждый из которых тянет нить через Шов. ББ — это <strong>одна нить</strong>, протянутая от одной мёртвой матери к одному живому ребёнку.
+        </p>
+        <div class="note-box">
+          <p>
+            Нить маленькая, локальная, персональная. Но она <strong>физически проходит через границу</strong> — а значит, истончает её в точке прохождения. Принцип не меняется от масштаба: любая связь через Шов его ослабляет.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Как именно ББ создает канал через Шов</h2>
+
+        <div class="layer-card">
+          <div class="layer-title">1. Некроматерь (Stillmother)</div>
+          <p>
+            Мозг мёртв, тело поддерживается искусственно. Она находится «между»: формально жива, фактически мертва. Её утроба — это <strong>точка контакта</strong> между миром живых и Берегом. Мать уже на той стороне, но тело ещё на этой — и именно этот разрыв и используется.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">2. Пуповина</div>
+          <p>
+            Физическая связь между мёртвой матерью и живым младенцем. Через неё проходит <strong>канал</strong>: мать на той стороне (Берег), ребёнок на этой (мир живых). Пуповина буквально протянута <strong>сквозь Шов</strong>. Это не метафора — это физическая нить, связывающая два мира.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">3. Капсула</div>
+          <p>
+            Имитирует утробу: температура, питательная среда, звук сердцебиения матери. Всё это нужно, чтобы младенец оставался в состоянии «между» — не живой, не мёртвый. Если капсула ломается, связь рвётся, и ББ перестаёт работать. Капсула — это <strong>стабилизатор канала</strong>.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">4. Odradek</div>
+          <p>
+            Браслет-сканер на плече носителя. Считывает восприятие ББ и проецирует его для носителя — Сэм «видит» BT через «глаза» младенца. Odradek — это <strong>интерфейс</strong>, преобразующий сигнал с Берега в видимое изображение.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <p>
+            Итог: каждый ББ — это <strong>одна нить через Шов</strong>, протянутая от мёртвой матери к живому ребёнку. Нить маленькая, локальная, персональная. Но она физически проходит через границу — а значит, <strong>истончает её в точке прохождения</strong>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: Войдаут -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.3"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.4"/>
+          <circle cx="50" cy="50" r="15" fill="#ff6b6b" opacity="0.15"/>
+          <path d="M50 15 L50 85 M15 50 L85 50 M27 27 L73 73 M73 27 L27 73" stroke="#ff6b6b" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="5" fill="#ff6b6b" opacity="0.8"/>
+        </svg>
+        <div>
+          <div class="icon-label">Войдаут</div>
+          <div class="icon-desc">Взрыв антиматерии при прорыве BT. Первый войдаут в истории вызвал один ББ.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Исторические прецеденты: когда ББ рвал Шов</h2>
+
+        <h3>Первый войдаут — Манхэттен</h3>
+        <p>
+          Первые эксперименты с ББ проводились на Манхэттене в секретной правительственной лаборатории. Один из экспериментов вызвал <strong>первый в истории войдаут</strong> — взрыв антиматерии, который уничтожил весь остров и убил действующего президента США.
+        </p>
+        <div class="note-box">
+          <p>
+            Это был не хиральная сеть, не Амелия — это был <strong>один ББ</strong>, чей канал через Шов стал нестабильным и спровоцировал прорыв BT. Один младенец в капсуле уничтожил целый остров.
+          </p>
+        </div>
+
+        <h3>Выход смерти — Сэм как ББ</h3>
+        <p>
+          Сэм был первым полноценным ББ. Когда Бриджет/Амелия <strong>оживила его</strong> после смерти, его канал через Шов — от мёртвой матери Лизы к живому ребёнку — стал не просто нитью, а <strong>мостом</strong>. Через этот мост в реальность хлынули BT по всему миру.
+        </p>
+        <div class="note-box">
+          <p>
+            Выход смерти начался <strong>с одного ББ</strong>. Не с сети, не с терминала — с одного младенца, чей канал через Шов оказался слишком сильным. Сэм — первый ББ, первый возвращенец, и случайно — причина глобальной катастрофы.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Масштаб: ББ vs хиральная сеть</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>ББ</th>
+              <th>Хиральная сеть</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Что создаёт</strong></td>
+              <td>Одна нить через Шов (мать → ребёнок)</td>
+              <td>Множество нитей через Шов (узел → Берег Амелии → другие Берега)</td>
+            </tr>
+            <tr>
+              <td><strong>Масштаб истончения</strong></td>
+              <td>Локальный, в радиусе метров вокруг носителя</td>
+              <td>Глобальный, по всей территории покрытия</td>
+            </tr>
+            <tr>
+              <td><strong>Связь с Амелией</strong></td>
+              <td>Нет — канал через Берег конкретной матери</td>
+              <td>Да — все узлы связаны через Берег Амелии</td>
+            </tr>
+            <tr>
+              <td><strong>Риск войдаута</strong></td>
+              <td>Да — если ББ нестабилен или стрессован (autotoxemia)</td>
+              <td>Да — при высокой хиральной плотности в регионе</td>
+            </tr>
+            <tr>
+              <td><strong>Срок службы</strong></td>
+              <td>~1 год, после чего связь слабеет и становится опасной</td>
+              <td>Неограничен, но каждый узел усиливает дестабилизацию</td>
+            </tr>
+            <tr>
+              <td><strong>Количество</strong></td>
+              <td>Десятки одновременно (у разных оперативников)</td>
+              <td>Сотни узлов по континенту</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          <p>
+            Ключевая разница: ББ — <strong>локальная игла</strong>, протыкающая Шов в одной точке. Хиральная сеть — <strong>сеть каналов</strong>, истончающая Шов повсеместно. Но принцип один и тот же: любая связь через Шов его ослабляет.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: Autotoxemia -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="35" y="30" width="30" height="40" rx="5" stroke="#f9c74f" stroke-width="2.5" fill="#3a3f4a" opacity="0.6"/>
+          <path d="M45 45 L55 45 M45 55 L55 55" stroke="#f9c74f" stroke-width="2" opacity="0.7"/>
+          <circle cx="50" cy="35" r="3" fill="#ff6b6b" opacity="0.6"/>
+          <path d="M40 70 Q50 80 60 70" stroke="#f9c74f" stroke-width="2" fill="none" opacity="0.5"/>
+          <path d="M30 50 Q25 45 20 50" stroke="#ff6b6b" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <path d="M70 50 Q75 55 80 50" stroke="#ff6b6b" stroke-width="1.5" fill="none" opacity="0.4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Autotoxemia</div>
+          <div class="icon-desc">Когда ББ «травмируется» стрессом. Канал нестабилен. Прямая угроза войдаута.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Когда ББ становится опасен</h2>
+
+        <div class="layer-card-3">
+          <div class="layer-title-3">Autotoxemia (аутотоксемия)</div>
+          <p>
+            Состояние, когда ББ получает «травму» от чрезмерного стресса: слишком много BT рядом, слишком долгое нахождение в зоне с высокой хиральной плотностью, слишком сильные эмоциональные перегрузки носителя. Канал через Шов становится <strong>нестабильным</strong>, и BT могут прорваться через него. Это <strong>прямая угроза войдаута</strong>.
+          </p>
+        </div>
+
+        <div class="layer-card-3">
+          <div class="layer-title-3">Истёкший срок ББ</div>
+          <p>
+            Связь с матерью слабеет, канал «размыкается». ББ становится не просто бесполезным, а <strong>опасным</strong>: нестабильный канал может спровоцировать прорыв. Именно поэтому ББ <strong>утилизируют</strong> после примерно года работы — не потому, что младенец «устаёт», а потому, что <strong>канал через Шов деградирует и становится угрозой</strong>.
+          </p>
+        </div>
+
+        <div class="layer-card-3">
+          <div class="layer-title-3">Множество ББ одновременно</div>
+          <p>
+            Один ББ — игла. Сотни ББ — уже сеть игл. Bridges использовали множество ББ для разных оперативников, и каждый был точкой истончения. Чем больше ББ в поле одновременно, тем сильнее локальное истончение Шова в регионе.
+          </p>
+        </div>
+
+        <div class="note-box-3">
+          <p>
+            Утилизация ББ — не акт жестокости (хотя и он тоже). Это <strong>техника безопасности</strong>: истёкший ББ — это бомба замедленного действия. Канал, который больше не может стабильно держать связь, рвётся — и через разрыв хлынут BT. Крематорий — не могила, а <strong>предохранитель</strong>.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: Замершая беременность -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="30" stroke="#4ecdc4" stroke-width="2" fill="#3a3f4a" opacity="0.5"/>
+          <path d="M50 30 L50 50 L65 50" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="50" cy="50" r="4" fill="#ff6b6b" opacity="0.6"/>
+          <path d="M35 50 L40 50 M60 50 L65 50 M50 65 L50 70" stroke="#4ecdc4" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Седьмой месяц</div>
+          <div class="icon-desc">Замершая беременность в DS2. Тот же механизм, что у ББ — но без капсулы.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>DS2: замершая беременность и ББ — один механизм</h2>
+        <p>
+          <span class="tag-2">DS2</span>
+          В DS2 появляется <strong>синдром замершей беременности</strong> (Stillbaby Syndrome) — дети замирают на седьмом месяце в утробе. Седьмой месяц — это <strong>ровно тот срок</strong>, на котором извлекают ББ из некроматери. Совпадение неслучайное.
+        </p>
+
+        <div class="note-box-2">
+          <p>
+            Матка на седьмом месяце максимально связана с Берегом: пуповина как канал между матерью и ребёнком достигает максимальной «пропускной способности». Когда Шов истончён (из-за хиральной сети), этот канал становится нестабильным: Ка ребёнка уходит на Берег и не возвращается.
+          </p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>ББ (искусственный)</th>
+              <th>Замершая беременность (естественная)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Срок</strong></td>
+              <td>Извлечение на 7-м месяце</td>
+              <td>Замирание на 7-м месяце</td>
+            </tr>
+            <tr>
+              <td><strong>Канал через Шов</strong></td>
+              <td>Искусственно поддерживается (капсула, некроматерь)</td>
+              <td>Естественный, без поддержки</td>
+            </tr>
+            <tr>
+              <td><strong>Что происходит</strong></td>
+              <td>Канал стабилен, ББ «видит» Берег</td>
+              <td>Канал нестабилен, Ка ребёнка уходит и не возвращается</td>
+            </tr>
+            <tr>
+              <td><strong>Причина нестабильности</strong></td>
+              <td>Истёкший срок, autotoxemia, поломка капсулы</td>
+              <td>Истончённый Шов (из-за хиральной сети)</td>
+            </tr>
+            <tr>
+              <td><strong>Кто виноват</strong></td>
+              <td>Система Bridges, использующая младенцев как инструмент</td>
+              <td>Хиральная сеть, истончающая Шов повсеместно</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note-box-2">
+          <p>
+            Кодзима связывает их намеренно: <strong>технология ББ и естественная беременность — один и тот же механизм</strong>. Граница между жизнью и смертью, пуповина как канал, седьмой месяц как точка максимальной связи с Берегом. ББ — это та же беременность, только искусственно стабилизированная капсулой. Когда Шов истончается повсеместно, даже естественные беременности начинают «работать как ББ» — но без капсулы, без поддержки, и поэтому ребёнок просто уходит на Берег и не возвращается.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Аналогия: ткань и иглы</h2>
+        <div class="quote-box">
+          Представь тонкую ткань — это Шов. Каждая игла, проткнувшая ткань, оставляет отверстие. Одна игла (один ББ) — маленькая дырочка, почти незаметная. Сотни игл (хиральная сеть) — ткань в дырах, рвётся от любого прикосновения. Но даже одна игла, если её дёргать (нестабильный ББ, autotoxemia), может <strong>разорвать ткань в точке прокола</strong> — и это войдаут.
+          <div class="quote-author">— Принцип истончения Шова</div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Аналогия</th>
+              <th>Что в мире DS</th>
+              <th>Что происходит с Шовом</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Одна игла в ткани</td>
+              <td>Один ББ на курьере</td>
+              <td>Локальное истончение, метры вокруг. Безопасно при стабильности.</td>
+            </tr>
+            <tr>
+              <td>Сотни игл в ткани</td>
+              <td>Хиральная сеть, сотни узлов</td>
+              <td>Глобальное истончение, катастрофы, замершие беременности.</td>
+            </tr>
+            <tr>
+              <td>Игла дёргают</td>
+              <td>Autotoxemia, истёкший ББ</td>
+              <td>Разрыв в точке прокола — войдаут.</td>
+            </tr>
+            <tr>
+              <td>Слишком толстая нить в одной точке</td>
+              <td>Сэм — первый ББ, оживлённый Амелией</td>
+              <td>Не дырочка, а дыра — Выход смерти.</td>
+            </tr>
+            <tr>
+              <td>Ткань уже в дырах, новая игла</td>
+              <td>Естественная беременность при истончённом Шове (DS2)</td>
+              <td>Даже естественный канал рвётся — замершая беременность.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Два инструмента, один принцип</h2>
+        <div class="note-box">
+          <p>
+            ББ и хиральная сеть — <strong>два инструмента, работающие на одном принципе: связь через Шов ценой его истончения</strong>. ББ — микроуровень (одна мать, один ребёнок, одна нить). Сеть — макроуровень (сотни узлов, Берег Амелии, все Берега). Но суть одна: каждое соединение через границу делает границу тоньше.
+          </p>
+          <p>
+            Bridges построили всю систему спасения на <strong>использовании границы между жизнью и смертью</strong>. ББ — это эксплуатация этой границы на уровне одного ребёнка. Хиральная сеть — на уровне целой страны. Кодзима именно это и разбирает: можно ли спасти мир, используя мёртвых как ресурс — и что happens, когда ресурс исчерпывается, а граница уже слишком тонка.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          Да, ББ истончают Шов. Каждый ББ — нить сквозь границу между мирами, протянутая от мёртвой матери к живому ребёнку. Один ББ — игла, сотни ББ — уже сеть игл. Нестабильный или истёкший ББ может вызвать войдаут. Выход смерти вообще начался с одного ББ (Сэма), чей канал оказался слишком сильным. В DS2 замершая беременность на седьмом месяце — та же механика в естественных условиях: истончённый Шов рвёт канал между матерью и ребёнком. ББ и хиральная сеть — два инструмента на одном принципе: <strong>связь через Шов ценой его истончения</strong>.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

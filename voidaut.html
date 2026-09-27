@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Войдаут — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --accent-2: #4ecdc4;
+        --accent-soft: rgba(255, 107, 107, 0.08);
+        --accent-2-soft: rgba(78, 205, 196, 0.08);
+        --void-bg: #0d0e12;
+        --void-border: #1a1c20;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        color: var(--accent-2);
+        margin-top: 2rem;
+        font-size: 1.2rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .void-zone {
+        background: var(--void-bg);
+        border: 1px solid var(--void-border);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.7);
+      }
+
+      .note-box {
+        background: var(--accent-soft);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .note-box-2 {
+        background: var(--accent-2-soft);
+        border-left: 4px solid var(--accent-2);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .layer-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-card-2 {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .layer-title-2 {
+        color: var(--accent-2);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        vertical-align: top;
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      ul { list-style: none; padding-left: 0; }
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .chain {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+      .chain-step {
+        flex: 1;
+        min-width: 120px;
+        background: var(--card-bg);
+        padding: 1rem;
+        text-align: center;
+        border-radius: 0;
+        border-left: 3px solid var(--accent);
+        font-size: 0.85rem;
+      }
+      .chain-step:first-child {
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        border-left: none;
+      }
+      .chain-step:last-child {
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      }
+      .chain-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        font-size: 1.5rem;
+        padding: 0 0.3rem;
+      }
+      .chain-label {
+        font-weight: bold;
+        color: var(--accent);
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+
+      .quote-box {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        font-style: italic;
+        color: var(--text-muted);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .quote-author {
+        text-align: right;
+        font-style: normal;
+        color: var(--accent);
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(255, 107, 107, 0.15);
+        color: var(--accent);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .tag-2 {
+        display: inline-block;
+        background: rgba(78, 205, 196, 0.15);
+        color: var(--accent-2);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Войдаут</h1>
+      <p class="subtitle">«Материя встречает антиматерию. Результат — кратер.»</p>
+
+      <!-- Иконка: аннигиляция -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="35" cy="50" r="15" fill="#4ecdc4" opacity="0.4" stroke="#4ecdc4" stroke-width="2"/>
+          <circle cx="65" cy="50" r="15" fill="#ff6b6b" opacity="0.4" stroke="#ff6b6b" stroke-width="2"/>
+          <path d="M50 50 L50 50" stroke="#fff" stroke-width="3"/>
+          <circle cx="50" cy="50" r="6" fill="none" stroke="#e0e2e5" stroke-width="2" opacity="0.6"/>
+          <path d="M20 30 L25 35 M80 30 L75 35 M20 70 L25 65 M80 70 L75 65" stroke="#ff6b6b" stroke-width="2" opacity="0.5"/>
+          <path d="M14 50 L20 50 M80 50 L86 50 M50 14 L50 20 M50 80 L50 86" stroke="#ff6b6b" stroke-width="1.5" opacity="0.4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Войдаут (Voidout)</div>
+          <div class="icon-desc">Аннигиляция материи и антиматерии. BT + живой человек = взрыв, уничтожающий всё в радиусе километров.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Суть: почему происходит взрыв</h2>
+        <p>
+          BT (Beached Things) состоят из <strong>антиматерии</strong>, поступающей с Берега — «изнанки» мира, мира мёртвых. Живой человек состоит из обычной <strong>материи</strong>. Когда BT поглощает живого человека, эти две субстанции входят в прямой контакт — и происходит <strong>аннигиляция</strong>: материя и антиматерия взаимно уничтожают друг друга, выделяя колоссальное количество энергии.
+        </p>
+        <div class="void-zone">
+          <p style="text-align: center; font-size: 1.2rem; margin: 0;">
+            <strong style="color: var(--accent-2);">Материя</strong> (живой человек)
+            &nbsp;+&nbsp;
+            <strong style="color: var(--accent);">Антиматерия</strong> (BT)
+            &nbsp;=&nbsp;
+            <strong style="color: #fff;">Аннигиляция</strong> (войдаут)
+          </p>
+        </div>
+        <div class="note-box">
+          <p>
+            Результат — <strong>войдаут</strong>: взрыв, который оставляет гигантский кратер, способный уничтожить целый город. В эпицентре не остаётся ничего — ни тел, ни зданий, только чёрная пустота и хиральная аномалия.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Не любой контакт = взрыв</h2>
+        <p>
+          Важно различать <strong>касание</strong> и <strong>поглощение</strong>. Обычный гейзер (маленький BT) при простом касании Сэма не вызывает войдаут. Полноценный войдаут происходит, когда <strong>Catcher</strong> (крупный BT) <strong>поглощает</strong> живого человека — антиматерия BT и материя человека смешиваются внутри тела существа.
+        </p>
+        <div class="layer-card">
+          <div class="layer-title">Гейзер (Gazer) — касание</div>
+          <p>
+            Маленький BT, который «проверяет» присутствие живого. Если касается — Сэм видит «руки» из смолы. Это предупреждение, не смертельный контакт. Если вырваться — ничего не происходит.
+          </p>
+        </div>
+        <div class="layer-card">
+          <div class="layer-title">Catcher — поглощение</div>
+          <p>
+            Крупный BT, который появляется, если Сэм не вырвался от гейзеров. Catcher обволакивает и <strong>поглощает</strong> живого человека — антиматерия и материя смешиваются — <strong>войдаут</strong>.
+          </p>
+        </div>
+        <div class="note-box">
+          <p>
+            В геймплее это отражено пошагово: гейзеры хватают → Сэм видит «руки» → если не вырывается, появляется Catcher → если Catcher съедает Сэма → войдаут. Каждая стадия — шанс избежать катастрофы.
+          </p>
+        </div>
+      </section>
+
+      <!-- Цепочка: смерть → некроз → BT → поглощение → войдаут -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.3"/>
+          <circle cx="50" cy="50" r="25" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.5"/>
+          <circle cx="50" cy="50" r="10" fill="#ff6b6b" opacity="0.6"/>
+          <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke="#ff6b6b" stroke-width="2" opacity="0.4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Цепочка катастрофы</div>
+          <div class="icon-desc">От смерти одного человека до кратера размером с город — пять шагов.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Цепочка: от смерти до войдаута</h2>
+        <div class="chain">
+          <!-- ВСТАВЬТЕ ЭТОТ БЛОК СРАЗУ ПОД ЗАГОЛОВКОМ «Цепочка: от смерти до войдаута» -->
+<style>
+    .ds-steps-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important; /* Небольшое расстояние между блоками */
+        margin: 20px 0 !important;
+        width: 100% !important;
+        max-width: 650px !important; /* Узкая аккуратная ширина */
+        font-family: sans-serif !important;
+    }
+
+    .ds-step-card {
+        background-color: #3a3f4a !important; /* Серый фон */
+        border: 1px solid #444 !important;
+        border-radius: 8px !important; /* Компактное скругление */
+        padding: 12px 20px !important; /* Маленькие внутренние отступы */
+        position: relative !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .ds-step-card.final-step-highlight {
+        border-color: #ff6b6b !important; /* Красный контур для финала */
+    }
+
+    .ds-step-title {
+        color: #ff6b6b !important; 
+        font-weight: bold !important;
+        font-size: 1rem !important; /* Уменьшенный заголовок */
+        margin-bottom: 4px !important; 
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    .ds-step-text {
+        color: #e0e2e5 !important; 
+        font-size: 0.9rem !important; /* Аккуратный плотный шрифт */
+        margin: 0 !important;
+        line-height: 1.4 !important; 
+    }
+
+    .ds-step-divider {
+        text-align: center !important;
+        color: #ff6b6b !important;
+        font-size: 1.3rem !important; 
+        font-weight: bold !important;
+        line-height: 1 !important;
+        margin: -4px 0 !important; /* Максимально стягивает блоки вместе */
+    }
+</style>
+
+<div class="ds-steps-wrapper">
+
+    <!-- Шаг 1 -->
+    <div class="ds-step-card">
+        <div class="ds-step-title">1. Смерть</div>
+        <p class="ds-step-text">Человек умирает. Ка (душа) отделяется от тела и уходит на Берег.</p>
+    </div>
+
+    <div class="ds-step-divider">↓</div>
+
+    <!-- Шаг 2 -->
+    <div class="ds-step-card">
+        <div class="ds-step-title">2. Некроз</div>
+        <p class="ds-step-text">Тело разлагается. 24 часа без льда, до 40 — на льду. Ка пытается вернуться.</p>
+    </div>
+
+    <div class="ds-step-divider">↓</div>
+
+    <!-- Шаг 3 -->
+    <div class="ds-step-card">
+        <div class="ds-step-title">3. BT</div>
+        <p class="ds-step-text">Ка возвращается в тело. Тело становится BT (Beached Thing) — существом из антиматерии.</p>
+    </div>
+
+    <div class="ds-step-divider">↓</div>
+
+    <!-- Шаг 4 -->
+    <div class="ds-step-card">
+        <div class="ds-step-title">4. Контакт</div>
+        <p class="ds-step-text">BT встречает живого человека. Гейзеры хватают, вызывая Catcher.</p>
+    </div>
+
+    <div class="ds-step-divider">↓</div>
+
+    <!-- Шаг 5 -->
+    <div class="ds-step-card final-step-highlight">
+        <div class="ds-step-title">5. Войдаут</div>
+        <p class="ds-step-text">Catcher поглощает живого. Материя + antimatter = аннигиляция. Кратер.</p>
+    </div>
+
+</div>
+
+        <div class="note-box-2">
+          <p>
+            Именно поэтому трупы <strong>сжигают</strong> в крематориях — без тела Ка не может вернуться, и BT не формируется. Вся система утилизации трупов в DS — это не ритуал, а <strong>физическая мера безопасности</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Почему Сэм не убивает людей</h2>
+        <p>
+          Сэм использует резиновые пули, боло, оглушение — не из пацифизма, а из <strong>выживания</strong>. Убитый враг через сутки станет BT, и если рядом есть живые — войдаут. Каждый труп на поле боя — потенциальная бомба.
+        </p>
+        <div class="layer-card-2">
+          <div class="layer-title-2">Мирные средства</div>
+          <p>
+            Резиновые пули (уровень летальности ниже) → враг падает, но не умирает. Боло — связывает, не убивает. Оглушение — временно выводит из строя. Сэм «откладывает» врагов, но не создаёт трупов. <strong>Каждый неубитый враг — это предотвращённый войдаут.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Исторические войдауты</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Событие</th>
+              <th>Что произошло</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Первый войдаут в истории</strong></td>
+              <td>Врач принимал роды у матери с мёртвым мозгом (некроматери). При контакте с пуповиной младенца он почувствовал BT. Через мгновение — взрыв. Никто не понял, что случилось. Это было первое столкновение материи и антиматерии в истории человечества.</td>
+            </tr>
+            <tr>
+              <td><strong>Манхэттен</strong></td>
+              <td>Эксперименты с ББ в секретной правительственной лаборатории. Один из экспериментов вызвал войдаут — Манхэттен уничтожен, действующий президент США убит. Бриджет Стрэнд (вице-президент) наследовала власть. Это событие стало катализатором создания Bridges.</td>
+            </tr>
+            <tr>
+              <td><strong>Центральный Узел (Central Knot City)</strong></td>
+              <td>Тело из команды утилизации трупов «некротизировалось» прямо в машине — превратилось в BT среди живых людей. Войдаут уничтожил весь город. Сэм был в этой команде и выжил только потому, что он — возвращенец.</td>
+            </tr>
+            <tr>
+              <td><strong>Самоубийство Люси</strong></td>
+              <td>Люси (жена Сэма) покончила с собой, не выдержав кошмаров DOOMS. Она и нерождённая дочь превратились в BT → поглотили живых людей в своём городе. Войдаут уничтожил всё. Сэм выжил как возвращенец — и был обвинён в катастрофе.</td>
+            </tr>
+            <tr>
+              <td><strong>Пролог: гибель Игоря Франка</strong></td>
+              <td>Гигас (Catcher) захватил и сожрал Игоря на глазах у Сэма в самом начале игры. Войдаут уничтожил зону. Сэм выжил — снова как возвращенец.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Иконка: возвращенец -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 15 L50 85" stroke="#e0e2e5" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.3"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#4ecdc4" stroke-width="2" opacity="0.5"/>
+          <path d="M50 20 L50 80" stroke="#4ecdc4" stroke-width="2" opacity="0.4"/>
+          <circle cx="50" cy="35" r="4" fill="#4ecdc4" opacity="0.6"/>
+          <path d="M42 50 Q50 45 58 50" stroke="#4ecdc4" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <path d="M42 60 Q50 55 58 60" stroke="#4ecdc4" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <path d="M44 70 Q50 67 56 70" stroke="#4ecdc4" stroke-width="1.5" fill="none" opacity="0.3"/>
+        </svg>
+        <div>
+          <div class="icon-label">Возвращенец и войдаут</div>
+          <div class="icon-desc">Кратер Сэма меньше. Его Ка «забирает» часть энергии аннигиляции обратно на Берег.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Нюанс: возвращенцы и размер кратера</h2>
+        <p>
+          Сэм — возвращенец, и его войдауты <strong>меньше</strong>. Если обычный человек вызывает взрыв, уничтожающий город, то кратер от войдаута с участием Сэма значительно меньше. Причина: его Ка возвращается из Шва и «забирает» часть энергии аннигиляции обратно на Берег, гася часть взрыва.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Обычный человек</th>
+              <th>Возвращенец (Сэм)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Размер кратера</strong></td>
+              <td>Километры — уничтожает город</td>
+              <td>Значительно меньше — локальный</td>
+            </tr>
+            <tr>
+              <td><strong>Что происходит с Ка</strong></td>
+              <td>Ка поглощается BT и уничтожается</td>
+              <td>Ка возвращается из Шва, забирает часть энергии</td>
+            </tr>
+            <tr>
+              <td><strong>Выживаемость</strong></td>
+              <td>Невозможна — полная аннигиляция</td>
+              <td>Возможна — Сэм «возвращается»</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Нюанс: BT может сожрать BT</h2>
+        <p>
+          BT способны поглощать не только людей, но и других BT. Однако <strong>BT-каннибализм не вызывает взрыва</strong>: антиматерия + антиматерия = не аннигиляция, а вспышка света, и оба BT исчезают — разрушительная энергия поглощается Берегом.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Столкновение</th>
+              <th>Результат</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: var(--accent-2);">Материя</strong> (живой) + <strong style="color: var(--accent);">Антиматерия</strong> (BT)</td>
+              <td><strong style="color: var(--accent);">Аннигиляция → войдаут</strong> — кратер, разрушения, всё уничтожено</td>
+            </tr>
+            <tr>
+              <td><strong style="color: var(--accent);">Антиматерия</strong> (BT) + <strong style="color: var(--accent);">Антиматерия</strong> (BT)</td>
+              <td><strong style="color: var(--accent-2);">Вспышка света</strong> — оба исчезают, энергия уходит на Берег, нет взрыва</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Аналогия: коллайдер</h2>
+        <p>
+          В физике элементарных частиц аннигиляция — это процесс, при котором частица и античастица сталкиваются и превращаются в энергию (фотоны). В коллайдере это микроскопический всплеск, который учёные фиксируют датчиками.
+        </p>
+        <p>
+          В мире DS — тот же процесс, но в <strong>макромасштабе</strong>: BT (античастица) сталкивается с живым человеком (частица), и аннигиляция выделяет столько энергии, что уничтожает целый город. Кратер — это след «макроаннигиляции».
+        </p>
+        <div class="note-box">
+          <p>
+            Формула та же: <strong>E = mc²</strong>. Только «m» — масса целого человека, а «c» — скорость света. Энергия одного войдаута эквивалентна уничтожению ~70 кг материи — это <strong>миллионы мегатонн в тротиловом эквиваленте</strong>. Отсюда и размер кратера.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <ul>
+          <li><strong>BT = антиматерия</strong> из Берега. Живой человек = материя.</li>
+          <li><strong>Поглощение</strong> (не просто касание) = смешивание материи и антиматерии = <strong>аннигиляция</strong>.</li>
+          <li>Результат — <strong>войдаут</strong>: взрыв, кратер, уничтожение всего в радиусе километров.</li>
+          <li>Цепочка: <strong>смерть → некроз → BT → контакт → поглощение → войдаут</strong>.</li>
+          <li>Трупы сжигают, чтобы <strong>разорвать цепочку</strong> на этапе 2→3: без тела нет BT.</li>
+          <li>Сэм не убивает людей, потому что <strong>каждый труп — потенциальная бомба</strong>.</li>
+          <li>Возвращенцы дают <strong>меньшие кратеры</strong>: Ка забирает часть энергии на Берег.</li>
+          <li>BT + BT = <strong>не взрыв</strong>, а вспышка: антиматерия + антиматерия ≠ аннигиляция.</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Ка и мир мёртвых в Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;       /* Тёмно-серый фон страницы */
+        --card-bg: #3a3f4a;        /* Цвет карточек */
+        --text-main: #e0e2e5;      /* Основной текст */
+        --text-muted: #a1a5ad;     /* Второстепенный текст */
+        --accent: #ff6b6b;         /* Акцентный красный */
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* Стили для иконок-заглушек */
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Таблица */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th {
+        background: rgba(255, 107, 107, 0.1);
+        color: var(--accent);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Списки */
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Ка и мир мёртвых в Death Stranding</h1>
+
+<a href="index.html" class="back-btn-fixed">← На главную</a>
+      <!-- Иконка: Пуповина -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="#ff6b6b" stroke-width="4" opacity="0.8"/>
+          <path d="M20 50 Q50 20 80 50 Q50 80 20 50" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Пуповина</div>
+          <div class="icon-desc">Связь между Берегом и телом. Через неё Ка возвращается к Ха, превращая его в BT.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Как было до Выхода смерти</h2>
+        <p>
+          Человек умирал → Ка (душа) покидала Ха (тело) → проходила через Шов (Seam) → попадала на Берег → <strong>уходила дальше, в мир мёртвых</strong>. Берег был просто транзитной зоной — пересадочным пунктом между жизнью и тем, что за ней.
+        </p>
+      </section>
+
+      <!-- Иконка: Берег -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="60" width="80" height="30" fill="#4a505a" rx="8"/>
+          <path d="M10 60 Q50 40 90 60" fill="#5a616d"/>
+          <circle cx="30" cy="75" r="6" fill="#e0e2e5"/>
+          <circle cx="50" cy="70" r="5" fill="#e0e2e5"/>
+          <circle cx="70" cy="78" r="4" fill="#e0e2e5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Берег (The Beach)</div>
+          <div class="icon-desc">Пространство между мирами. Раньше было транзитом, теперь — ловушка для душ.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что изменил Выход смерти</h2>
+        <ul>
+          <li>Выход смерти <strong>разрушил границу</strong> между миром живых и миром мёртвых.</li>
+          <li>Берег, бывший переходным пространством, <strong>переплёлся с физическим миром</strong>.</li>
+          <li>Путь дальше — в мир мёртвых — <strong>оказался заблокирован</strong>.</li>
+        </ul>
+        <p>
+          Душа по-прежнему покидает тело, доходит до Берега — но <strong>не может уйти дальше</strong>. Она застревает. Отсюда и название игры: <strong>Stranding</strong> — это когда киты выбрасываются на берег и не могут вернуться в океан. Души мёртвых — как те киты: выброшены на берег, не могут ни вернуться в мир живых, ни уйти в мир мёртвых.
+        </p>
+      </section>
+
+      <!-- Иконка: BT (Тварь) -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 80 L50 20 L80 80 Z" stroke="#ff6b6b" stroke-width="4" fill="#3a3f4a" opacity="0.8"/>
+          <circle cx="40" cy="40" r="6" fill="#ff6b6b"/>
+          <circle cx="60" cy="40" r="6" fill="#ff6b6b"/>
+          <path d="M40 55 Q50 65 60 55" stroke="#ff6b6b" stroke-width="3" fill="none"/>
+        </svg>
+        <div>
+          <div class="icon-label">BT (Beached Thing)</div>
+          <div class="icon-desc">Тело, к которому вернулась застрявшая Ка. Опасны для живых, видны только через сканер.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что происходит с застрявшей душой</h2>
+        <ul>
+          <li>Ка застревает на Береге и <strong>возвращается обратно к своему Ха</strong> через пуповину.</li>
+          <li>Тело становится <strong>BT (Тварью)</strong>.</li>
+          <li>Если тело кремировать вовремя — пуповина обрывается, Ка не может вернуться и остаётся на Береге.</li>
+          <li>Но это <strong>не значит, что она ушла в мир мёртвых</strong>: путь дальше по-прежнему закрыт.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Кто именно сломал путь</h2>
+        <p>
+          <strong>Амелия</strong> — Фактор вымирания. Её связь с Берегом была настолько глубокой, что её присутствие в реальном мире буквально истончала границу между измерениями. Чем больше хиральная сеть росла, тем сильнее Берега всех людей сливались с реальностью — и тем труднее становилось душам уйти. Полностью подключённая сеть = полностью стёртая граница = Последний Выход смерти.
+        </p>
+      </section>
+
+      <section>
+        <h2>Метафора целиком</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>До Выхода смерти</th>
+              <th>После Выхода смерти</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Жизнь → Шов → Берег → <strong>Мир мёртвых</strong></td>
+              <td>Жизнь → Шов → Берег → ❌ (путь закрыт)</td>
+            </tr>
+            <tr>
+              <td>Берег — транзит</td>
+              <td>Берег — ловушка</td>
+            </tr>
+            <tr>
+              <td>Душа уходит дальше</td>
+              <td>Душа возвращается к телу → BT</td>
+            </tr>
+            <tr>
+              <td>Кремация не нужна</td>
+              <td>Кремация обязательна</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Что остаётся неизвестным</h2>
+        <div class="note-box">
+          В лоре прямо сказано: <strong>никто не знает, что находится за Берегом</strong>. Куда уходят души «по ту сторону», что такое мир мёртвых — это загадка даже для Хартмана, который умирает 60 раз в день и каждый раз проводит 3 минуты на Берегу. Он исследует его годами, но дальше Берега не прошёл ни разу.
+        </div>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          Выход смерти сломал путь с Берега в мир мёртвых, и души застряли — как выброшенные на берег киты.
+        </p>
+	<!-- Удалите старую строчку и вставьте этот блок перед заголовком "КА И МИР МЁРТВЫХ..." -->
+<style>
+    .back-btn-fixed {
+        display: inline-flex !important;
+        align-items: center !important;
+        color: #e0e2e5 !important; /* Светлый текст */
+        text-decoration: none !important;
+        font-size: 0.9rem !important;
+        font-family: sans-serif !important;
+        font-weight: 500 !important;
+        padding: 8px 16px !important;
+        border: 1px solid #444 !important; /* Серая рамка */
+        border-radius: 8px !important;
+        background: transparent !important;
+        transition: all 0.3s ease !important;
+        margin-top: 10px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .back-btn-fixed:hover {
+        color: #ffffff !important;
+        border-color: #ff6b6b !important; /* Рамка становится розовой/красной */
+        background-color: rgba(255, 107, 107, 0.1) !important; /* Легкое свечение */
+        transform: translateX(-3px) !important; /* Легкий сдвиг влево */
+    }
+</style>
+
+<a href="index.html" class="back-btn-fixed">← На главную</a>
+      </section>
+    </div>
+
+  </body>
+</html>

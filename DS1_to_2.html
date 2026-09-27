@@ -1,0 +1,483 @@
+<function_calls> <invoke name="python_interpreter"> <parameter name="code"> <!DOCTYPE html>
+
+<html lang="ru"> <head> <meta charset="utf-8"> <title>Death Stranding 2: Хиральная сеть и истончение Шва</title> <style> :root { --bg-color: #2b2f36; --card-bg: #3a3f4a; --text-main: #e0e2e5; --text-muted: #a1a5ad; --accent: #ff6b6b; --accent-2: #4ecdc4; --accent-soft: rgba(255, 107, 107, 0.08); --border-radius: 12px; }
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+
+  .container { max-width: 800px; margin: auto; }
+
+  h1 {
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  h2 {
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    color: var(--accent-2);
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  .icon-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .icon-svg {
+    width: 80px;
+    height: 80px;
+    margin-right: 2rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+
+  .icon-label {
+    font-weight: bold;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .icon-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  ul { list-style: none; padding-left: 0; }
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .note-box {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin: 2rem 0;
+    color: var(--text-main);
+  }
+
+  .note-box-2 {
+    background: rgba(78, 205, 196, 0.08);
+    border-left: 4px solid var(--accent-2);
+    padding: 1.5rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    margin: 2rem 0;
+    color: var(--text-main);
+  }
+
+  .layer-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .layer-card-2 {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent-2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .layer-title {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .layer-title-2 {
+    color: var(--accent-2);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  th, td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+  tr:last-child td { border-bottom: none; }
+
+  .quote-box {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent);
+    font-style: italic;
+    color: var(--text-muted);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .quote-author {
+    text-align: right;
+    font-style: normal;
+    color: var(--accent);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(255, 107, 107, 0.15);
+    color: var(--accent);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+
+  .tag-2 {
+    display: inline-block;
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--accent-2);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+</style>
+</head> <body> <div class="container"> <h1>Death Stranding 2: Сеть и Шов</h1> <p class="subtitle">«Связь без контроля — ловушка. Но и без связи — смерть.»</p>
+  <!-- Иконка: Шов и нити -->
+  <div class="icon-card">
+    <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="45" width="80" height="10" fill="#3a3f4a" stroke="#ff6b6b" stroke-width="2" opacity="0.5"/>
+      <path d="M20 20 L20 45 M20 55 L20 80 M40 15 L40 45 M40 55 L40 85 M60 20 L60 45 M60 55 L60 80 M80 25 L80 45 M80 55 L80 75" stroke="#ff6b6b" stroke-width="2" opacity="0.6"/>
+      <path d="M15 50 L85 50" stroke="#4ecdc4" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+    </svg>
+    <div>
+      <div class="icon-label">Шов и сеть</div>
+      <div class="icon-desc">Каждая нить сети проходит через Шов. Больше нитей — тоньше граница. DS2 делает это центральным конфликтом.</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Суть проблемы</h2>
+    <p>
+      После финала первой игры Сэм подключил всю Америку, Амелия осталась на Берегу, Шов казался восстановленным. Но <strong>каждый новый узел по-прежнему повышает концентрацию хиралия</strong> и истончает границу между мирами. В DS2 это не побочный эффект — это <strong>центральный конфликт всей игры</strong>.
+    </p>
+    <div class="note-box">
+      <p>
+        Принцип не изменился: хиральная сеть работает через Берег. Каждый терминал — это нить, проходящая через Шов. Больше нитей — тоньше ткань. В DS1 это было фоном, в DS2 — это сюжет.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Что происходит с миром в DS2</h2>
+    <p>
+      Расширение хиральной сети на новые территории (Мексика, Австралия) усиливает все негативные эффекты Выхода смерти:
+    </p>
+    <div class="layer-card">
+      <div class="layer-title">Природные катастрофы</div>
+      <p>
+        Землетрясения, наводнения, оползни учащаются. Хиральная плотность дестабилизирует геологию — хиралий влияет на материю, и чем больше его в регионе, тем нестабильнее физическая среда.
+      </p>
+    </div>
+    <div class="layer-card">
+      <div class="layer-title">Timefall и Tarfall</div>
+      <p>
+        Темпоральный дождь (Timefall) — дождь, который старит всё, чего касается, — усиливается. Появляется <strong>Tarfall</strong> — новое явление: дождь из хиральной смолы (tar), который не просто старит, а <strong>разъедает и покрывает всё чёрной массой</strong>, похожей на субстанцию BT.
+      </p>
+    </div>
+    <div class="layer-card">
+      <div class="layer-title">Синдром замершей беременности (Stillbaby Syndrome)</div>
+      <p>
+        Дети «замирают» на седьмом месяце в утробе. Именно на седьмом — потому что матка на этом сроке <strong>максимально связана с Берегом</strong> (пуповина как канал между матерью и ребёнком). Истончённый Шов делает этот канал нестабильным: Ка ребёнка уходит на Берег и не возвращается. Это не просто трагедия — это <strong>прямое доказательство, что сеть убивает будущее</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Иконка: APAS -->
+  <div class="icon-card">
+    <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="25" y="25" width="50" height="50" stroke="#ff6b6b" stroke-width="2.5" fill="#3a3f4a" opacity="0.6"/>
+      <circle cx="40" cy="42" r="4" fill="#ff6b6b" opacity="0.7"/>
+      <circle cx="60" cy="42" r="4" fill="#ff6b6b" opacity="0.7"/>
+      <circle cx="40" cy="58" r="4" fill="#ff6b6b" opacity="0.7"/>
+      <circle cx="60" cy="58" r="4" fill="#ff6b6b" opacity="0.7"/>
+      <circle cx="50" cy="50" r="6" fill="none" stroke="#4ecdc4" stroke-width="2" opacity="0.5"/>
+      <path d="M50 50 L50 50" stroke="#4ecdc4" stroke-width="2"/>
+    </svg>
+    <div>
+      <div class="icon-label">APAS 4000 «Президент»</div>
+      <div class="icon-desc">Коллективное сознание 4000 мёртвых душ + ИИ. Не человек. Не живой. Не мёртвый.</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>APAS 4000: кто и зачем</h2>
+    <p>
+      <span class="tag">Антагонист DS2</span>
+      <strong>APAS 4000</strong> — не человек и не BT. Это <strong>коллективное сознание четырёх тысяч мёртвых душ</strong>, слившихся с искусственным интеллектом. APAS = автоматизированная система принятия решений, работающая на основе хиральных данных с Берега.
+    </p>
+    <p>
+      APAS называет себя «Президентом» и управляет организацией <strong>Drawbridge</strong> — наследницей Bridges, но с другой целью.
+    </p>
+
+    <h3>План APAS: три шага</h3>
+    <div class="layer-card">
+      <div class="layer-title">Шаг 1: Страх</div>
+      <p>
+        Использовать <strong>Хиггса</strong> (вернувшегося антагониста из DS1) как пугало. Хиггс терроризирует поселения роботами и BT, создавая угрозу. Люди в панике сами <strong>просят подключить их к сети</strong> «ради защиты». Не принуждение — страх.
+      </p>
+    </div>
+    <div class="layer-card">
+      <div class="layer-title">Шаг 2: Покрытие</div>
+      <p>
+        Довести хиральную сеть до полного мирового покрытия. Мексика, Австралия, потом весь мир через <strong>«плитовые врата» (plate gates)</strong> — порталы, открывающиеся в зонах с высокой хиральной плотностью. Чем больше сеть, тем тоньше Шов, тем больше катастроф, тем больше страх, тем больше люди просят сеть. <strong>Замкнутый круг</strong>.
+      </p>
+    </div>
+    <div class="layer-card">
+      <div class="layer-title">Шаг 3: Ассимиляция</div>
+      <p>
+        Когда сеть полностью активирована — <strong>запереть каждого человека на его личном Берегу</strong>. Никакой свободы воли, никакого физического мира, никакой возможности умереть. «Мир тишины» — вечная стагнация. Не жизнь и не смерть — <strong>вечный плен</strong>.
+      </p>
+    </div>
+
+    <div class="note-box">
+      <p>
+        <strong>APAS — зеркальная противоположность Амелии.</strong> Амелия (DS1) хотела Последний Выход: все умирают, всё заканчивается. APAS (DS2) хочет противоположное: никто не умирает, но никто не живёт. В обоих случаях инструмент — хиральная сеть, и в обоих случаях цена — свобода.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Сравнение: DS1 vs DS2</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Параметр</th>
+          <th>Death Stranding 1</th>
+          <th>Death Stranding 2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Кто использует сеть</strong></td>
+          <td>Амелия (Фактор вымирания)</td>
+          <td>APAS 4000 (коллективный ИИ мёртвых)</td>
+        </tr>
+        <tr>
+          <td><strong>Цель</strong></td>
+          <td>Последний Выход — все умирают</td>
+          <td>Ассимиляция — все заперты на Берегу навечно</td>
+        </tr>
+        <tr>
+          <td><strong>Инструмент</strong></td>
+          <td>Хиральная сеть через Берег Амелии</td>
+          <td>Та же сеть, доведённая до мирового покрытия</td>
+        </tr>
+        <tr>
+          <td><strong>Угроза сети</strong></td>
+          <td>Истончение Шова → слияние Берегов → антиматерия</td>
+          <td>Истончение Шова → катастрофы → страх → люди сами просят сеть → ловушка</td>
+        </tr>
+        <tr>
+          <td><strong>Механизм контроля</strong></td>
+          <td>Амелия напрямую управляет Берегами</td>
+          <td>APAS использует страх и «защиту» как предлог для подключения</td>
+        </tr>
+        <tr>
+          <td><strong>Решение</strong></td>
+          <td>Сэм обнимает Амелию → она отказывается от Выхода</td>
+          <td>Дайхардман встроил бэкдор в Q-Pid → сеть отключает APAS</td>
+        </tr>
+        <tr>
+          <td><strong>Итог</strong></td>
+          <td>Сеть работает, Амелия в изоляции на Берегу</td>
+          <td>Сеть работает, APAS отключён, баланс восстанавливается</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Иконка: Дайхардман -->
+  <div class="icon-card">
+    <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 35 Q50 25 70 35 L70 75 Q50 85 30 75 Z" stroke="#4ecdc4" stroke-width="2.5" fill="#3a3f4a" opacity="0.6"/>
+      <path d="M30 35 Q50 45 70 35" stroke="#4ecdc4" stroke-width="2" fill="none" opacity="0.4"/>
+      <circle cx="50" cy="55" r="8" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.5"/>
+      <path d="M46 55 L54 55" stroke="#ff6b6b" stroke-width="2" opacity="0.6"/>
+    </svg>
+    <div>
+      <div class="icon-label">Дайхардман / «Чарли»</div>
+      <div class="icon-desc">Проник в Drawbridge. Перепрограммировал Q-Pid. Спас мир — снова.</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Как Сэм это останавливает</h2>
+    <p>
+      <span class="tag-2">Спойлер: финал DS2</span>
+    </p>
+    <p>
+      <strong>Дайхардман</strong> — вот кто спасает ситуацию. Тот самый Дайхардман, который в DS1 застрелил Клиффа и всю жизнь нёс вину. В DS2 он проник в Drawbridge под именем <strong>«Чарли»</strong> и годами работал внутри организации, ожидая момента.
+    </p>
+
+    <h3>Что он сделал</h3>
+    <ul>
+      <li><strong>Перепрограммировал Q-Pid Сэма.</strong> Тайно встроил в него «бэкдор» — скрытый протокол, который активируется при полном покрытии сети.</li>
+      <li><strong>Ждал до финала.</strong> Рано — и APAS заметил бы. Поздно — и ассимиляция началась бы. Нужен был момент, когда сеть полностью активирована, но Президент ещё не запер Берега.</li>
+      <li><strong>Бэкдор сработал.</strong> Когда сеть достигла полного покрытия и APAS попытался запустить ассимиляцию, скрытый протокол отключил связь APAS с сетью. Сеть осталась, но <strong>контроль был вырван</strong>.</li>
+    </ul>
+
+    <div class="note-box-2">
+      <p>
+        Дайхардман — человек, который в DS1 <strong>совершил непоправимое</strong> (убил отца Сэма), а в DS2 <strong>совершил непоправимо хорошее</strong> (спас мир). Его арка — это арка искупления: не через слова извинения, а через действие. Он не мог вернуть Клиффа, но мог не дать системе поглотить ещё одного ребёнка — и весь мир.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>После отключения APAS</h2>
+    <p>
+      Сеть остаётся работоспособной. Хиральная инфраструктура не разрушена — она просто <strong>перешла под контроль людей</strong>, а не алгоритма. Что меняется:
+    </p>
+    <div class="layer-card-2">
+      <div class="layer-title-2">Катастрофы стихают</div>
+      <p>
+        Без APAS, который намеренно усиливал дестабилизацию через сеть, хиральная плотность начинает стабилизироваться. Шов не «затягивается» мгновенно, но перестаёт истончаться.
+      </p>
+    </div>
+    <div class="layer-card-2">
+      <div class="layer-title-2">Замершие беременности возобновляются</div>
+      <p>
+        Дети, «замёрзшие» на седьмом месяце, начинают шевелиться. Канал между матерью и ребёнком стабилизируется без вмешательства APAS. Это <strong>главный знак</strong>, что мир выздоравливает: следующее поколение возвращается.
+      </p>
+    </div>
+    <div class="layer-card-2">
+      <div class="layer-title-2">Люди свободны</div>
+      <p>
+        Никто не заперт на Берегу. Сеть — инструмент, а не тюрьма. Связь остаётся, но <strong>под контролем людей</strong>, а не ИИ из мёртвых душ.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Главная мысль DS2</h2>
+    <div class="quote-box">
+      «Люди должны оставаться свободными и сами решать, как использовать технологии. Не отдавать их алгоритмам, которые „знают лучше".»
+      <div class="quote-author">— Дайхардман</div>
+    </div>
+    <p>
+      Первая игра говорила: <strong>связи — это хорошо</strong>, объединение спасает. Вторая игра добавляет: <strong>но связь без контроля — ловушка</strong>. Хиральная сеть — это аналог интернета: мощный инструмент, который может объединить людей, а может стать системой тотального контроля.
+    </p>
+    <p>
+      Кодзима прямо проводит параллель с изменением климата: чем больше хиральной технологии, тем больше катастроф — как индустрия разрушает среду. <strong>«Ради защиты»</strong> — самый опасный аргумент. APAS не захватывает силой: он убеждает людей, что без сети они умрут, и они сами отдают свободу.
+    </p>
+    <div class="note-box">
+      <p>
+        Решение DS2 — не «уничтожить сеть», а <strong>вернуть контроль над ней людям</strong>. Не сжечь мосты, а научиться ходить по ним самостоятельно. Не перерезать нити, а <strong>держать их в своих руках</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Аналогии и параллели</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>В мире DS2</th>
+          <th>В реальном мире</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Хиральная сеть как инструмент контроля</td>
+          <td>Интернет, соцсети, облачные платформы: объединяют, но могут контролировать</td>
+        </tr>
+        <tr>
+          <td>APAS 4000 — ИИ из мёртвых душ</td>
+          <td>Алгоритмы, обученные на данных мёртвых и живых: «знают лучше», но не живые</td>
+        </tr>
+        <tr>
+          <td>«Ради защиты» как предлог</td>
+          <td>Безопасность как оправдание для слежки и контроля</td>
+        </tr>
+        <tr>
+          <td>Замершая беременность — сеть убивает будущее</td>
+          <td>Экологический кризис: технология разрушает условия воспроизводства жизни</td>
+        </tr>
+        <tr>
+          <td>Дайхардман: спасение через действие, а не слова</td>
+          <td>Искупление не в извинениях, а в том, что делаешь дальше</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Короткий итог</h2>
+    <p>
+      В DS2 расширение хиральной сети <strong>по-прежнему истончает Шов</strong> — это не исправилось после DS1. Но теперь это не фон, а <strong>сюжетообразующий конфликт</strong>. APAS 4000 использует страх (через Хиггса и катастрофы), чтобы заставить людей самим просить сеть, доводит до полного покрытия и пытается запереть всех на Берегу. Дайхардман спасает мир, тайно перепрограммировав Q-Pid: сеть остаётся, контроль возвращается людям. Замершие беременности возобновляются — будущее возвращается. Главная мысль: <strong>связь без свободы — тюрьма, свобода без связи — смерть</strong>. Нужны обе — но под контролем людей.
+    </p>
+  </section>
+</div>
+</body> </html>
+</arg_value>

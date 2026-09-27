@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Шов (Seam) — подтекст названия</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .layer-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Шов (Seam): подтекст названия</h1>
+
+      <!-- Иконка: Шов -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="15" y1="50" x2="85" y2="50" stroke="#e0e2e5" stroke-width="2" opacity="0.3"/>
+          <path d="M20 45 L25 55 M30 45 L35 55 M40 45 L45 55 M50 45 L55 55 M60 45 L65 55 M70 45 L75 55" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="14" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Шов (The Seam)</div>
+          <div class="icon-desc">Не просто «сим» — многослойное слово: строчка, граница, рана, шрам и игра звучания.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Слой 1: Шов как строчка, соединение</h2>
+        <div class="layer-card">
+          <div class="layer-title">Прямой смысл</div>
+          <p>
+            <em>Seam</em> — это буквально «шов», «стык», «место соединения». В контексте Bridges это идеально ложится на главную тему игры: <strong>сшивание разорванной Америки</strong>. Сэм не просто разносит посылки — он «прошивает» страну обратно, восстанавливая связи. Хиральная сеть — гигантский шов, стягивающий изолированные узлы.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Слой 2: Шов как граница (геология)</h2>
+        <div class="layer-card">
+          <div class="layer-title">Физический смысл</div>
+          <p>
+            В геологии <em>seam</em> — прослойка между пластами (например, <em>coal seam</em> — угольный пласт). В Death Stranding Шов — тонкая мембрана между миром живых и Берегом. Не стена, а <strong>плёнка, которую можно прорвать</strong>. Отсюда войд‑ауты: разрыв Шова = катастрофа.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Слой 3: Шов как рана и шрам</h2>
+        <div class="layer-card">
+          <div class="layer-title">Метафора</div>
+          <p>
+            Шов — одновременно <strong>рана</strong> (разрыв, через который Берег проникает в реальность) и <strong>шрам</strong> (след от сшивания, свидетельство травмы). После Выхода смерти Шов повреждён, истончён, местами разорван. Задача Bridges — «заштопать» разрывы, стабилизировать границу.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Слой 4: Игра звучания — seam / seem</h2>
+        <div class="layer-card">
+          <div class="layer-title">Лингвистический нюанс</div>
+          <p>
+            <em>Seam</em> звучит почти как <em>seem</em> — «казаться», «представляться». Это перекликается с тем, как в игре размывается грань между реальностью и восприятием, между живым и мёртвым. Мир <em>кажется</em> одним, а на деле он прошит разрывами; связи <em>кажутся</em> хрупкими, но именно они держат всё вместе.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Слой 5: Связь с нитью и пуповиной</h2>
+        <div class="layer-card">
+          <div class="layer-title">Тематическая связь</div>
+          <p>
+            В лоре всё держится на нитях: пуповины, хиральные нити, верёвки Сэма. <em>Seam</em> как шов — место, где эти нити должны быть аккуратно соединены. Когда шов рвётся, нити путаются, и появляются BT. DOOMS‑связь близнецов (Малинген и Локни) — тоже своего рода шов: тонкая линия между двумя сознаниями. И когда она нарушается — начинается трагедия.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Почему это не случайное слово</h2>
+        <div class="note-box">
+          <p>
+            Кодзима берёт простые, бытовые понятия (шов, груз, мост, узел) и нагружает их сразу несколькими смыслами: физическим, техническим, эмоциональным и философским. <strong>Seam</strong> — идеальный пример: это и строчка на ткани, и геологический пласт, и рана, и шрам, и место соединения, и фонетическая игра со словом «казаться».
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          <strong>Seam — не просто «сим».</strong> Это шов в пяти смыслах: строчка (сшивание Америки), граница (мембрана между мирами), рана/шрам (след Выхода смерти), фонетическая игра (seam / seem — «казаться»), и нить (место соединения связей, пуповин и DOOMS‑бonds). Каждое значение работает одновременно.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

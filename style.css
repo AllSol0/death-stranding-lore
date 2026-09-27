@@ -1,0 +1,151 @@
+/* style.css — единый стиль для лорного сайта по Death Stranding */
+
+:root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+/* Шапка */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 1px solid #444;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+header p {
+    color: var(--text-muted);
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+/* ГЛАВНОЕ ИЗМЕНЕНИЕ: Адаптивная сетка */
+.grid-container {
+    display: grid;
+    /* Разрешаем сетке переносить карточки на новые строки, если они не влезают */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    
+    /* Явно задаем отступы: 25px по вертикали и 25px по горизонтали */
+    gap: 25px;
+    
+    padding: 40px 20px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+    /* Чтобы карточки не «прыгали» при наведении */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border-color: var(--accent);
+}
+
+.card h2 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid #444;
+}
+
+/* Адаптив для очень маленьких экранов */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .grid-container {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+}
+
+/* Красивая контурная кнопка возврата */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-main); /* Изначально текст светлый */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border: 1px solid #444; /* Неброская рамка */
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Отступ до начала статьи */
+}
+
+/* Эффект подсветки при наведении */
+.back-btn:hover {
+    color: #ffffff;
+    border-color: var(--accent); /* Рамка становится красной */
+    background-color: rgba(255, 107, 107, 0.1); /* Легкое красное свечение внутри */
+    transform: translateX(-3px); /* Кнопка слегка сдвигается влево, имитируя стрелку */
+}
+
+/* Фикс, чтобы ссылка никогда не становилась фиолетовой */
+.back-btn,
+.back-btn:visited,
+.back-btn:active {
+    color: var(--text-main) !important;
+}
+
+.back-btn:hover,
+.back-btn:hover:visited {
+    color: #ffffff !important;
+}
+

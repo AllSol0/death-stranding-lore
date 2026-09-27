@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>BT (Beached Things) — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      ul { list-style: none; padding-left: 0; }
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .step-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .step-number {
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BT (Beached Things): полная картина</h1>
+
+      <!-- Иконка: BT -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 80 L50 20 L80 80 Z" stroke="#ff6b6b" stroke-width="4" fill="#3a3f4a" opacity="0.8"/>
+          <circle cx="40" cy="40" r="6" fill="#ff6b6b"/>
+          <circle cx="60" cy="40" r="6" fill="#ff6b6b"/>
+          <path d="M40 55 Q50 65 60 55" stroke="#ff6b6b" stroke-width="3" fill="none"/>
+        </svg>
+        <div>
+          <div class="icon-label">BT (Beached Thing)</div>
+          <div class="icon-desc">Душа (Ка), застрявшая между мирами. Привязана пуповиной к своему мёртвому телу (Ха). Не может уйти далеко.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что такое BT</h2>
+        <p>
+          BT — <strong>Beached Things</strong>, «выброшенные на Берег существа». Это не призраки и не зомби, а <strong>души (Ка), которые не смогли уйти в мир мёртвых</strong> и застряли между мирами. Название — прямая отсылка к китам, выброшенным на берег: они не могут ни вернуться в океан, ни жить на суше.
+        </p>
+      </section>
+
+      <!-- Иконка: Пуповина -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="40" stroke="#ff6b6b" stroke-width="4" opacity="0.8"/>
+          <path d="M20 50 Q50 20 80 50 Q50 80 20 50" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Пуповина — якорь BT</div>
+          <div class="icon-desc">Каждый BT привязан пуповиной к своему мёртвому Ха (телу). Это физическая связь, которая не даёт Ка уйти далеко от тела.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Пуповина и привязка к телу</h2>
+        <p>
+          Это <strong>ключевая деталь лора</strong>, которую часто упускают: BT не свободно бродит где попало. Он <strong>привязан пуповиной к своему мёртвому Ха (телу)</strong> и не может уйти от него далеко.
+        </p>
+        <ul>
+          <li><strong>Пуповина — физическая связь</strong> между застрявшей Ка и мёртвым телом. Она работает как якорь: душа «пришита» к своему Ха.</li>
+          <li><strong>BT не может покинуть тело.</strong> Дальше определённого радиуса от Ха пуповина не пускает — BT буквально натягивается, как на поводке.</li>
+          <li><strong>Именно поэтому</strong> BT всегда появляются рядом с мёртвыми телами. Найти тело — значит найти BT, и наоборот.</li>
+          <li><strong>Пуповина — не абстракция.</strong> Её можно увидеть через сканер Сэма (браслет Odradek). Она выглядит как нить, тянущаяся от BT к земле, к месту, где лежит тело.</li>
+          <li><strong>Перерезание пуповины</strong> — единственный способ «освободить» BT. Если перерезать её, Ка отделяется от Ха и уходит на Берег. Без пуповины тело перестаёт притягивать хираль и не порождает новых BT.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Откуда берутся BT: цепочка</h2>
+        <div class="step-card">
+          <div class="step-number">1. Смерть</div>
+          <p>Человек умирает. Ка покидает Ха и пытается пройти через Шов на Берег.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2. Шов повреждён</div>
+          <p>После Выхода смерти путь с Берега в мир мёртвых закрыт. Ка застревает на Береге.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3. Возвращение</div>
+          <p>Ка возвращается к телу через пуповину. Тело «оживает» — но не как человек, а как BT.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4. Хираль</div>
+          <p>Тело начинает «протекать» хиралем — чёрная смолистая субстанция, которая растекается и притягивает других BT.</p>
+        </div>
+      </section>
+
+      <!-- Иконка: Войд-аут -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="20" fill="#ff6b6b" opacity="0.3"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.5"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0.3"/>
+          <path d="M50 30 L50 70 M30 50 L70 50 M36 36 L64 64 M64 36 L36 64" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Войд-аут</div>
+          <div class="icon-desc">Если BT поглощает живого человека — взрыв антиматерии. Кратер. Стирает всё в радиусе.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Войд-ауты: BT как катастрофа</h2>
+        <p>
+          Если BT поглощает живого человека, происходит <strong>войл-аут</strong> — взрыв антиматерии.
+        </p>
+        <ul>
+          <li>Один такой взрыв способен <strong>стереть с карты целый город</strong>.</li>
+          <li>На месте взрыва остаётся <strong>кратер</strong> — зона, где пространство необратимо повреждено.</li>
+          <li>Именно поэтому Bridges одержимы тем, чтобы <strong>не допускать скопления BT</strong> и вовремя кремировать тела.</li>
+          <li>Механика в игре: если тебя поймал BT и ты не вырвался — запускается цепная реакция.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Как BT выглядят и ведут себя</h2>
+        <ul>
+          <li><strong>Форма:</strong> полупрозрачные фигуры, иногда почти человеческие, иногда искажённые. Под темпоральным дождём заметнее.</li>
+          <li><strong>Хиральный след:</strong> оставляют чёрную жижу — хираль, который они «вытекают».</li>
+          <li><strong>Реакция на живых:</strong> реагируют на тепло и сердцебиение. Пульс и тепло тела — маяк для BT.</li>
+          <li><strong>Стаи:</strong> если один BT находит человека, он может позвать других. Одиночная встреча легко превращается в засаду.</li>
+          <li><strong>Невидимость:</strong> в обычных условиях BT не видны. Сэм видит их только через Odradek (сканер) и благодаря DOOMS.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Как с ними борются</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Инструмент</th>
+              <th>Как работает</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Замирание</strong></td>
+              <td>BT реагируют на пульс и тепло. Замираешь — не замечают. Лучший способ избежать боя.</td>
+            </tr>
+            <tr>
+              <td><strong>Хиральные гранаты</strong></td>
+              <td>Растворяют связь BT с этим миром. Хираль — их среда, и правильно применённая хиральная энергия «отпускает» Ка.</td>
+            </tr>
+            <tr>
+              <td><strong>Перерезание пуповины</strong></td>
+              <td>Единственный способ <strong>навсегда</strong> освободить BT: Ка отделяется от Ха и уходит на Берег. Без пуповины тело перестаёт притягивать хираль.</td>
+            </tr>
+            <tr>
+              <td><strong>Кремация тел</strong></td>
+              <td>Если тело сжечь до того, как Ка вернётся, пуповина обрывается, и BT не образуется.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Иконка: Особые случаи -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="38" stroke="#e0e2e5" stroke-width="2" opacity="0.3"/>
+          <path d="M30 50 Q50 25 70 50 Q50 75 30 50" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="6" fill="#ff6b6b"/>
+          <path d="M50 44 L50 30" stroke="#e0e2e5" stroke-width="2" opacity="0.4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Особые случаи</div>
+          <div class="icon-desc">Сэм, Амелия и ребёнок Малинген — случаи, где правила BT работают нестандартно.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Особые случаи</h2>
+        <div class="note-box">
+          <p>
+            <strong>Сэм:</strong> его связь с Берегом и BT — особая, потому что Амелия вернула его из мира мёртвых. Он не просто курьер, а <strong>стабилизатор</strong>: его присутствие и действия помогают «развязывать» узлы скопления BT. Он чувствует BT благодаря DOOMS.
+          </p>
+          <p>
+            <strong>Амелия:</strong> её Берег связывает все личные Берега людей. Через эту связь Берег начал массово просачиваться в реальность. Она — <strong>Фактор вымирания</strong>: чем больше хиральная сеть растёт, тем сильнее слияние Берегов, тем больше BT.
+          </p>
+          <p>
+            <strong>Ребёнок Малинген:</strong> родился мёртвым, Ка вернулась и стала BT. Пуповина привязала её <strong>к месту смерти</strong>, а не только к телу. Через эту пуповину BT-девочка стала каналом между Берегом и телом Малинген, поддерживая жизнь «мёртвого» тела. Когда Сэм перерезал пуповину — BT ушла, канал закрылся, Малинген начала угасать.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Почему BT важны для темы игры</h2>
+        <p>
+          BT — это <strong>физическое воплощение разорванных связей</strong>. Каждый BT — чья-то душа, которая не смогла уйти, потому что мир «не сшит» обратно. Борьба с BT — это не про насилие, а про <strong>восстановление связей</strong>: кремация, перерезание пуповины, доставка грузов, подключение узлов. Чем больше узлов подключено, тем стабильнее Шов и тем меньше BT появляется в этих зонах.
+        </p>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          BT — застрявшая Ка, привязанная <strong>пуповиной</strong> к мёртвому Ха. Не может уйти от тела. Хираль, который они выделяют, притягивает других BT. Если BT поглотит живого — войд-аут. Освободить BT = перерезать пуповину. Кремировать тело до возвращения Ка = BT не образуется. Сэм — стабилизатор, Амелия — причина, пуповина — якорь.
+        </p>
+      </section>
+    </div>
+  </body>
+
+  <body>
+    <div class="container">
+      <h2>Классы BT</h2>
+
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="35" cy="45" r="12" stroke="#e0e2e5" stroke-width="3" opacity="0.5"/>
+          <circle cx="65" cy="45" r="12" stroke="#ff6b6b" stroke-width="3" opacity="0.7"/>
+          <path d="M35 57 L35 85 M65 57 L65 85" stroke="#e0e2e5" stroke-width="3" opacity="0.4"/>
+          <circle cx="35" cy="45" r="3" fill="#ff6b6b"/>
+          <circle cx="65" cy="45" r="3" fill="#e0e2e5" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Два класса BT</div>
+          <div class="icon-desc">Gazer — пассивные наблюдатели. Catcher — активные охотники и боссы.</div>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Что это</th>
+            <th>Поведение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gazer</strong> (Наблюдатель)</td>
+            <td>Обычные гуманоидные BT, которых ты видишь в зонах. Привязаны пуповиной к своим телам, дрейфуют на месте.</td>
+            <td>Пассивны, пока не заметят живого. Реагируют на пульс и тепло.</td>
+          </tr>
+          <tr>
+            <td><strong>Catcher</strong> (Ловец)</td>
+            <td>Крупные BT-боссы. Это BT крупных животных или существ, чьи тела генерируют огромное количество хираля.</td>
+            <td>Активно охотятся, преследуют, пытаются поглотить живого. Если поймают — войд-аут.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        <p>
+          Обычные BT, которых ты обходишь затаив дыхание, — это <strong>Gazer</strong>. Крупные боссы (кит, лев, гигантский кальмар и т. д.) — это <strong>Catcher</strong>.
+        </p>
+      </div>
+    </div>
+  </body>
+
+</html>

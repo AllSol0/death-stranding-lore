@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Берег и Шов — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* Карточки с иконками */
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Таблица */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th {
+        background: rgba(255, 107, 107, 0.1);
+        color: var(--accent);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Списки */
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Берег и Шов: полная картина</h1>
+
+      <!-- Иконка: Берег -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="60" width="80" height="30" fill="#3a3f4a" stroke="#e0e2e5" stroke-width="2" opacity="0.6"/>
+          <path d="M10 75 Q40 40 50 55 Q60 70 90 75" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="35" r="8" fill="#e0e2e5" opacity="0.5"/>
+          <circle cx="30" cy="45" r="4" fill="#ff6b6b" opacity="0.6"/>
+        </svg>
+        <div>
+          <div class="icon-label">Берег (The Beach)</div>
+          <div class="icon-desc">Пространство между миром живых и миром мёртвых. Личный для каждого, но у DOOMS может быть общим.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что такое Берег</h2>
+        <p>
+          Берег — это <strong>пересадочный пункт души (Ка)</strong>. До Выхода смерти Ка проходила через Шов, попадала на Берег и спокойно уходила дальше — в мир мёртвых. Тело оставалось мёртвым, душа уходила.
+        </p>
+        <ul>
+          <li><strong>Внешний вид:</strong> бескрайний океан, туман, пепел, обломки на песке. Время течёт иначе.</li>
+          <li><strong>Вода — не вода:</strong> смесь физической и хиральной субстанции.</li>
+          <li><strong>Личный Берег:</strong> у каждого человека свой. У людей с DOOMS Берега могут пересекаться или быть общими (как у Малинген и Локни).</li>
+        </ul>
+      </section>
+
+      <!-- Иконка: Шов -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="50" x2="80" y2="50" stroke="#e0e2e5" stroke-width="3" opacity="0.4"/>
+          <path d="M45 45 L55 55 M55 45 L45 55" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <circle cx="50" cy="50" r="12" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="4 4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Шов (The Seam)</div>
+          <div class="icon-desc">Граница (мембрана) между миром живых и Берегом. Через неё Ка проходит при смерти.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что такое Шов</h2>
+        <p>
+          Шов — это <strong>тонкая граница, мембрана</strong> между миром живых и Берегом. Это «фильтр», через который Ка проходит при смерти.
+        </p>
+        <ul>
+          <li><strong>До Выхода смерти:</strong> Шов был стабильным — Ка спокойно проходила через него в одну сторону.</li>
+          <li><strong>После Выхода смерти:</strong> Шов истончается и рвётся. В местах разрыва Берег просачивается в реальность.</li>
+          <li><strong>Результат разрыва:</strong> BT, темпоральный дождь, искажение пространства, войд-ауты (взрывы антиматерии).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Как они связаны: путь души</h2>
+        <p>
+          Путь Ка выглядит так: <strong>Жизнь → Шов → Берег → Мир мёртвых</strong>. После Выхода смерти этот путь ломается.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Состояние</th>
+              <th>До Выхода смерти</th>
+              <th>После Выхода смерти</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Шов</strong></td>
+              <td>Стабилен, работает как фильтр</td>
+              <td>Истончается, рвётся, пропускает Берег в реальность</td>
+            </tr>
+            <tr>
+              <td><strong>Берег</strong></td>
+              <td>Транзит: зашёл и ушёл дальше</td>
+              <td>Ловушка: зашёл, дальше нельзя, вернулся к телу</td>
+            </tr>
+            <tr>
+              <td><strong>Итог</strong></td>
+              <td>Душа уходит, тело остаётся мёртвым</td>
+              <td>Душа возвращается, тело становится BT</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Иконка: Хартман -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="38" stroke="#e0e2e5" stroke-width="2" opacity="0.3"/>
+          <path d="M50 20 L50 80 M20 50 L80 50" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="50" cy="50" r="6" fill="#ff6b6b"/>
+          <text x="42" y="58" font-size="10" fill="#e0e2e5">60</text>
+        </svg>
+        <div>
+          <div class="icon-label">Хартман и Берег</div>
+          <div class="icon-desc">Искусственно умирает 60 раз в день, проводит ~3 минуты на Берегу. Изучает Берег «изнутри», но дальше Берега никто не прошёл.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Хартман: изучение Берега</h2>
+        <ul>
+          <li><strong>Метод:</strong> Хартман искусственно умирает 60 раз в день и проводит по ~3 минуты на Берегу, затем возвращается.</li>
+          <li><strong>Цель:</strong> изучить Берег изнутри, понять, как он устроен и как взаимодействует с реальным миром.</li>
+          <li><strong>Важный нюанс:</strong> он видит Берег, но <strong>никогда не видел, что находится за ним</strong>. Мир мёртвых остаётся абсолютной неизвестностью.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Особые случаи: Амелия и Сэм</h2>
+        <div class="note-box">
+          <p>
+            <strong>Амелия:</strong> её Берег уникален — он не индивидуальный, а <strong>связывает Берега всех людей</strong> в один. Именно через её Берег все личные Берега начинают сливаться с реальностью. Поэтому она — Фактор вымирания.
+          </p>
+          <p>
+            <strong>Сэм:</strong> из‑за DOOMS у него есть свой Берег. Он связан с Амелией, потому что она <strong>воскресила его в детстве</strong> — вернула из мира мёртвых через свой Берег. Отсюда — его особая связь с Берегом и BT.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Войд-аут и разрыв Шова</h2>
+        <p>
+          Когда Шов разрывается, BT вытягивает энергию из Берега — происходит <strong>войд‑аут</strong>, взрыв антиматерии. Разрыв Шова = катастрофа.
+        </p>
+        <ul>
+          <li>BT использует энергию Берега через разорванный Шов.</li>
+          <li>Это вызывает локальные взрывы и разрушение материи.</li>
+          <li>Именно поэтому стабилизация Шова и защита от прорыва — ключевая задача Bridges.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          <strong>Шов — граница. Берег — транзитный пункт.</strong> До Выхода смерти душа спокойно уходила дальше. После — Шов рвётся, Берег становится ловушкой, Ка возвращается к телу, и оно становится BT. Хартман изучает Берег, Амелия связывает все Берега, Сэм связан с Амелией. Войд‑ауты — результат разрыва Шова.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
