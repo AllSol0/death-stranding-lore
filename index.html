@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лор Death Stranding</title>
     <style>
-        /* Перенесенный и исправленный CSS из вашего файла style.css */
+        /* Базовые стили страницы (под темную тему со скриншота) */
         :root {
             --bg-color: #2b2f36;
             --card-bg: #3a3f4a;
@@ -44,6 +44,57 @@
             color: var(--text-muted);
             margin-top: 12px;
             font-size: 1rem;
+        }
+
+        /* ЛОГИКА ВКЛАДОК (TABS) */
+        /* Скрываем радио-кнопки */
+        input[name="lore-tabs"] {
+            display: none;
+        }
+
+        /* Навигация вкладок */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #2d333f;
+            padding-bottom: 15px;
+        }
+
+        .tab-label {
+            padding: 10px 30px;
+            font-size: 1.1rem;
+            color: #8a8f98;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            background-color: #252a34;
+        }
+
+        .tab-label:hover {
+            color: #ffffff;
+            background-color: #2d333f;
+        }
+
+        /* Стили для активных вкладок */
+        #tab-world:checked ~ .tabs-nav .tab-label[for="tab-world"],
+        #tab-characters:checked ~ .tabs-nav .tab-label[for="tab-characters"] {
+            color: #ffffff;
+            background-color: #383f4d;
+            box-shadow: 0 0 0 1px #ff4500; /* Выделение активной вкладки обводкой */
+        }
+
+        /* Скрываем панели с контентом по умолчанию */
+        .tab-panel {
+            display: none;
+        }
+
+        /* Показываем нужную панель при активации радио-кнопки */
+        #tab-world:checked ~ .tabs-content #content-world,
+        #tab-characters:checked ~ .tabs-content #content-characters {
+            display: block;
         }
 
         /* ИСПРАВЛЕННАЯ СЕТКА: Карточки теперь могут переноситься и имеют отступы со всех сторон */
@@ -119,83 +170,181 @@
 </head>
 <body>
 
-    <header>
-        <h1>Лор Death Stranding</h1>
-        <p>Разбираем мир, персонажей и тайны</p>
-    </header>
+<div class="container">
+    
+    <!-- Переключатели (скрытые инпуты) -->
+    <input type="radio" id="tab-world" name="lore-tabs" checked>
+    <input type="radio" id="tab-characters" name="lore-tabs">
 
-    <!-- Правильная структура: все карточки лежат строго друг за другом -->
-    <main class="grid-container">
+    <!-- Навигационные кнопки вкладок -->
+    <div class="tabs-nav">
+        <label for="tab-world" class="tab-label">Мир</label>
+        <label for="tab-characters" class="tab-label">Персонажи</label>
+    </div>
 
-        <!-- Карточка 1 -->
-        <a href="ka_and_dead_world.html" class="card-link">
-            <div class="card">
-                <h2>Ка и мир мёртвых</h2>
-                <p>Пуповина, Берег, BT. Как устроен путь души и что сломал Выход смерти.</p>
+    <!-- Контент вкладок -->
+    <div class="tabs-content">
+        
+        <!-- ВКЛАДКА 1: МИР -->
+        <div id="content-world" class="tab-panel">
+            <header>
+                <h1>Лор Death Stranding</h1>
+                <p>Разбираем мир, науку и тайны</p>
+            </header>
+
+            <div class="grid-container">
+
+                <!-- Карточка 1 (Выделенная) -->
+		<a href="ka_and_dead_world.html" class="card-link">
+                <div class="card highlighted">
+                    <h2>Ка и мир мёртвых</h2>
+                    <p>Пуповина, Берег, BT. Как устроен путь души и что сломал Выход смерти.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 2 -->
+		<a href="beach_and_seam.html" class="card-link">
+                <div class="card">
+                    <h2>Берег и Шов</h2>
+                    <p>Полная картина: Берег, Шов, Хартман, Амелия, Сэм и войд‑ауты.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 3 -->
+		<a href="seam_subtext.html" class="card-link">
+                <div class="card">
+                    <h2>Шов: подтекст названия</h2>
+                    <p>Пять смыслов слова Seam: строчка, граница, рана, фонетика, нить.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 4 -->
+		<a href="seam_rupture.html" class="card-link">
+                <div class="card">
+                    <h2>Разрыв Шова</h2>
+                    <p>Как Берег просачивается в реальность: BT, хираль, темпоральный дождь, войд‑аут.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 5 -->
+		<a href="BT.html" class="card-link">
+                <div class="card">
+                    <h2>БТ</h2>
+                    <p>БТ, классы, описание, выход смерти, почему BT важны для темы игры.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 6 -->
+		<a href="BB_seam.html" class="card-link">
+                <div class="card">
+                    <h2>ББ и истончение Шва</h2>
+                    <p>Как именно ББ создает канал через Шов, исторические прецеденты: когда ББ рвал Шов.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 7 -->
+		<a href="voidaut.html" class="card-link">
+                <div class="card">
+                    <h2>Выход смерти</h2>
+                    <p>Почему происходит взрыв, цепочка: от смерти до войдаута, нюанс: возвращенцы и размер кратера.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 8 -->
+		<a href="DS1_to_2.html" class="card-link">
+                <div class="card">
+                    <h2>От DS1 к DS2</h2>
+                    <p>Шов и увеличение сети, суть проблемы, что происходит с миром в DS2.</p>
+                </div>
+		</a>
+
+                <!-- Карточка 9 -->
+		<a href="5EE.html" class="card-link">
+                <div class="card">
+                    <h2>5 Факторов вымирания</h2>
+                    <p>Что такое Фактор вымирания (EE), что объединяет все EE, DS2: седьмой EE?</p>
+                </div>
+		</a>
             </div>
-        </a>
+        </div>
 
-        <!-- Карточка 2 -->
-        <a href="beach_and_seam.html" class="card-link">
-            <div class="card">
-                <h2>Берег и Шов</h2>
-                <p>Полная картина: Берег, Шов, Хартман, Амелия, Сэм и войд‑ауты.</p>
-            </div>
-        </a>
+  <!-- ВКЛАДКА 2: ПЕРСОНАЖИ -->
+        <div id="content-characters" class="tab-panel">
+            <header>
+                <h1>Лор Death Stranding</h1>
+                <p>Действующие лица и их истории в мире Death Stranding</p>
+            </header>
+            
+            <div class="grid-container">
+                <!-- Сэм Бриджес -->
+                <div class="card" onclick="window.location.href='Sam.html';" style="cursor: pointer;">
+                    <h2>Сэм Бриджес</h2>
+                    <p>Главный герой, легендарный курьер компании Bridges со способностью возвращенца и DOOMs.</p>
+                </div>
 
-        <!-- Карточка 3 -->
-        <a href="seam_subtext.html" class="card-link">
-            <div class="card">
-                <h2>Шов: подтекст названия</h2>
-                <p>Пять смыслов слова Seam: строчка, граница, рана, фонетика, нить.</p>
-            </div>
-        </a>
+                <!-- Люси Стрэнд -->
+                <div class="card" onclick="window.location.href='Lucy.html';" style="cursor: pointer;">
+                    <h2>Люси Срэнд</h2>
+                    <p>Жена Сэма Бриджеса и его лечащий врач-психиатр, изучавшая феномен DOOMs.</p>
+                </div>
 
-        <!-- Карточка 4 -->
-        <a href="seam_rupture.html" class="card-link">
-            <div class="card">
-                <h2>Разрыв Шова</h2>
-                <p>Как Берег просачивается в реальность: BT, хираль, темпоральный дождь, войд‑аут.</p>
-            </div>
-        </a>
+                <!-- Амелия/Бриджет -->
+                <div class="card" onclick="window.location.href='Amelie.html';" style="cursor: pointer;">
+                    <h2>Амелия/Бриджет</h2>
+                    <p>Бриджет Стрэнд — президент UCA (Тело), и её дочь Амелия — Фактор вымирания (Душа).</p>
+                </div>
 
-        <!-- Карточка 5 -->
-        <a href="BT.html" class="card-link">
-            <div class="card">
-                <h2>БТ</h2>
-                <p>БТ, классы, описание, выход смерти, почему BT важны для темы игры.</p>
-            </div>
-        </a>
+                <!-- Клифф Унгер -->
+                <div class="card" onclick="window.location.href='Cliff.html';" style="cursor: pointer;">
+                    <h2>Клиф Унгер</h2>
+                    <p>Ветеран спецвойск, капитан армии США и биологический отец Сэма Бриджеса.</p>
+                </div>
 
-        <!-- Карточка 6 -->
-        <a href="BB_seam.html" class="card-link">
-            <div class="card">
-                <h2>ББ и истончение Шва</h2>
-                <p>Как именно ББ создает канал через Шов, исторические прецеденты: когда ББ рвал Шов.</p>
-            </div>
-        </a>
+                <!-- Мама и Локни -->
+                <div class="card" onclick="window.location.href='Mama.html';" style="cursor: pointer;">
+                    <h2>Мама и Локни</h2>
+                    <p>Сестры-близнецы с уникальной связью, гениальные инженеры и создательницы хиральной сети.</p>
+                </div>
 
-        <!-- Карточка 7 (Теперь она полностью независима и перенесется вниз с отступом) -->
-        <a href="voidaut.html" class="card-link">
-            <div class="card">
-                <h2>Выход смерти</h2>
-                <p>Почему происходит взрыв, цепочка: от смерти до войдаута, нюанс: возвращенцы и размер кратера.</p>
-            </div>
-        </a>
+                <!-- Фрэджайл -->
+                <div class="card" onclick="window.location.href='Fragile.html';" style="cursor: pointer;">
+                    <h2>Фрэджайл</h2>
+                    <p>Глава курьерской службы Fragile Express с высоким уровнем DOOMs, помогающая Сэму.</p>
+                </div>
 
-        <!-- Карточка 8 (Теперь она полностью независима и перенесется вниз с отступом) -->
-        <a href="DS1_to_2.html" class="card-link">
-            <div class="card">
-                <h2>От DS1 к DS2</h2>
-                <p>Шов и увеличение сети, суть проблемы,что происходит с миром в DS2 </p>
-            </div>
-        </a>
+                <!-- Дедмэн -->
+                <div class="card" onclick="window.location.href='Deadman.html';" style="cursor: pointer;">
+                    <h2>Дедмэн</h2>
+                    <p>Вврач организации Bridges, созданный искусственным путем и изучающий природу ББ.</p>
+                </div>
 
-    </main>
+                <!-- Дайхардмэн -->
+                <div class="card" onclick="window.location.href='Diehardman.html';" style="cursor: pointer;">
+                    <h2>Дайхардмэн</h2>
+                    <p>Директор Bridges и новый президент UCA, скрывающий лицо под маской из-за темного прошлого.</p>
+                </div>
+
+                <!-- Хартмэн -->
+                <div class="card" onclick="window.location.href='Heartman.html';" style="cursor: pointer;">
+                    <h2>Хартмэн</h2>
+                    <p>Ученый Bridges, который каждые 21 минуту умирает на 3 минуты, чтобы искать свою семью на Берегу.</p>
+                </div>
+
+                <!-- Хиггс -->
+                <div class="card" onclick="window.location.href='Higgs.html';" style="cursor: pointer;">
+                    <h2>Хигс</h2>
+                    <p>Главный антагонист первой части, лидер террористов Homo Demens, управляющий БТ.</p>
+                </div>
+            </div> <!-- Конец сетки Персонажи -->
+        </div> <!-- Конец вкладки Персонажи -->
+
+    </div> <!-- Конец контента вкладок -->
 
     <footer>
-        <p>© Разбираем лор ДС | Сайт свидетелей творчества Кожимы</p>
+        © Разбираем лор ДС | Сайт свидетелей творчества Кожимы
     </footer>
+
+</div>
 
 </body>
 </html>
