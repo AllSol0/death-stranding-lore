@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Фрэджайл — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --accent-2: #4ecdc4;
+        --accent-3: #f9ca24;
+        --accent-soft: rgba(255, 107, 107, 0.08);
+        --accent-2-soft: rgba(78, 205, 196, 0.08);
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        color: var(--accent-2);
+        margin-top: 2rem;
+        font-size: 1.2rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      ul { list-style: none; padding-left: 0; }
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: var(--accent-soft);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+      }
+
+      .note-box-2 {
+        background: var(--accent-2-soft);
+        border-left: 4px solid var(--accent-2);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+      }
+
+      .layer-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-card-2 {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent-2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .layer-title-2 {
+        color: var(--accent-2);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      .quote-box {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        font-style: italic;
+        color: var(--text-muted);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .quote-author {
+        text-align: right;
+        font-style: normal;
+        color: var(--accent);
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(255, 107, 107, 0.15);
+        color: var(--accent);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .tag-2 {
+        display: inline-block;
+        background: rgba(78, 205, 196, 0.15);
+        color: var(--accent-2);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .tag-3 {
+        display: inline-block;
+        background: rgba(249, 202, 36, 0.15);
+        color: var(--accent-3);
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.15);
+      }
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 1.5rem;
+        bottom: -1rem;
+        width: 2px;
+        background: rgba(255, 107, 107, 0.2);
+      }
+      .timeline-item:last-child::after { display: none; }
+      .timeline-time {
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Фрэджайл</h1>
+      <p class="subtitle">«Я всегда буду рядом.»</p>
+
+      <!-- Иконка: Фрэджайл -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Зонт -->
+          <path d="M20 45 Q50 25 80 45" stroke="#ff6b6b" stroke-width="2.5" fill="#3a3f4a" opacity="0.6"/>
+          <line x1="50" y1="45" x2="50" y2="80" stroke="#e0e2e5" stroke-width="2" opacity="0.5"/>
+          <circle cx="50" cy="80" r="3" fill="#e0e2e5" opacity="0.6"/>
+          <!-- Силуэт -->
+          <circle cx="50" cy="55" r="8" stroke="#e0e2e5" stroke-width="2" fill="#3a3f4a" opacity="0.5"/>
+          <path d="M40 65 L35 85 L65 85 L60 65" stroke="#e0e2e5" stroke-width="2" fill="#3a3f4a" opacity="0.5" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Фрэджайл (Fragile)</div>
+          <div class="icon-desc">Бывший владелец Fragile Express. Основатель Drawbridge. DOOMS выше 2-го уровня. Мёртвая с первой главы DS2. Актриса — Леа Сейду.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Бэкграунд: до встречи с Сэмом</h2>
+
+        <div class="layer-card">
+          <div class="layer-title">Семья и Fragile Express</div>
+          <p>
+            Фрэджайл родилась после Выхода смерти. Её отец — основатель логистической компании <strong>Fragile Express</strong>, мать — курьер-фрилансер, работавшая с выжившими. Назвав дочь в честь компании, родители дали обещание: <strong>восстановить страну к тому времени, когда она вырастет</strong>. Фрэджайл с детства слушала рассказы отца о том, какой Америка была до катастрофы.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Уход матери</div>
+          <p>
+            Когда Фрэджайл было двенадцать, мать <strong>ушла</strong>. Она считала, что так будет лучше для всех: её целью было уничтожить BB-лаборатории UCA. Уход матери сделал связь отца и дочери <strong>ещё крепче</strong>. Мать позже известна под именем <strong>Coffin</strong>.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Наследство и DOOMS</div>
+          <p>
+            Фрэджайл родилась с <strong>DOOMS выше 2-го уровня</strong>: может видеть BT и «прыгать» через свой Берег. После смерти отца она унаследовала Fragile Express — структуру, связи и репутацию. Её способности и харизма привлекли внимание небольшой курьерской компании во главе с <strong>Хиггсом Монаханом</strong>. Компании объединились: Fragile Express стала единственным крупным перевозчиком в центральном регионе.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: Хиггс и Фрэджайл -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Маска Хиггса -->
+          <path d="M25 40 Q35 25 50 30 Q65 25 75 40 L75 55 Q50 65 25 55 Z" stroke="#ff6b6b" stroke-width="2" fill="#3a3f4a" opacity="0.5"/>
+          <line x1="35" y1="40" x2="65" y2="40" stroke="#ff6b6b" stroke-width="1.5" opacity="0.6"/>
+          <!-- Зонт Фрэджайл -->
+          <path d="M50 70 Q65 60 80 70" stroke="#4ecdc4" stroke-width="2" fill="none" opacity="0.5"/>
+          <line x1="65" y1="70" x2="65" y2="90" stroke="#e0e2e5" stroke-width="1.5" opacity="0.4"/>
+        </svg>
+        <div>
+          <div class="icon-label">Хиггс: партнёрство и предательство</div>
+          <div class="icon-desc">Начал как партнёр. Стал террористом. Изуродовал Фрэджайл. Уничтожил её репутацию.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Хиггс: партнёрство и предательство</h2>
+
+        <h3>Совместная работа</h3>
+        <p>
+            Сначала Фрэджайл и Хиггс работали успешно: доставляли припасы даже в самые отдалённые поселения. Но Хиггс был <strong>лидером террористической группы Homo Demens</strong> и использовал Fragile Express для <strong>контрабанды оружия и бомб</strong> в города, прямо под носом Фрэджайл.
+          </p>
+
+        <h3>Middle Knot City</h3>
+        <p>
+            Хиггс обманом заставил Фрэджайл <strong>доставить ядерную бомбу</strong> в Middle Knot City. Бомба взорвалась, уничтожив весь город. Репутация Фрэджайл и Fragile Express была разрушена — их считали соучастниками.
+          </p>
+
+        <h3>South Knot City: выбор Хиггса</h3>
+        <p>
+            Узнав, что Хиггс планирует взорвать <strong>South Knot City</strong>, Фрэджайл бросилась украсть бомбу. Хиггс поймал её. Он дал ей жестокий выбор: <strong>спасти себя</strong>, «прыгнув» через Берег, или <strong>спасти город</strong>, пронеся бомбу через Timefall (дождь, старящий всё, к чему прикасается).
+          </p>
+        <p>
+            Фрэджайл выбрала город. Хиггс дал ей капюшон — <strong>только для лица</strong>, чтобы оно осталось неискажённым. Он хотел, чтобы её лицо запомнили как лицо человека, уничтожившего Middle Knot City. Она добралась до смоляного озера и обезвредила бомбу, но <strong>тело от шеи вниз постарело</strong> до состояния старухи. С тех пор она зависела от DOOMS-способностей, чтобы двигаться.
+          </p>
+
+        <div class="note-box">
+          <p>
+            Фрэджайл не сломалась окончательно. Её тело было изуродовано, репутация уничтожена, но она продолжила работать — движимая <strong>местью Хиггсу</strong> и желанием восстановить наследие отца.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Встреча с Сэмом (DS1)</h2>
+        <p>
+          Фрэджайл находит Сэма во время доставки в Central Knot City. Они прячутся в пещере от Timefall и BT. Она хватает его за руку — у Сэма срабатывает <strong>гаптофобия</strong>. После того как BT уходят, оба плачут и видят <strong>пять фигур в небе</strong> — Факторов вымирания, которые на мгновение появляются и исчезают.
+        </p>
+
+        <h3>Партнёрство</h3>
+        <ul>
+          <li>Фрэджайл даёт Сэму <strong>браслет Fragile Express</strong> — из хиральных кристаллов с меткой её крови, чтобы выжившие в центральном регионе не атаковали его.</li>
+          <li>Она предлагает свою способность «прыжков» для быстрого перемещения Сэма — <strong>в обмен на обещание</strong> помочь ей с Хиггсом.</li>
+          <li>Сэм случайно видит её постаревшее тело в душе. Она рассказывает ему о Хиггсе, отце, Fragile Express и предательстве.</li>
+          <li>Когда Хиггс подкидывает Сэму ядерную бомбу (замаскированную под груз), Фрэджайл помогает её обезвредить — повторение истории с South Knot City, но на этот раз успешно.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Победа над Хиггсом</h2>
+        <p>
+          После того как Сэм побеждает Хиггса в бою, Фрэджайл бьёт его по лицу голой рукой — <strong>первое физическое прикосновение</strong>, которое она позволяет себе. Хиггс связан и безсилен.
+        </p>
+        <p>
+          Фрэджайл <strong>не убивает</strong> Хиггса. Она даёт ему выбор: <strong>самоубийство</strong> или <strong>вечное изгнание на Берегу</strong>. Хиггс выбирает второе. Для Фрэджайл это не акт милосердия, а <strong>акт власти</strong>: она решает судьбу человека, который изуродовал её тело и жизнь, — и выбирает не стать убийцей.
+        </p>
+        <p>
+          В плену Хиггс признаётся: Амелия дала ему силы, она — настоящий лидер Homo Demens, и террористы всегда служили ей. Фрэджайл передаёт эту информацию Сэму и показывает <strong>поддельного ББ</strong> — куклу, через которую Амелия контролировала Хиггса.
+        </p>
+      </section>
+
+      <!-- Иконка: DOOMS прыжок -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="70" r="8" fill="#4ecdc4" opacity="0.5"/>
+          <circle cx="70" cy="30" r="8" fill="#ff6b6b" opacity="0.5"/>
+          <path d="M38 65 Q50 50 62 35" stroke="#e0e2e5" stroke-width="2" fill="none" stroke-dasharray="4 3" opacity="0.4"/>
+          <path d="M50 50 L50 50" stroke="#ff6b6b" stroke-width="2"/>
+        </svg>
+        <div>
+          <div class="icon-label">Способности DOOMS</div>
+          <div class="icon-desc">Уровень выше 2. Видит BT. Прыгает через Берег. Цена: усталость, старение, смерть при перегрузке.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Способности Фрэджайл</h2>
+        <div class="layer-card-2">
+          <div class="layer-title-2">Видение BT</div>
+          <p>
+            DOOMS выше 2-го уровня позволяет Фрэджайл <strong>видеть BT</strong> без помощи ББ. Сэм (уровень 2) может только чувствовать их. Для неё BT видимы напрямую.
+          </p>
+        </div>
+        <div class="layer-card-2">
+          <div class="layer-title-2">«Прыжок» через Берег</div>
+          <p>
+            Главная способность: телепортация через свой Берег. Фрэджайл очищает разум, и её DOOMS переносят её из точки А в точку Б, проходя через Берег. Зонт-навигатор помогает строить координаты — он считывает хиральную плотность и прокладывает маршрут.
+          </p>
+        </div>
+        <div class="layer-card-2">
+          <div class="layer-title-2">Ограничения и цена</div>
+          <ul>
+            <li><strong>Груз:</strong> может переносить только то, что считает «снаряжением». Тяжёлые грузы и люди — с трудом и риском.</li>
+            <li><strong>Усталость:</strong> каждый прыжок изматывает. Частые прыжки ускоряют <strong>старение</strong> тела (которое и так постарело от Timefall).</li>
+            <li><strong>Смерть:</strong> чрезмерное использование прыжков может <strong>убить</strong>. В DS1 Фрэджайл чуть не умерла, перевозя команду Сэма через Берег обратно на восток.</li>
+            <li><strong>Люди:</strong> перенос живых людей через Берег крайне опасен — требуется особая связь (как ловец снов Амелии для Сэма).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Финал DS1: Берег Амелии</h2>
+        <p>
+          Когда Амелия готовится запустить Последний Выход, Фрэджайл должна доставить Сэма на её Берег. Но Берег Амелии находится <strong>выше всех остальных</strong> — обычный «прыжок» туда не достанет. Сэм понимает, что <strong>ловец снов</strong>, который Амелия дала ему в детстве, может стать связующей нитью. Фрэджайл использует его как мост — и переносит Сэма на Берег Амелии.
+        </p>
+        <p>
+          Сэм обнимает Амелию → она отказывается от Последнего Выхода → мир спасён. Фрэджайл, истощённая, ждёт возвращения. После этого она решает <strong>присоединиться к Bridges</strong> и возродить Fragile Express: «Я больше не хочу менять прошлое. Я хочу думать о будущем».
+        </p>
+        <p>
+          Но когда Сэму приказывают утилизировать Лу, он уходит. Фрэджайл просит его остаться и работать на её компанию. Сэм отказывает — и оставляет её разочарованную, когда двери ангара закрываются.
+        </p>
+      </section>
+
+      <section>
+        <h2>Между DS1 и DS2</h2>
+        <ul>
+          <li><strong>APAS 4000</strong> — система автоматизации доставки, изначально вспомогательная для курьеров, — берёт под контроль весь процесс доставки в сети. Людям-курьерам больше не остаётся работы.</li>
+          <li><strong>Bridges и Fragile Express распущены.</strong> Дайхардман больше не президент.</li>
+          <li>Фрэджайл основывает <strong>Drawbridge</strong> — частную гражданскую организацию для работы вне UCA. Корабль <strong>DHV Magellan</strong> — мобильная база.</li>
+          <li>Сэм и Лу <strong>бесследно исчезают</strong>. Фрэджайл ищет их 11 месяцев.</li>
+          <li>Находит Сэма в убежище на границе с Мексикой. Предлагает сделку: подключить Мексику к сети, а взамен — стереть все записи о его уходе из Bridges.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Начало DS2: атака и «смерть» Лу</h2>
+        <p>
+          Сэм соглашается — при условии, что Фрэджайл останется с Лу. Пока Сэм в экспедиции, на убежище <strong>нападают</strong> красные фигуры. Фрэджайл хватает Лу, пытается сбежать на уницикле, но получает <strong>пулю</strong> и падает. Пытается «прыгнуть» с Лу, но не может — связь с девочкой мешает. Пытается отправить только Лу — второй выстрел, и она теряет сознание.
+        </p>
+        <p>
+          Сэм возвращается, находит Фрэджайл раненой, а Лу — «мёртвой». Фрэджайл начинает <strong>курить</strong> — новая привычка, появившаяся после трагедии.
+        </p>
+      </section>
+
+      <!-- Иконка: Секрет Фрэджайл -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="35" stroke="#ff6b6b" stroke-width="2" fill="#3a3f4a" opacity="0.4"/>
+          <path d="M50 35 L50 65 M35 50 L65 50" stroke="#ff6b6b" stroke-width="2" opacity="0.6"/>
+          <circle cx="50" cy="50" r="10" fill="#ff6b6b" opacity="0.3"/>
+          <circle cx="50" cy="50" r="4" fill="#ff6b6b" opacity="0.7"/>
+        </svg>
+        <div>
+          <div class="icon-label">Секрет Фрэджайл</div>
+          <div class="icon-desc">Мертва с первой главы DS2. Жила на «заимствованном времени» благодаря Лу. Не помнила этого до финала.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Секрет: Фрэджайл мертва с первой главы</h2>
+        <div class="note-box">
+          <p>
+            <span class="tag">Главный спойлер DS2</span>
+            Фрэджайл <strong>погибла в первой главе DS2</strong> — в момент нападения на убежище. Пуля убила её. Но её <strong>Ха и Ка разделились</strong> при выстреле.
+          </p>
+        </div>
+
+        <h3>Что произошло на самом деле</h3>
+        <ul>
+          <li><strong>Ха</strong> (тело) осталось в мире живых — раненое, но «живое» на заимствованном времени.</li>
+          <li><strong>Ка</strong> (душа) попала на другой Берег — вместе с Лу.</li>
+          <li>На Берегу Ка Фрэджайл <strong>передаёт Лу Нилу Ване</strong> и его солдатам, считая, что так будет безопаснее. После этого Ка <strong>забывает всё</strong>.</li>
+          <li>Ха возвращается к Сэму — без памяти о том, что произошло. Она <strong>не знала, что мертва</strong>.</li>
+          <li>Лу <strong>не была мертва</strong> — её Ка ушла на другой Берег, а тело осталось. «Заимствованное время» Фрэджайл поддерживалось связью с Лу.</li>
+        </ul>
+
+        <div class="note-box-2">
+          <p>
+            <strong>Почему она не помнила?</strong> Разделение Ха и Ка привело к потере памяти. Фрэджайл жила, работала, курила, руководила Drawbridge — не зная, что она уже мертва. Правда вернулась к ней только на Берегу APAS, в финале игры.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Роль в DS2: Drawbridge и Австралия</h2>
+
+        <h3>DHV Magellan</h3>
+        <p>
+          Фрэджайл показывает Сэму корабль Drawbridge — <strong>DHV Magellan</strong> (Deep-tar Hunting Vessel, но также «Die-Hardman's Vessel» — подсказка). На борту: Тарман, Доллман и таинственный <strong>«Чарли»</strong> — спонсор, который скрывает лицо и говорит голосом Дайхардмана.
+        </p>
+
+        <h3>Миссия</h3>
+        <p>
+          Сэм должен пройти через <strong>Plate Gate</strong> в Мексике — портал, открывающийся в зонах с высокой хиральной плотностью, — и попасть в <strong>Австралию</strong>. Задача: подключить австралийские объекты к хиральной сети, стабилизировать континент и позволить Magellan следовать за Сэмом.
+        </p>
+
+        <h3>Возвращение Хиггса</h3>
+        <p>
+          В Австралии Сэм сталкивается с <strong>Хиггсом</strong> — он вернулся с Берега. Те же красные фигуры, что напали на Фрэджайл и Лу, — его люди. Хиггс управляет роботизированным телом с электрогитарой. Фрэджайл в шоке: она думала, что навсегда заперла его на Берегу.
+        </p>
+
+        <h3>Расследование: правда о Лу</h3>
+        <p>
+          Фрэджайл исследует архивы UCA и выясняет: серийный номер BB-28 был присвоен Лу четыре года назад, после утилизации предыдущего ББ. Некромать Лу родилась кесаревым сечением, после чего Лу держали в хранилище, пока не назначили Игорю, а от него — Сэму. Это подтверждает то, что Дедман говорил перед смертью.
+        </p>
+      </section>
+
+      <section>
+        <h2>Финал DS2: прощание</h2>
+        <div class="quote-box">
+          «Это моя вина, что ты никогда не видел, как Лу растёт. Я украла эти драгоценные годы. Мне так жаль, Сэм. Я не могу вернуть тебе потерянное время, но пообещай мне, что ты будешь использовать своё будущее с Лу на полную.»
+          <div class="quote-author">— Фрэджайл, финал DS2</div>
+        </div>
+
+        <p>
+          На Берегу APAS Фрэджайл <strong>вспоминает правду</strong>: она мертва с первой главы. Всё это время она жила на заимствованном времени. Она хочет провести оставшиеся моменты <strong>рядом с Сэмом</strong> — и это единственное, что её держит.
+        </p>
+
+        <p>
+          Обесцвеченная Фрэджайл появляется рядом с Сэмом, с маленькой Лу на руках. Она кладёт Лу к его ногам. Говорит, что он <strong>никогда не будет одинок</strong>, и указывает на единственную фотографию на его доске: Сэм, Лу и Фрэджайл вместе.
+        </p>
+
+        <p>
+          Фрэджайл <strong>исчезает</strong>. Её персонаж — наконец — обретает покой.
+        </p>
+
+        <div class="note-box-2">
+          <p>
+            Фрэджайл винит себя за то, что <strong>украла у Сэма годы взросления Лу</strong>: пока Лу была на Берегу с её Ка, Сэм жил без дочери. Она не может вернуть это время, но просит его жить будущим. Это последний акт человека, который всю жизнь <strong>строил мосты</strong> — и в конце стал мостом между Сэмом и его ребёнком.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Финальная сцена: Лу как Фрэджайл</h2>
+        <p>
+          В самом последнем кадре DS2 — <strong>белоснежный силуэт на скале</strong>. Женщина с волосами, как у Фрэджайл. На шее — <strong>те же дополнительные руки</strong>, что носила Фрэджайл. На лодыжке — колокольчик Рейни. Курит сигарету — <strong>как Фрэджайл</strong>. Три открытки с видами.
+        </p>
+        <p>
+          Камера показывает лицо. Это <strong>Лу</strong> — повзрослевшая. Она говорит:
+        </p>
+        <div class="quote-box">
+          «Я всегда любила курьеров. Сквозь ледяной дождь и кусающий ветер, через реки, горы и бесконечные пустыни... Они приходят, чтобы доставить что-то бесценное. Это мой единственный канал связи с внешним миром. И я знаю, что они вернутся снова. Сегодня. И каждый день — даже когда нас давно не будет. Смерть не может разорвать нас. Вот почему сегодня — очередной день в дороге.»
+          <div class="quote-author">— Лу / Туморроу, финал DS2</div>
+        </div>
+        <p>
+          Лу унаследовала не только внешность Фрэджайл, но и её <strong>привычки, миссию и философию</strong>. Фрэджайл умерла — но продолжила жить в девочке, которую защищала. Не кровью, а <strong>выбором</strong>: передать Лу Нилу, забыть себя, держаться до последнего — и исчезнуть, когда дело сделано.
+        </p>
+      </section>
+
+      <section>
+        <h2>Личность и символизм</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Символ</th>
+              <th>Значение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fragile</strong> («хрупкая»)</td>
+              <td>Имя — не слабость, а вызов. Она хрупкая, но не ломается. Хрупкость — её сила: она знает свою уязвимость и работает через неё.</td>
+            </tr>
+            <tr>
+              <td><strong>Зонт-навигатор</strong></td>
+              <td>Оммаж Мэри Поппинс (Кодзима прямо подтвердил). Инструмент навигации по Берегам — одновременно практичный и символичный: зонтик = защита.</td>
+            </tr>
+            <tr>
+              <td><strong>Постаревшее тело</strong></td>
+              <td>Жертва ради других. Тело — цена сострадания. Лицо сохранено: Хиггс хотел, чтобы её узнавали — но не из уважения, а из стыда.</td>
+            </tr>
+            <tr>
+              <td><strong>Курение (DS2)</strong></td>
+              <td>Новая привычка после потери Лу. Сигарета — единственное, что она может контролировать. Когда Лу-Туморроу закуривает в финале — наследие Фрэджайл.</td>
+            </tr>
+            <tr>
+              <td><strong>«Дополнительные руки»</strong></td>
+              <td>Механические руки на шее — вспомогательные. Фрэджайл буквально «держит» то, что не может держать сама. Переданы Лу в финале: преемственность.</td>
+            </tr>
+            <tr>
+              <td><strong>«Я всегда буду рядом»</strong></td>
+              <td>Её фраза-обещание. Выполняется буквально: после смерти её Ка остаётся с Лу, а Лу становится её воплощением.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Хронология Фрэджайл</h2>
+        <div class="timeline-item">
+          <div class="timeline-time">После Выхода смерти</div>
+          <div>Рождение. Отец основал Fragile Express. Назвал дочь в честь компании.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">~12 лет</div>
+          <div>Мать уходит. Связь с отцом крепнет. Мать известна как Coffin.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">После смерти отца</div>
+          <div>Наследует Fragile Express. Объединяется с Хиггсом. Совместная работа.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Предательство Хиггса</div>
+          <div>Обманом доставляет ядерную бомбу в Middle Knot City → взрыв. Хиггс раскрывается как лидер Homo Demens.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">South Knot City</div>
+          <div>Несёт бомбу через Timefall → спасает город → тело постарело. Репутация разрушена.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">DS1</div>
+          <div>Встречает Сэма. Партнёрство. Помогает ему на западном пути. Побеждает Хиггса — запирает на Берегу. Помогает Сэму добраться до Амелии. Мир спасён.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Между DS1 и DS2</div>
+          <div>Присоединяется к Bridges. Возрождает Fragile Express. Сэм уходит. APAS берёт контроль. Bridges и Fragile Express распущены. Фрэджайл основывает Drawbridge.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">DS2, Глава 1</div>
+          <div>Находит Сэма. Уговоривает подключить Мексику. Нападение на убежище. <strong>Фрэджайл погибает.</strong> Ха и Ка разделяются. Ка передаёт Лу Нилу. Ха возвращается к Сэму — без памяти.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">DS2, основная часть</div>
+          <div>Руководит Drawbridge. Направляет Сэма в Австралию. Хиггс возвращается. Фрэджайл расследует прошлое Лу. Начинает курить.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">DS2, финал</div>
+          <div>Вспоминает правду на Берегу APAS. Прощается с Сэмом. Кладёт Лу к его ногам. Исчезает. Лу-Туморроу наследует её руки, привычки и миссию.</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>DS1 vs DS2: сравнение</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>DS1</th>
+              <th>DS2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Роль</strong></td>
+              <td>Партнёр Сэма, владелец Fragile Express</td>
+              <td>Лидер Drawbridge, мёртвая с Главы 1</td>
+            </tr>
+            <tr>
+              <td><strong>Состояние тела</strong></td>
+              <td>Постаревшее от шеи вниз, живая</td>
+              <td>Та же внешность, но тело живёт на «заимствованном времени»</td>
+            </tr>
+            <tr>
+              <td><strong>Способности</strong></td>
+              <td>Полные: прыжки, видение BT</td>
+              <td>Те же, но угасающие — тело теряет силы</td>
+            </tr>
+            <tr>
+              <td><strong>Отношение к Хиггсу</strong></td>
+              <td>Месть, затем запирает его на Берегу</td>
+              <td>Шок от его возвращения; Хиггс — причина её гибели</td>
+            </tr>
+            <tr>
+              <td><strong>Отношение к Сэму</strong></td>
+              <td>Деловой партнёр → дружба → доверие</td>
+              <td>Глубокая привязанность; последние слова — про будущее с Лу</td>
+            </tr>
+            <tr>
+              <td><strong>Отношение к Лу</strong></td>
+              <td>ББ Сэма, опека во время миссий</td>
+              <td>Защищает ценой жизни; передаёт Ка Нилу; винит себя за потерю лет</td>
+            </tr>
+            <tr>
+              <td><strong>Финал</strong></td>
+              <td>Жива, возрождает Fragile Express, остаётся одна</td>
+              <td>Исчезает. Лу наследует её внешность, руки, привычки, миссию</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          <strong>Фрэджайл</strong> — дочь основателя Fragile Express, курьер с DOOMS выше 2-го уровня. Хиггс предал её, изуродовал тело Timefall и разрушил репутацию. В DS1 — ключевой союзник Сэма: помогла победить Хиггса, добраться до Амелии, спасти мир. Между играми основала Drawbridge. В DS2 погибла в первой главе, но её Ха продолжало жить без памяти, на заимствованном времени, пока она не вспомнила правду в финале. Перед тем как исчезнуть, попросила Сэма жить будущим с Лу. В последнем кадре Лу-Туморроу сидит на скале — с руками Фрэджайл, её сигаретой и её философией: «Смерть не может разорвать нас.»
+        </p>
+        <p>
+          Фрэджайл — <strong>человек, который всю жизнь строил мосты между людьми, а в конце сам стал мостом</strong>: между Сэмом и Лу, между жизнью и смертью, между DS1 и DS2. Она хрупкая — но не ломается.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

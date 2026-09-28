@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Клифф Ангер (Cliff Unger) — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      ul { list-style: none; padding-left: 0; }
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .layer-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      .layer-title {
+        color: var(--accent);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      .quote-box {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--accent);
+        font-style: italic;
+        color: var(--text-muted);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Клифф Ангер (Cliff Unger)</h1>
+
+      <!-- Иконка: Клифф -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 90 L35 40 L50 55 L65 25 L90 90 Z" stroke="#e0e2e5" stroke-width="3" fill="#3a3f4a" opacity="0.7"/>
+          <path d="M35 40 L50 55 L65 25" stroke="#ff6b6b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="20" r="5" fill="#ff6b6b" opacity="0.6"/>
+        </svg>
+        <div>
+          <div class="icon-label">Клифф Унгер</div>
+          <div class="icon-desc">Биологический отец Сэма. Военный, спасавший сына. Стал уникальным BT — удерживаемым не пуповиной, а любовью.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Игра слов: Кодзима в имени Клиффа</h2>
+        <p>
+          Кодзима, как всегда, не выбирает имена случайно. <strong>Cliff Unger</strong> — это сжатая в два слова биография персонажа, его характер и его судьба.
+        </p>
+
+        <div class="layer-card">
+          <div class="layer-title">Cliff — скала, обрыв</div>
+          <p>
+            <em>Cliff</em> — «обрыв», «отвесная скала». Клифф — человек, стоящий на краю. Край жизни и смерти, край отчаяния и любви. Он буквально «на краю» с самого начала: жена в коме, сына забрали, он у последней черты. И каждая его встреча с Сэмом в игре — это тоже момент на краю, на обрыве между мирами.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Clifford — брод у обрыва</div>
+          <p>
+            Полное имя <em>Clifford</em> происходит от староанглийского «брод у скалы» (<em>cliff</em> — обрыв, <em>ford</em> — брод, мелкое место для перехода через реку). <strong>Брод</strong> — это переход, переправа. <strong>Обрыв</strong> — край, за которым бездна. Клифф — тот, кто стоит на переправе между жизнью и смертью, между миром живых и Берегом. Он и есть этот брод: точка перехода, через которую Сэм узнаёт правду о себе.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Unger — Anger (гнев)</div>
+          <p>
+            <em>Unger</em> фонетически почти неотличим от <em>anger</em> — «гнев». Вся история Клиффа — это гнев отца, у которого забрали ребёнка. Гнев на Bridges, на Бриджет, на систему, которая использовала его сына как подопытного. Этот гнев настолько силён, что удерживает его Ка в мире живых после смерти — не пуповина, а ярость и любовь не дают ему уйти.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Cliff Unger = «обрыв + гнев»</div>
+          <p>
+            Собранные вместе: <strong>обрыв</strong> (край, переход) + <strong>гнев</strong> (якорь, удерживающий в мире). Имя — это формула персонажа: человек, чей гнев держит его на краю между мирами. Он не ушёл, потому что злится. Он не ушёл, потому что любит. Гнев и любовь — один и тот же якорь.
+          </p>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-title">Cliff — отсылка к Mads Mikkelsen</div>
+          <p>
+            Внешность Клиффа и его харизма — во многом наследие Мадса Миккельсена, датского актёра, известного ролями харизматичных антагонистов (Ганнибал, Казино Рояль). Его лицо — скулы, взгляд, сдержанность — само по себе выглядит как «обрыв»: резкое, жёсткое, но с глубиной под краем. Кодзима не случайно выбрал именно его: Клифф должен быть одновременно пугающим и вызывающим сочувствие.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: Колыбель -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 50 Q50 30 80 50 L75 70 L25 70 Z" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a" opacity="0.7"/>
+          <path d="M25 70 Q30 80 35 70 M65 70 Q70 80 75 70" stroke="#ff6b6b" stroke-width="3" fill="none"/>
+          <circle cx="50" cy="50" r="6" fill="#e0e2e5" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Колыбель Клиффа</div>
+          <div class="icon-desc">Младенец-возвращенец, забранный Bridges. Сцена у колыбели — кульминация всей истории Клиффа.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>История Клиффа: до смерти</h2>
+        <ul>
+          <li><strong>Военный ветеран.</strong> Спецназ, опыт боевых действий. Профессиональный солдат, прошедший несколько войн.</li>
+          <li><strong>Жена Лиза</strong> впала в кому — мозг умер, тело поддерживалось искусственно. Клифф остался один с новорождённым сыном.</li>
+          <li><strong>Сын-возвращенец.</strong> Младенец умер и вернулся — один из первых задокументированных случаев. Bridges забрали ребёнка для изучения: возвращенцы — ключ к пониманию Берега и Шова.</li>
+          <li><strong>Попытка спасти сына.</strong> Клифф выкрал младенца из лаборатории Bridges, но был остановлен. У колыбели его настиг <strong>Дайхардман</strong> — его бывший подчинённый и друг, действовавший по приказу Бриджет.</li>
+          <li><strong>Смерть.</strong> Дайхардман застрелил Клиффа. Перед смертью Клифф просил Бриджет позаботиться о мальчике. Бриджет (её Ха) забрала ребёнка и воспитала как своего — это и есть Сэм.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Дайхардман и Клифф</h2>
+        <div class="note-box">
+          <p>
+            <strong>Дайхардман (John)</strong> — бывший подчинённый Клиффа в армии. Они были близки: Клифф спас ему жизнь, учил, был командиром и другом. Когда Бриджет приказала остановить Клиффа и забрать ребёнка, Дайхардман оказался между долгом и личной преданностью. Он выполнил приказ — и застрелил человека, который был ему ближе всех. Маска, которую он носит всю игру, — это <strong>маска стыда и вины</strong>: он не может показать лицо миру после того, что сделал.
+          </p>
+          <p>
+            Имя <em>Die-Hardman</em> — тоже кодзимовская игра: <em>die hard</em> — «умирать с трудом», «цепляться за жизнь». Но в контексте Клиффа это ещё и «человек, который убил того, кто умирал с трудом» — Клифф цеплялся за жизнь ради сына, а Дайхардман оборвал эту цепь.
+          </p>
+        </div>
+      </section>
+
+      <!-- Иконка: BT-Клифф -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="38" stroke="#ff6b6b" stroke-width="2" opacity="0.4"/>
+          <path d="M30 35 L70 65 M70 35 L30 65" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="50" cy="50" r="15" fill="none" stroke="#e0e2e5" stroke-width="2" opacity="0.4"/>
+          <path d="M42 42 L58 58 M58 42 L42 58" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Клифф как BT</div>
+          <div class="icon-desc">Не пуповина, а любовь удерживает его. Поля боя — проекции его воспоминаний через Берег.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Клифф после смерти: уникальный BT</h2>
+        <p>
+          После смерти Клифф стал BT — но не обычным. Его случай нарушает все «правила», по которым работают стандартные BT.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Обычный BT</th>
+              <th>Клифф</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Привязан пуповиной к мёртвому телу (Ха).</td>
+              <td>Привязан <strong>эмоцией</strong> — любовью к сыну. Тело не держит его.</td>
+            </tr>
+            <tr>
+              <td>Не может покинуть место смерти.</td>
+              <td>Перемещается между <strong>проекциями воспоминаний</strong> — полями войн.</td>
+            </tr>
+            <tr>
+              <td>Пассивен, пока не заметит живого.</td>
+              <td>Активно ищет Сэма. Преследует, но не чтобы убить.</td>
+            </tr>
+            <tr>
+              <td>Удерживает разрыв Шова открытым пуповиной.</td>
+              <td>Доступ к <strong>чужим Берегам</strong> через связь Амелии.</td>
+            </tr>
+            <tr>
+              <td>Освобождается перерезанием пуповины.</td>
+              <td>Освобождается, когда Сэм узнаёт правду и принимает отца.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Поля боя: воспоминания Клиффа</h2>
+        <p>
+          Каждая встреча с Клиффом происходит в <strong>военном пространстве</strong> — это не обычная зона с разрывом Шова, а материализованные воспоминания Клиффа через Берег.
+        </p>
+        <div class="layer-card">
+          <div class="layer-title">Вьетнам</div>
+          <p>Джунгли, ловушки, засады. Проекция боевого опыта Клиффа — места, где он воевал и терял товарищей.</p>
+        </div>
+        <div class="layer-card">
+          <div class="layer-title">Первая мировая</div>
+          <p>Окопы, грязь, газ. Метафора бессмысленной бойни и состояния «на дне» — край отчаяния.</p>
+        </div>
+        <div class="layer-card">
+          <div class="layer-title">Вторая мировая</div>
+          <p>Руины, разрушенные города. Метафора тотального разрушения и потери — как Выход смерти, но в человеческом масштабе.</p>
+        </div>
+        <p>
+          Все три войны — это не случайные наборы, а <strong>эмоциональные слои Клиффа</strong>: места, где он потерял веру в систему, в командование, в смысл. Каждое поле боя — это «обрыв», на котором он стоял. И каждое — это Берег, спроецированный через его личные воспоминания.
+        </p>
+      </section>
+
+      <section>
+        <h2>Связь Клиффа и Амелии</h2>
+        <div class="note-box">
+          <p>
+            Через Берег Амелии Клифф получил <strong>доступ к Берегам других людей</strong>. Это позволяет ему перемещаться между воспоминаниями, а не быть привязанным к одной точке смерти. Без Амелии он был бы обычным BT, привязанным к месту гибели. С её связью — он стал чем-то большим.
+          </p>
+          <p>
+            Но Амелия не «помогала» Клиффу намеренно. Это побочный эффект её природы: её Берег связывает всех, и Клифф, как BT с сильнейшей эмоциональной привязкой, просто <strong>протянул нити через эту связь</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Финал: правда и освобождение</h2>
+        <div class="quote-box">
+          «Я всегда был рядом с тобой, Сэм.»
+        </div>
+        <p>
+          В финале игры Сэм узнаёт: Клифф — его отец. Все эти встречи, все погони, все «поля боя» — это были не атаки врага, а <strong>попытки отца быть рядом с сыном</strong>. Клифф преследовал Сэма не чтобы убить — он просто хотел защитить его, даже будучи мёртвым.
+        </p>
+        <ul>
+          <li>Клифф обнимает Сэма — и <strong>исчезает</strong>. Его Ка наконец отпущена: не пуповина удерживала его, а незавершённость. Когда Сэм узнал правду и принял отца — «якорь» любви больше не нужен.</li>
+          <li>Это контраст с обычными BT, которых освобождают перерезанием пуповины. Клиффа освободило <strong>знание и прощение</strong>.</li>
+          <li>BB (младенец в капсуле Сэма) — это символ того самого ребёнка Клиффа. Сэм всю игру носит «своего» BB, не зная, что вся его жизнь — продолжение истории отца.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Чем Клифф важен для темы игры</h2>
+        <p>
+          Клифф — это <strong>оборотная сторона темы связей</strong>. В Death Stranding связи — это хорошо: они сшивают мир, восстанавливают Америку. Но Клифф показывает, что связь может быть и <strong>проклятием</strong>: любовь, которая не отпускает, гнев, который не угасает, привязанность, которая держит душу в мире живых, когда ей пора уйти.
+        </p>
+        <p>
+          Его имя — <strong>обрыв + гнев</strong> — это формула: человек, чья любовь стала обрывом, с которого он не смог уйти. И единственное, что его освободило — это не нож и не пуповина, а сын, который наконец сказал: «Я знаю. Я прощаю.»
+        </p>
+      </section>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          <strong>Cliff Unger</strong> — обрыв + гнев. Биологический отец Сэма, военный, чьего сына-возвращенца забрали в Bridges. Убит Дайхардманом по приказу Бриджет. Стал уникальным BT: удерживаем не пуповиной, а любовью к сыну. Перемещается между военными воспоминаниями через Берег Амелии. Освобождён не перерезанием пуповины, а тем, что Сэм узнал правду и принял отца. Его имя — формула персонажа: человек на краю, удержанный яростью.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
