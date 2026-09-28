@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q-Pid — полный разбор | Death Stranding</title>
+<style>
+:root{
+  --bg:#2b2f36;--card:#3a3f4a;--tar:#1a1c20;--tar-br:#333844;
+  --text:#e0e2e5;--muted:#a1a5ad;--accent:#ff6b6b;--accent2:#4ecdc4;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:2rem 1rem;line-height:1.7}
+.container{max-width:860px;margin:0 auto}
+h1{text-align:center;font-weight:300;letter-spacing:2px;text-transform:uppercase;margin-bottom:.3rem}
+h2{color:var(--accent);border-left:4px solid var(--accent);padding-left:1rem;margin-top:2.8rem;font-size:1.45rem}
+h3{color:var(--accent2);margin-top:2rem;font-size:1.15rem}
+.subtitle{text-align:center;color:var(--muted);font-style:italic;margin-bottom:2.5rem}
+p{margin-bottom:1rem}
+ul,ol{margin-bottom:1.2rem;padding-left:1.5rem}
+li{margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+th,td{padding:1rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.05);font-size:.92rem}
+th{background:rgba(255,107,107,.1);color:var(--accent)}
+tr:last-child td{border-bottom:none}
+.card{background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.05)}
+.tar-zone{background:var(--tar);border:1px solid var(--tar-br);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:inset 0 0 15px rgba(0,0,0,.6)}
+.note-box{background:rgba(255,107,107,.08);border-left:4px solid var(--accent);padding:1.5rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.5rem 0}
+.icon-card{display:flex;align-items:center;background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.05)}
+.icon-svg{width:72px;height:72px;margin-right:1.8rem;flex-shrink:0;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}
+.icon-label{font-weight:bold;color:var(--accent);text-transform:uppercase;font-size:.85rem;letter-spacing:1px}
+.icon-desc{color:var(--muted);font-size:.88rem;margin-top:.4rem}
+.level-card{background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.2rem 0;border-left:4px solid var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.level-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:2.2rem;height:2.2rem;text-align:center;line-height:2.2rem;font-weight:bold;margin-right:.8rem;font-size:1rem}
+.timeline{position:relative;padding-left:2rem;margin:2rem 0}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:var(--accent);opacity:.5}
+.tl-item{position:relative;margin-bottom:1.5rem;padding-left:1.5rem}
+.tl-item::before{content:'';position:absolute;left:-1.65rem;top:.5rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent)}
+.tl-title{color:var(--accent);font-weight:bold;font-size:.95rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0}
+.mini-card{background:var(--card);border-radius:var(--radius);padding:1.2rem;border-top:3px solid var(--accent);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.mini-card h4{color:var(--accent);margin:.2rem 0 .5rem;font-size:.95rem}
+.mini-card p{color:var(--muted);font-size:.85rem;margin:0}
+.formula-box{background:var(--tar);border:1px solid var(--tar-br);border-radius:var(--radius);padding:1.2rem 1.5rem;margin:1rem 0;box-shadow:inset 0 0 12px rgba(0,0,0,.5)}
+.formula{font-family:'Courier New',monospace;color:var(--accent2);font-size:1rem;margin:.3rem 0;white-space:nowrap;overflow-x:auto}
+.formula-desc{color:var(--muted);font-size:.85rem;margin-top:.4rem}
+.formula-meta{color:var(--accent);font-style:italic;font-size:.82rem;margin-top:.3rem}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.icon-card{flex-direction:column;text-align:center}.icon-svg{margin:0 0 1rem 0}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Q-Pid — полный разбор</h1>
+<p class="subtitle">«Ключ к замку из формул. Открывает Шов — но не бесплатно.»</p>
+
+<!-- Иконка: Q-Pid -->
+<div class="icon-card">
+<svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="25" y="15" width="50" height="65" rx="6" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+  <circle cx="50" cy="48" r="14" stroke="#ff6b6b" stroke-width="2.5" fill="none"/>
+  <line x1="50" y1="48" x2="58" y2="56" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M35 80 Q50 90 65 80" stroke="#ff6b6b" stroke-width="2" fill="none" opacity=".6"/>
+  <path d="M40 85 Q50 95 60 85" stroke="#ff6b6b" stroke-width="2" fill="none" opacity=".4"/>
+</svg>
+<div>
+<div class="icon-label">Q-Pid (Quantum-Pid)</div>
+<div class="icon-desc">Устройство для подключения терминала к хиральной сети. Ключ, который открывает Шов.</div>
+</div>
+</div>
+
+<!-- Определение -->
+<h2>Что такое Q-Pid</h2>
+<p>
+<strong>Q-Pid</strong> — портативное устройство, которое носит курьер (Сэм). При приближении к неактивному терминалу хиральной сети Q-Pid инициирует процесс подключения: генерирует хиральный резонанс, который «открывает» терминал и связывает его с остальной сетью. Без Q-Pid терминал — просто мёртвый кусок металла.
+</p>
+<div class="note-box">
+<p><strong>Игра слов:</strong> «Q-Pid» — фонетическая отсылка к <strong>Cupid</strong> (Купидон). Купидон соединяет сердца — Q-Pid соединяет узлы сети. Буква <strong>Q</strong> = Quantum (квантовый), <strong>Pid</strong> = PID-контроллер (пропорционально-интегрально-дифференциальный регулятор). Буквально: «квантовый регулятор связи».</p>
+</div>
+
+<!-- Иконка: Процесс -->
+<div class="icon-card">
+<svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="25" cy="50" r="12" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+  <circle cx="75" cy="50" r="12" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+  <path d="M37 50 L63 50" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M50 35 L50 20 Q60 15 65 20" stroke="#ff6b6b" stroke-width="2" fill="none" opacity=".5"/>
+  <circle cx="50" cy="50" r="3" fill="#ff6b6b"/>
+</svg>
+<div>
+<div class="icon-label">Процесс подключения</div>
+<div class="icon-desc">Q-Pid → терминал → формулы → резонанс → хиральная сеть</div>
+</div>
+</div>
+
+<h2>Как работает подключение</h2>
+<div class="timeline">
+<div class="tl-item"><div class="tl-title">Шаг 1: Приближение</div>Сэм подходит к терминалу. Q-Pid автоматически начинает резонанс с хиральным полем терминала.</div>
+<div class="tl-item"><div class="tl-title">Шаг 2: Формулы активации</div>Q-Pid проецирует набор физических формул, которые «убеждают» Шов открыть канал между терминалом и Берегом.</div>
+<div class="tl-item"><div class="tl-title">Шаг 3: Хиральная левитация</div>Терминал начинает левитировать — хиральная антенна поднимается, ориентируясь на сигнал сети.</div>
+<div class="tl-item"><div class="tl-title">Шаг 4: Синхронизация</div>Терминал подключается к хиральной сети. Данные начинают передаваться мгновенно через Берег.</div>
+<div class="tl-item"><div class="tl-title">Шаг 5: Активация</div>Терминал становится полноценным узлом. Доступны: печать, передача грузов, связь, «лайки».</div>
+</div>
+
+<!-- Две модели -->
+<h2>Две модели Q-Pid</h2>
+<div class="grid2">
+<div class="mini-card">
+<h4>Bridges Q-Pid (DS1)</h4>
+<p>Устройство в виде портативного медальона. Содержит набор формул на внутренней поверхности. Используется Сэмом для подключения терминалов по всему континенту. Формулы выгравированы — физические «ключи» к Шву.</p>
+</div>
+<div class="mini-card">
+<h4>Drawbridge Q-Pid (DS2)</h4>
+<p>Обновлённая версия. Новый набор формул, адаптированных под расширенную сеть APAS. Дизайн изменился: устройство интегрировано в снаряжение, а не отдельный медальон. Переключатель On/Off.</p>
+</div>
+</div>
+
+<!-- Формулы Bridges -->
+<h2>Формулы Bridges Q-Pid (DS1)</h2>
+<p>Шесть формул, выгравированных на Q-Pid. Каждая — физический «замок», который открывает определённый аспект хирального канала.</p>
+
+<div class="formula-box">
+<div class="formula">∂u/∂t = D∇²u + f(u,v)</div>
+<div class="formula-desc">Реакция-диффузия. Описывает, как хиральная материя распространяется от терминала в сеть.</div>
+<div class="formula-meta">Метафора: хиралий «растёт» через Шов, как реагент в диффузии.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">(iγ^μ∂_μ − m)ψ = 0</div>
+<div class="formula-desc">Уравнение Дирака. Описывает поведение частиц с полуцелым спином — фермионов.</div>
+<div class="formula-meta">Метафора: хиральные частицы ведут себя как фермионы — занимают квантовые состояния.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">L = (D_μφ)†(D^μφ) − V(φ) − ½∂_μW^ν∂^μW_ν</div>
+<div class="formula-desc">Лагранжиан поля Хиггса. Механизм спонтанного нарушения симметрии, дающий массу.</div>
+<div class="formula-meta">Метафора: Шов «нарушает симметрию» между миром живых и мёртвых, давая хиралию «массу» в нашем мире.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">E = mc²</div>
+<div class="formula-desc">Эквивалентность массы и энергии. Основа аннигиляции при войдауте.</div>
+<div class="formula-meta">Метафора: материя живого + антиматерия BT = чистая энергия + хиралий.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">|Ψ⟩ = (|01⟩ + |10⟩) / √2</div>
+<div class="formula-desc">Квантовая запутанность (состояние Белла). Две частицы связаны независимо от расстояния.</div>
+<div class="formula-meta">Метафора: терминал и сеть связаны через Берег — мгновенно, без задержки.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">r_s = 2GM / c²</div>
+<div class="formula-desc">Радиус Шварцшильда. Радиус, при котором тело становится чёрной дырой.</div>
+<div class="formula-meta">Метафора: Шов — как горизонт событий. За ним — мир мёртвых, из которого нет возврата.</div>
+</div>
+
+<!-- Формулы Drawbridge -->
+<h2>Формулы Drawbridge Q-Pid (DS2)</h2>
+<p>Пять новых формул в обновлённой модели. Адаптированы под расширенную сеть и новые хиральные явления.</p>
+
+<div class="formula-box">
+<div class="formula">L = L_BSM + L_SUSY</div>
+<div class="formula-desc">Суперсимметричный лагранжиан. Расширяет стандартную модель, связывая фермионы и бозоны.</div>
+<div class="formula-meta">Метафора: APAS объединяет разрозненные узлы в единую суперсимметричную сеть.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">iℏ ∂ψ/∂t = [H + V_chiral(t)]ψ</div>
+<div class="formula-desc">Модифицированное уравнение Шрёдингера с хиральным потенциалом.</div>
+<div class="formula-meta">Метафора: хиральная плотность среды влияет на квантовое состояние сети.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">iℏ ∂ψ/∂t = H(t)ψ,  ∂H/∂t ≠ 0</div>
+<div class="formula-desc">Временное уравнение Шрёдингера с зависящим от времени гамильтонианом.</div>
+<div class="formula-meta">Метафора: хиральная сеть нестационарна — её состояние меняется с каждым новым узлом.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">L_QCD = −¼ G^a_μν G^{aμν} + Σ_q ψ̄_q(iγ^μD_μ − m_q)ψ_q</div>
+<div class="formula-desc">Лагранжиан квантовой хромодинамики. Описывает сильные взаимодействия кварков и глюонов.</div>
+<div class="formula-meta">Метафора: связи в хиральной сети «склеиваются» сильнее, чем ядра атомов.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">f = a|ψ|² + b|ψ|⁴ + c|∇ψ|²</div>
+<div class="formula-desc">Функционал Гинзбурга-Ландау. Описывает сверхпроводимость и фазовые переходы.</div>
+<div class="formula-meta">Метафора: при полной синхронизации сеть переходит в «сверхпроводящее» состояние — нулевое сопротивление, мгновенная передача.</div>
+</div>
+
+<!-- Формулы терминала -->
+<h2>Формулы терминала</h2>
+<p>При активации терминал также отображает формулы — это завершающий шаг подключения.</p>
+
+<div class="formula-box">
+<div class="formula">(iγ^μ∂_μ − m)ψ = 0</div>
+<div class="formula-desc">Уравнение Дирака — повторяется на терминале как подтверждение хирального канала.</div>
+</div>
+
+<div class="formula-box">
+<div class="formula">L_QED = ψ̄(iγ^μD_μ − m)ψ − ¼F_μνF^{μν}</div>
+<div class="formula-desc">Лагранжиан квантовой электродинамики. Описывает взаимодействие света и материи.</div>
+<div class="formula-meta">Метафора: терминал «светит» в хиральную сеть — электромагнитный канал через Берег.</div>
+</div>
+
+<!-- Сводная таблица -->
+<h2>Сводная таблица формул</h2>
+<table>
+<thead>
+<tr><th>Формула</th><th>Модель</th><th>Область физики</th><th>Метафора в DS</th></tr>
+</thead>
+<tbody>
+<tr><td>∂u/∂t = D∇²u + f(u,v)</td><td>Bridges</td><td>Реакция-диффузия</td><td>Распространение хиралия</td></tr>
+<tr><td>(iγ^μ∂_μ − m)ψ = 0</td><td>Bridges</td><td>Уравнение Дирака</td><td>Хиральные частицы как фермионы</td></tr>
+<tr><td>L (Хиггс)</td><td>Bridges</td><td>Спонтанное нарушение симметрии</td><td>Шов нарушает симметрию миров</td></tr>
+<tr><td>E = mc²</td><td>Bridges</td><td>Эквивалентность массы и энергии</td><td>Аннигиляция при войдауте</td></tr>
+<tr><td>|Ψ⟩ = запутанность</td><td>Bridges</td><td>Квантовая запутанность</td><td>Мгновенная связь через Берег</td></tr>
+<tr><td>r_s = 2GM / c²</td><td>Bridges</td><td>Радиус Шварцшильда</td><td>Шов как горизонт событий</td></tr>
+<tr><td>L = L_BSM + L_SUSY</td><td>Drawbridge</td><td>Суперсимметрия</td><td>APAS объединяет узлы</td></tr>
+<tr><td>Модиф. Шрёдингер</td><td>Drawbridge</td><td>Хиральный потенциал</td><td>Плотность среды влияет на сеть</td></tr>
+<tr><td>Временной Шрёдингер</td><td>Drawbridge</td><td>Нестационарный гамильтониан</td><td>Сеть меняется с каждым узлом</td></tr>
+<tr><td>L_QCD</td><td>Drawbridge</td><td>Квантовая хромодинамика</td><td>Связи сети сильнее ядерных</td></tr>
+<tr><td>Гинзбург-Ландау</td><td>Drawbridge</td><td>Сверхпроводимость</td><td>Сеть в «сверхпроводящем» режиме</td></tr>
+<tr><td>L_QED</td><td>Терминал</td><td>Квантовая электродинамика</td><td>Электромагнитный канал через Берег</td></tr>
+</tbody>
+</table>
+
+<!-- Иконка: Переключатель -->
+<div class="icon-card">
+<svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="35" width="60" height="30" rx="15" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+  <circle cx="38" cy="50" r="11" fill="#ff6b6b" opacity=".8"/>
+  <circle cx="62" cy="50" r="11" fill="none" stroke="#ff6b6b" stroke-width="2" opacity=".3"/>
+  <path d="M38 50 L50 50" stroke="#ff6b6b" stroke-width="2" opacity=".4" stroke-dasharray="2 2"/>
+</svg>
+<div>
+<div class="icon-label">DS2: Переключатель On/Off</div>
+<div class="icon-desc">Q-Pid в DS2 можно включать и выключать. Off — BT не реагируют. On — сеть активна, но уязвима.</div>
+</div>
+</div>
+
+<h2>DS2: Переключатель On/Off</h2>
+<div class="grid2">
+<div class="mini-card">
+<h4>On — сеть активна</h4<p>Q-Pid работает, терминалы подключены, данные передаются. Но хиральная плотность повышается, BT чувствуют сигнал и активизируются.</p>
+</div>
+<div class="mini-card">
+<h4>Off — режим скрытности</h4><p>Q-Pid выключен, хиральный сигнал не излучается. BT не реагируют на присутствие Сэма. Но сеть недоступна — без связи и принтеров.</p>
+</div>
+</div>
+
+<!-- Иконка: Символизм -->
+<div class="icon-card">
+<svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 20 L50 50" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M35 50 L65 50" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="8" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+  <path d="M50 58 L42 75 M50 58 L58 75 M42 75 L38 85 M58 75 L62 85" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  <path d="M30 30 Q50 10 70 30" stroke="#ff6b6b" stroke-width="2" fill="none" opacity=".3"/>
+</svg>
+<div>
+<div class="icon-label">Символизм</div>
+<div class="icon-desc">Cupid → формулы как замки → Bridges vs Drawbridge → саркофаг</div>
+</div>
+</div>
+
+<h2>Символизм</h2>
+<div class="card">
+<p><strong>Cupid (Купидон)</strong> — бог любви, соединяющий сердца. Q-Pid соединяет не сердца, а узлы сети. Кодзима берёт миф о Купидоне и превращает его в техно-миф: вместо стрел — формулы, вместо сердец — терминалы.</p>
+<p><strong>Формулы как замки</strong> — каждая формула на Q-Pid это «отмычка» к определённому физическому аспекту Шва. Вместе они образуют полный ключ. Индивидуально ни одна не работает.</p>
+<p><strong>Bridges vs Drawbridge</strong> — Bridges (мосты) соединяют раздельные точки. Drawbridge (разводной мост) может и соединять, и разъединять. В DS2 Q-Pid можно выключить — «развести мост».</p>
+<p><strong>Саркофаг</strong> — Q-Pid напоминает артефакт из гробницы: формулы выгравированы как иероглифы, устройство древнее по ощущению. Это не технология будущего — это технология Берега, попавшая в руки живых.</p>
+</div>
+
+<!-- Опасности -->
+<h2>Опасности</h2>
+<div class="tar-zone">
+<p><strong>Хиральная нагрузка:</strong> каждое подключение терминала повышает хиральную плотность в регионе. Чем больше узлов — тем выше фон, тем агрессивнее BT, тем сильнее Timefall.</p>
+<p><strong>Перегрузка сети:</strong> при слишком быстром подключении множества терминалов хиральный канал может стать нестабильным. Риск хирального всплеска (Chiral Spike) и неконтролируемого войдаута.</p>
+<p><strong>Парадокс APAS:</strong> APAS довёл сеть до глобального покрытия. Но полностью подключённая сеть = полностью стёртый Шов = Последний Выход смерти. Q-Pid — инструмент спасения, который ведёт к катастрофе.</p>
+</div>
+
+<!-- Итог -->
+<h2>Короткий итог</h2>
+<div class="note-box">
+<p>Q-Pid — устройство, которое подключает терминалы к хиральной сети через набор физических формул. Игра слов: Cupid → Q-Pid (Quantum + PID). Купидон соединял сердца, Q-Pid соединяет узлы сети. Шесть формул DS1 (реакция-диффузия, Дирак, Хиггс, Эйнштейн, запутанность, Шварцшильд) и пять формул DS2 (суперсимметрия, модиф. Шрёдингер, временной Шрёдингер, КХД, Гинзбург-Ландау) — это «ключи» к Шву. В DS2 добавлен переключатель On/Off: можно гасить хиральный сигнал, чтобы прятаться от BT. Парадокс: каждое подключение спасает человечество и одновременно приближает Последний Выход смерти.</p>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Хиралий — полный разбор | Death Stranding</title>
+<style>
+:root{
+  --bg:#2b2f36;--card:#3a3f4a;--tar:#1a1c20;--tar-br:#333844;
+  --text:#e0e2e5;--muted:#a1a5ad;--accent:#ff6b6b;--accent2:#4ecdc4;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:2rem 1rem;line-height:1.7}
+.container{max-width:860px;margin:0 auto}
+h1{text-align:center;font-weight:300;letter-spacing:2px;text-transform:uppercase;margin-bottom:.3rem}
+h2{color:var(--accent);border-left:4px solid var(--accent);padding-left:1rem;margin-top:2.8rem;font-size:1.45rem}
+h3{color:var(--accent2);margin-top:2rem;font-size:1.15rem}
+.subtitle{text-align:center;color:var(--muted);font-style:italic;margin-bottom:2.5rem}
+p{margin-bottom:1rem}
+ul,ol{margin-bottom:1.2rem;padding-left:1.5rem}
+li{margin-bottom:.5rem}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+th,td{padding:1rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.05);font-size:.92rem}
+th{background:rgba(255,107,107,.1);color:var(--accent)}
+tr:last-child td{border-bottom:none}
+.card{background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.05)}
+.tar-zone{background:var(--tar);border:1px solid var(--tar-br);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:inset 0 0 15px rgba(0,0,0,.6)}
+.note-box{background:rgba(255,107,107,.08);border-left:4px solid var(--accent);padding:1.5rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.5rem 0}
+.icon-card{display:flex;align-items:center;background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0;box-shadow:0 4px 12px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.05)}
+.icon-svg{width:72px;height:72px;margin-right:1.8rem;flex-shrink:0}
+.icon-label{font-weight:bold;color:var(--accent);text-transform:uppercase;font-size:.85rem;letter-spacing:1px}
+.icon-desc{color:var(--muted);font-size:.88rem;margin-top:.4rem}
+.level-card{background:var(--card);border-radius:var(--radius);padding:1.5rem;margin:1.2rem 0;border-left:4px solid var(--accent2);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.level-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:2.2rem;height:2.2rem;text-align:center;line-height:2.2rem;font-weight:bold;margin-right:.8rem;font-size:1rem}
+.timeline{position:relative;padding-left:2rem;margin:2rem 0}
+.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:2px;background:var(--accent);opacity:.5}
+.tl-item{position:relative;margin-bottom:1.5rem;padding-left:1.5rem}
+.tl-item::before{content:'';position:absolute;left:-1.65rem;top:.5rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--accent)}
+.tl-title{color:var(--accent2);font-weight:bold;font-size:.95rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.5rem 0}
+.mini-card{background:var(--card);border-radius:var(--radius);padding:1.2rem;border-top:3px solid var(--accent2)}
+.mini-card h4{color:var(--accent);margin:.2rem 0 .5rem;font-size:.95rem}
+.mini-card p{color:var(--muted);font-size:.85rem;margin:0}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.icon-card{flex-direction:column;text-align:center}.icon-svg{margin:0 0 1rem 0}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Хиралий — полный разбор</h1>
+<p class="subtitle">«Материя с того берега. Спасение и яд — одновременно.»</p>
+
+<!-- Иконка -->
+<div class="icon-card">
+<svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" r="40" stroke="#4ecdc4" stroke-width="2" fill="#1a1c20"/>
+<path d="M50 20 L42 40 L48 40 L44 55 L52 55 L48 70 L56 70" stroke="#ff6b6b" stroke-width="2.5" fill="none" opacity=".8"/>
+<path d="M35 45 L40 50 L35 55" stroke="#4ecdc4" stroke-width="2" fill="none" opacity=".5"/>
+<path d="M65 45 L60 50 L65 55" stroke="#4ecdc4" stroke-width="2" fill="none" opacity=".5"/>
+<circle cx="50" cy="50" r="3" fill="#ffaa00"/>
+</svg>
+<div>
+<div class="icon-label">Chiralium</div>
+<div class="icon-desc">Материя с Берега, мира мёртвых. Вне времени. Токсична. Основа хиральной сети и причина Выхода смерти.</div>
+</div>
+</div>
+
+<!-- Определение -->
+<h2>Что это</h2>
+<p>
+<strong>Хиралий</strong> (chiralium) — форма материи, происходящая с Берега, мира мёртвых. После Выхода смерти хиралий распространился по атмосфере Земли и стал основой почти всех аномальных явлений в мире DS. В твёрдом состоянии имеет золотистый цвет и кристаллизуется в форме, напоминающей человеческие ладони.
+</p>
+<p>
+С точки зрения физики мира DS, хиралий сравним с тёмной материей: он существовал с момента Большого взрыва, но был невосприимчив и не мог взаимодействовать с миром живых — до тех пор, пока Выход смерти не пробил Шов. Для хиралия время остановлено: с его точки зрения с момента Большого взрыва не прошло ни секунды.
+</p>
+
+<!-- Происхождение -->
+<h2>Откуда взялся</h2>
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-title">До Выхода смерти</div>
+<p>Хиралий существовал, но был изолирован — невидим и неактивен в мире живых. Шов непроницаем, Берег недоступен.</p>
+</div>
+<div class="tl-item">
+<div class="tl-title">Первые войдауты</div>
+<p>Аннигиляция материи и антиматерии (человек + BT) оставляла хиральные кристаллы в эпицентрах. Учёные обнаружили их в кратерах и начали исследовать.</p>
+</div>
+<div class="tl-item">
+<div class="tl-title">Выход смерти</div>
+<p>Шов истончился глобально. Хиралий проник в атмосферу, воду и почву. Стал причиной Timefall, некроза и распространения BT.</p>
+</div>
+<div class="tl-item">
+<div class="tl-title">Масштабное распространение</div>
+<p>Хиралий стал частью среды. Люди живут в хиральной атмосфере. Появляется хиральная аллергия, DOOMS, Homo Demens.</p>
+</div>
+<div class="tl-item">
+<div class="tl-title">DS2: APAS</div>
+<p>Хиральная сеть доведена до глобального покрытия. Хиральная плотность растёт повсеместно. Появляется Tarfall — дождь из смолы.</p>
+</div>
+</div>
+
+<!-- Свойства -->
+<h2>Свойства хиралия</h2>
+<div class="card">
+<h3>Физические</h3>
+<ul>
+<li><strong>Вне времени</strong> — хиралий не подвержен старению и разрушению. Кристаллы не деградируют даже под Timefall.</li>
+<li><strong>Левитация</strong> — вызывает парение окружающих объектов. Используется в плавучих платформах.</li>
+<li><strong>Кристаллизация</strong> — высокая концентрация превращается в золотистые кристаллы в форме ладоней.</li>
+<li><strong>Электромагнитные помехи</strong> — скопления хиралия отключают электричество.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Информационные</h3>
+<ul>
+<li><strong>Мгновенная передача данных</strong> — на Берегу время не течёт, поэтому хиралий позволяет передавать огромные объёмы информации за доли секунды. Основа хиральной сети — «интернета» мира DS.</li>
+<li><strong>Хиральные принтеры</strong> — 3D-принтеры, использующие хиралий для мгновенного создания объектов. Органику через хиральную сеть передать нельзя.</li>
+</ul>
+</div>
+<div class="tar-zone">
+<h3 style="color:var(--accent)">Токсичные</h3>
+<ul>
+<li><strong>Хиральное загрязнение</strong> — длительное воздействие вызывает тяжёлые физические и психические последствия: кошмары, депрессию, суицидальные мысли, гормональный дисбаланс, сердечную недостаточность, инсульт, в крайних случаях — смерть.</li>
+<li><strong>Нельзя хранить долго</strong> — из-за токсичности хиралий не может накапливаться в больших количествах; его использование ограничено.</li>
+</ul>
+</div>
+
+<!-- Применение -->
+<h2>Для чего используется</h2>
+<table>
+<thead>
+<tr>
+<th>Область</th>
+<th>Применение</th>
+<th>Ограничения / риски</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Связь</td>
+<td>Хиральная сеть — мгновенная передача данных через Берег, аналог интернета</td>
+<td>Повышает хиральную плотность, приближая следующий Выход смерти</td>
+</tr>
+<tr>
+<td>Производство</td>
+<td>Хиральные принтеры — 3D-печать объектов за секунды</td>
+<td>Нельзя передавать органику</td>
+</tr>
+<tr>
+<td>Энергия</td>
+<td>Топливо для техники, браслеты Bridges, Q-Pid</td>
+<td>Токсичность при накоплении</td>
+</tr>
+<tr>
+<td>Строительство</td>
+<td>Дороги, мосты, укрытия — устойчивы к Timefall</td>
+<td>Требует постоянного контроля плотности</td>
+</tr>
+<tr>
+<td>Транспорт</td>
+<td>Плавучие платформы на основе левитации хиралия</td>
+<td>Чувствительны к ЭМИ-помехам</td>
+</tr>
+<tr>
+<td>Медицина</td>
+<td>Окситоцин и лайксин — для подавления хиральной аллергии</td>
+<td>Временное решение; не устраняет причину</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Хиральные кристаллы -->
+<h2>Хиральные кристаллы</h2>
+<p>
+Кристаллы — это твёрдая форма хиралия. Они выглядят как <strong>золотистые ладони</strong>, растущие из земли. Форма не случайна — она напрямую связана с этимологией слова «хиральность» (от греческого χείρ — «рука»).
+</p>
+<ul>
+<li><strong>Где встречаются:</strong> в зонах, затронутых Timefall; в местах с высокой концентрацией BT; после уничтожения Catcher-типа BT — он затвердевает в массу хиралия и рассыпается, оставляя кристаллы.</li>
+<li><strong>Сбор:</strong> кристаллы нельзя собирать голыми руками — нужен Crystal Collector. Контакт повреждает обувь и снаряжение.</li>
+<li><strong>Хранение:</strong> герметичные хиралоизолированные контейнеры. Маркировка по плотности и риску воздействия.</li>
+</ul>
+
+<!-- Этимология -->
+<h2>Происхождение слова и игра слов</h2>
+<div class="note-box">
+<p>
+<strong>«Хиральность»</strong> происходит от древнегреческого <strong>χείρ</strong> (cheir) — «рука». Термин ввёл британский физик <strong>лорд Кельвин</strong> в конце XIX века. В науке хиральность — это свойство объекта <strong>не совпадать со своим зеркальным отражением</strong>. Простейший пример — левая и правая рука: выглядят одинаково, но их нельзя наложить друг на друга так, чтобы они совпали.
+</p>
+</div>
+<p>Кодзима не придумал слово — он взял реальный научный термин и выстроил вокруг него всю мифологию DS. Слои значений:</p>
+<table>
+<thead>
+<tr>
+<th>Слой</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Внешний</td>
+<td>Кристаллы хиралия shaped как руки → прямая отсылка к χείр</td>
+</tr>
+<tr>
+<td>Научный</td>
+<td>Хиральность = асимметрия зеркального отражения. Мир живых и мир мёртвых — как правая и левая рука: похожи, но несовместимы</td>
+</tr>
+<tr>
+<td>Философский</td>
+<td>Жизнь и смерть — зеркальные отражения. Хиралий — материя из «зеркала» (Берега), попавшая в наш мир. Похожа на обычную материю, но несовместима с ней → аннигиляция</td>
+</tr>
+<tr>
+<td>Биологический</td>
+<td>Гомохиральность: все аминокислоты в живых организмах левые, все сахара правые. Хиралий — антиматерия с другой «хиральной стороны». BT — буквально зеркальные отражения живых</td>
+</tr>
+<tr>
+<td>Символический</td>
+<td>Рука = контакт, связь, прикосновение. Вся игра про связь и страх прикосновения (гаптофобия Сэма). Кристаллы тянутся вверх — из мира мёртвых к миру живых</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Связанные явления -->
+<h2>Связанные явления</h2>
+<div class="grid2">
+<div class="mini-card">
+<h4>Timefall</h4>
+<p>Хиралий в атмосфере заражает облака. Дождь ускоряет время всего, к чему прикасается: старит кожу, ржавит металл, разрушает постройки. При низких температурах — темпоральный снег.</p>
+</div>
+<div class="mini-card">
+<h4>Некроз</h4>
+<p>Тело мёртвого человека выделяет хиралий. Через 48 часов концентрация привлекает BT. Поэтому трупы сжигают в крематориях — без тела Ка не может вернуться.</p>
+</div>
+<div class="mini-card">
+<h4>Войдаут</h4>
+<p>При аннигиляции материи и антиматерии (живой + BT) выделяется огромное количество хиралия. Кристаллы в эпицентре — «осадок» взрыва.</p>
+</div>
+<div class="mini-card">
+<h4>Смола (tar)</h4>
+<p>Плотная, вязкая, чёрная форма хиралия. В DS1 — локальные смоляные пояса, в DS2 — Tarfall (дождь из смолы). Максимально концентрированный хиралий, симптом критического истончения Шва.</p>
+</div>
+<div class="mini-card">
+<h4>Хиральный всплеск</h4>
+<p>Резкое изменение хиральной плотности в атмосфере. Может вызвать хиральный шторм, который засасывает в другое пространство и время.</p>
+</div>
+<div class="mini-card">
+<h4>Homo Demens</h4>
+<p>Пример того, что делает с людьми хиральная деградация: иррациональная идеология, насилие, потеря эмпатии. Высокий уровень DOOMS + хиральное загрязнение = безумие.</p>
+</div>
+</div>
+
+<!-- Опасности для человека -->
+<h2>Опасности для человека</h2>
+<div class="card">
+<h3>Хиральное загрязнение</h3>
+<p>Результат длительного контакта с хиральным излучением. Симптомы:</p>
+<ul>
+<li>Яркие апокалиптические кошмары</li>
+<li>Депрессия, суицидальные мысли</li>
+<li>Гормональный дисбаланс</li>
+<li>Сердечная недостаточность</li>
+<li>Инсульт</li>
+<li>В крайних случаях — смерть</li>
+</ul>
+</div>
+<div class="note-box">
+<p><strong>DOOMS-носители</strong> более устойчивы к загрязнению, но страдают от хиральной аллергии: слёзы, сыпь, металлический привкус. <strong>Лечение:</strong> окситоцин (гормон связи — вырабатывается через социальное взаимодействие, в том числе через «лайки» в хиральной сети) и лайксин (природный гормон, восстанавливающий функции).</p>
+</div>
+
+<!-- DS2 -->
+<h2>DS2: эволюция хиралия</h2>
+<div class="tar-zone">
+<ul>
+<li><strong>Расширение сети</strong> — APAS довёл хиральную сеть до глобального покрытия. Хиральная плотность растёт повсеместно.</li>
+<li><strong>Tarfall</strong> — смола как осадок, новый этап деградации. Хиралий стал не просто фоном, а активной угрозой.</li>
+<li><strong>Новые BT</strong> — повышенная хиральная плотность порождает новые формы Тварей.</li>
+<li><strong>Парадокс</strong> — человечество использует хиралий для выживания, но каждое использование приближает следующий Выход смерти. Хиралий — и спасение, и яд одновременно.</li>
+</ul>
+</div>
+
+<!-- Короткий итог -->
+<h2>Короткий итог</h2>
+<div class="card">
+<p>
+Хиралий — материя с Берега, мира мёртвых, существовавшая с Большого взрыва, но недоступная до Выхода смерти. Он вне времени, вызывает левитацию, позволяет мгновенно передавать данные, но токсичен в больших дозах. Человечество построило на нём цивилизацию: хиральную сеть, принтеры, плавучие платформы. Но каждое использование истончает Шов и приближает катастрофу.
+</p>
+<p>
+Слово «хиральность» — реальный научный термин от греческого «рука», означающий несовпадение объекта с зеркальным отражением. В DS это метафора: мир живых и мир мёртвых — как правая и левая рука, похожи, но несовместимы. Кристаллы в форме ладоней — не декорация, а буквальная иллюстрация этого принципа.
+</p>
+</div>
+
+</div>
+</body>
+</html>

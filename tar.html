@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Смола и смоляные пояса — Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --tar: #1a1c20;
+        --tar-border: #333844;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container { max-width: 800px; margin: auto; }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        margin-bottom: 3rem;
+        font-style: italic;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p { margin-bottom: 1rem; }
+
+      .tar-zone {
+        background: var(--tar);
+        border: 1px solid var(--tar-border);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+      }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th { background: rgba(255, 107, 107, 0.1); color: var(--accent); }
+      tr:last-child td { border-bottom: none; }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .step-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .step-item {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .step-item::before {
+        content: counter(step) ". ";
+        counter-increment: step;
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Смола и смоляные пояса</h1>
+      <p class="subtitle">«Там, где Шов истончён, из границы льётся смола.»</p>
+
+      <!-- Иконка: смола -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="38" fill="#1a1c20" stroke="#333844" stroke-width="2"/>
+          <path d="M40 50 Q50 35 60 50 T40 70" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.6"/>
+          <circle cx="40" cy="45" r="2" fill="#ff6b6b" opacity="0.7"/>
+          <circle cx="60" cy="45" r="2" fill="#ff6b6b" opacity="0.7"/>
+          <circle cx="50" cy="65" r="2" fill="#ff6b6b" opacity="0.7"/>
+        </svg>
+        <div>
+          <div class="icon-label">Tar (смола)</div>
+          <div class="icon-desc">Материализованный хиралий. След истончения Шова. Среда для BT и ускоренного старения.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что такое смола</h2>
+        <p>
+          В мире DS смола (tar) — это не просто вязкая субстанция, а <strong>материализованный хиралий</strong>, физическое проявление того, что Шов истончён. Это буквально «вытекшая» граница между мирами: когда Шов слабеет, из него начинает сочиться чёрная масса, которая разъедает материю, ускоряет старение и служит средой для BT.
+        </p>
+        <div class="tar-zone">
+          <p>
+            <strong>Свойства смолы:</strong><br>
+            • Разъедает и покрывает: груз портится, техника вязнет.<br>
+            • Ускоряет старение: контакт = сильный локальный Timefall.<br>
+            • Среда обитания BT: в смоле Твари стабильнее.<br>
+            • След истончения Шова: чем больше смолы, тем тоньше граница.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Смоляные пояса (Tar Belts)</h2>
+        <p>
+          Смоляной пояс — это <strong>огромная зона, покрытая смолой</strong>, фактически «океан» из tar. В DS1 самый известный — южный пояс, который физически блокирует путь к финальной зоне. Его нельзя пересечь вброд, на транспорте или обычным мостом: Сэм тонет за секунды, техника вязнет, мосты не строятся.
+        </p>
+        <div class="note-box">
+          <p>
+            Пояс — не случайное скопление смолы, а <strong>зона максимального истончения Шова</strong>. Там граница настолько тонкая, что смола буквально «льётся» в наш мир. Пояс работает как естественный барьер: некоторые зоны стали «пограничными» — почти частью Берега.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Как пересечь смоляной пояс (DS1)</h2>
+        <p>
+          Механика пересечения контринтуитивна и сюжетно обоснована: <strong>нельзя идти напрямую</strong>. Это часть темы игры: иногда нужно перестать сопротивляться, чтобы двигаться вперёд.
+        </p>
+        <ol class="step-list" style="counter-reset: step;">
+          <li class="step-item">
+            <strong>Нельзя идти вброд или плыть.</strong> Любая попытка заканчивается быстрой потерей груза и смертью.
+          </li>
+          <li class="step-item">
+            <strong>Нужно позволить BT поймать Сэма.</strong> На юго‑западе пояса есть зона с высокой активностью Тварей. Если не убегать и не сражаться, BT утаскивают Сэма в смолу.
+          </li>
+          <li class="step-item">
+            <strong>Всплывают затопленные руины.</strong> После захвата из смолы поднимаются здания — они работают как платформы. Дальше это платформенный сегмент: прыжки по крышам, карнизам, кондиционерам.
+          </li>
+          <li class="step-item">
+            <strong>Движение строго на юг.</strong> Любое отклонение (на север/запад) ведёт к падению в смолу и перезапуску сегмента.
+          </li>
+          <li class="step-item">
+            <strong>Альтернативный путь через кратер.</strong> Если кит‑существо убивает Сэма, появляется большой кратер по краю пояса — по его кромке можно пройти пешком. Это «ценой жизни», но рабочий вариант.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Tarfall в DS2: смола как погодное явление</h2>
+        <p>
+          Во второй части смола эволюционирует в <strong>Tarfall</strong> — дождь из смолы. Это показывает, что проблема уже не локальная, а глобальная: Шов истончается повсеместно.
+        </p>
+        <div class="tar-zone">
+          <p>
+            <strong>Эффекты Tarfall:</strong><br>
+            • Выпадает повсеместно, покрывает поверхности слоем tar.<br>
+            • Местность становится скользкой, объекты — нестабильными.<br>
+            • Появляются новые типы BT, руины «прорастают» смолой.<br>
+            • Мосты и дороги разрушаются быстрее.<br>
+            • Прямая связь с APAS: чем активнее сеть, тем сильнее Tarfall.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Связь смолы с ББ, сетью и Шовом</h2>
+        <p>
+          Смола — это <strong>общий язык мира DS</strong>, которым он говорит: «Здесь Шов слишком тонкий». Она объединяет все ключевые механики:
+        </p>
+        <ul>
+          <li><strong>ББ:</strong> нестабильный ББ может вызвать выброс смолы рядом с собой — локальный пробой границы.</li>
+          <li><strong>Хиральная сеть:</strong> узлы истончают Шов повсеместно; высокая плотность приводит к смоляным зонам и Tarfall.</li>
+          <li><strong>Замершая беременность (DS2):</strong> истончённый Шов «пропускает» смолу в биологию, канал между матерью и ребёнком становится нестабильным.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Сравнение: смола в DS1 и DS2</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>DS1: Смоляной пояс</th>
+              <th>DS2: Tarfall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Форма</strong></td>
+              <td>Статичный «океан» смолы</td>
+              <td>Дождь из смолы, покрывает местность</td>
+            </tr>
+            <tr>
+              <td><strong>Масштаб</strong></td>
+              <td>Локальная зона (юг карты)</td>
+              <td>Повсеместно, зависит от плотности сети</td>
+            </tr>
+            <tr>
+              <td><strong>Механика</strong></td>
+              <td>Нельзя пересечь напрямую; нужен триггер с BT и платформенный сегмент</td>
+              <td>Скользкие поверхности, новые BT, ускоренное разрушение объектов</td>
+            </tr>
+            <tr>
+              <td><strong>Связь с сюжетом</strong></td>
+              <td>Барьер перед финальной встречей с Амелией</td>
+              <td>Следствие действий APAS; маркер глобального истончения Шова</td>
+            </tr>
+            <tr>
+              <td><strong>Риск для Сэма</strong></td>
+              <td>Мгновенная потеря груза и смерть при контакте</td>
+              <td>Постепенное ухудшение условий, риск падения, потери груза, атак BT</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Иконка: ткань и смола -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="80" height="80" fill="#2b2f36" stroke="#444a5a" stroke-width="1.5"/>
+          <path d="M30 50 L70 50" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="4 3" opacity="0.8"/>
+          <circle cx="50" cy="50" r="12" fill="#1a1c20" opacity="0.9"/>
+          <circle cx="30" cy="30" r="4" fill="#1a1c20"/>
+          <circle cx="70" cy="70" r="4" fill="#1a1c20"/>
+        </svg>
+        <div>
+          <div class="icon-label">Аналогия: ткань и смола</div>
+          <div class="icon-desc">Смоляной пояс = дыра в ткани, Tarfall = капли сверху, ББ и сеть = иглы, прокалывающие ткань.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          <strong>Смола (tar)</strong> — материализованный хиралий и прямой признак истончения Шова.<br>
+          <strong>Смоляные пояса</strong> — зоны максимального истончения; в DS1 пересечение требует специальной механики.<br>
+          <strong>Tarfall (DS2)</strong> — смола стала повсеместным явлением, подчёркивая глобальный масштаб проблемы.<br>
+          Всё связано общей темой: <strong>любая связь через Шов ослабляет его</strong>, а смола — это физическое проявление этой слабости.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
