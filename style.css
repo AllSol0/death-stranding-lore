@@ -149,3 +149,24 @@ footer {
     color: #ffffff !important;
 }
 
+/*удалим*/
+/* Полный сброс стилей ссылок для карточек персонажей */
+.char-link, 
+.char-link:link, 
+.char-link:visited, 
+.char-link:hover, 
+.char-link:active {
+    text-decoration: none !important; /* Принудительно убирает любое подчёркивание */
+    color: inherit !important;           /* Сохраняет оригинальные цвета текста и заголовков */
+}
+
+/* Полное и безоговорочное удаление подчеркиваний и синего цвета во вкладке персонажей */
+#content-characters .grid-container a,
+#content-characters .grid-container a *,
+.char-link,
+.char-link *,
+.card-link,
+.card-link * {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+}
