@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Хиггс Монаган — Человек в золотой маске</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th {
+        background: rgba(255, 107, 107, 0.1);
+        color: var(--accent);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .mini-card {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .mini-card-title {
+        color: var(--accent);
+        font-weight: bold;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.75rem;
+      }
+
+      .mini-card p {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 600px) {
+        .grid2 { grid-template-columns: 1fr; }
+        .icon-card { flex-direction: column; text-align: center; }
+        .icon-svg { margin-right: 0; margin-bottom: 1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Хиггс Монаган — Человек в золотой маске</h1>
+
+      <!-- Иконка: Золотая маска -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Череп-маска -->
+          <path d="M50 10 Q25 15 25 45 Q25 65 35 75 L35 85 Q50 90 65 85 L65 75 Q75 65 75 45 Q75 15 50 10 Z" fill="#3a3f4a" stroke="#ff6b6b" stroke-width="3"/>
+          <!-- Глазницы -->
+          <ellipse cx="38" cy="45" rx="7" ry="9" fill="#2b2f36" stroke="#ff6b6b" stroke-width="2"/>
+          <ellipse cx="62" cy="45" rx="7" ry="9" fill="#2b2f36" stroke="#ff6b6b" stroke-width="2"/>
+          <!-- Свет в глазницах -->
+          <circle cx="38" cy="45" r="2.5" fill="#ff6b6b"/>
+          <circle cx="62" cy="45" r="2.5" fill="#ff6b6b"/>
+          <!-- Нос -->
+          <path d="M50 52 L46 62 L54 62 Z" fill="#2b2f36" stroke="#ff6b6b" stroke-width="1.5"/>
+          <!-- Зубы -->
+          <line x1="40" y1="68" x2="40" y2="78" stroke="#ff6b6b" stroke-width="1.5"/>
+          <line x1="46" y1="68" x2="46" y2="78" stroke="#ff6b6b" stroke-width="1.5"/>
+          <line x1="54" y1="68" x2="54" y2="78" stroke="#ff6b6b" stroke-width="1.5"/>
+          <line x1="60" y1="68" x2="60" y2="78" stroke="#ff6b6b" stroke-width="1.5"/>
+          <line x1="35" y1="72" x2="65" y2="72" stroke="#ff6b6b" stroke-width="1.5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Золотая маска</div>
+          <div class="icon-desc">Символ смерти и власти. Канал между миром живых и мёртвых, через который Хиггс призывает Тварей.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Кто такой Хиггс</h2>
+        <p>
+          Хиггс Монаган (настоящее имя — <strong>Питер Энглерт</strong>) — главный антагонист Death Stranding, лидер террористической группы <strong>Homo Demens</strong>, носитель <strong>DOOMS 7-го уровня</strong> — высшего на планете. Человек в золотой маске, способный призывать и контролировать Тварей (BT), управлять временным дождём и телепортироваться через Берег.
+        </p>
+        <p>
+          Не всегда был злодеем. Был курьером, работал с Фрэджайл, верил в объединение Америки — пока не встретил Амелию.
+        </p>
+      </section>
+
+      <!-- Иконка: Бункер / прошлое -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Бункер -->
+          <rect x="25" y="35" width="50" height="55" fill="#3a3f4a" stroke="#ff6b6b" stroke-width="3" rx="4"/>
+          <rect x="42" y="55" width="16" height="25" fill="#2b2f36" stroke="#ff6b6b" stroke-width="2" rx="2"/>
+          <!-- Трещина -->
+          <path d="M50 10 L50 30 L45 35" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M55 12 L55 28 L60 33" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Кровь -->
+          <circle cx="50" cy="20" r="3" fill="#ff6b6b" opacity="0.6"/>
+        </svg>
+        <div>
+          <div class="icon-label">До маски</div>
+          <div class="icon-desc">Ребёнок в бункере. Насилие, убийство дяди, первый контакт с Тварями — так родился DOOMS.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Как Хиггс получил DOOMS</h2>
+        <ul>
+          <li>Рано потерял родителей, воспитывался <strong>дядей в подземном убежище</strong>.</li>
+          <li>Дядя бил его каждый раз, когда он спрашивал о внешнем мире или пытался выйти.</li>
+          <li>Хиггс <strong>убил дядя ножом</strong> в порядке самообороны.</li>
+          <li>Вынес тело наружу — и почувствовал, как <strong>Твари реагируют на труп</strong>.</li>
+          <li>Тело начало некротизировать. Хиггс ощутил их приближение, увидел видения Берега.</li>
+          <li>Так проявился его <strong>DOOMS 2-го уровня</strong> — способность чувствовать BT.</li>
+          <li>Позже, после встречи с Амелией, уровень вырос до <strong>7-го</strong> — максимального.</li>
+        </ul>
+        <div class="note-box">
+          DOOMS пробуждается от контакта со смертью. Хиггс не родился с ним — он <strong>заработал</strong> его, убив единственного родственника и стоя рядом с некротизирующим телом, пока Твари кружили вокруг. Сила пришла через травму.
+        </div>
+      </section>
+
+      <!-- Иконка: DOOMS 7 -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Семь точек-уровней -->
+          <circle cx="50" cy="50" r="42" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.3"/>
+          <circle cx="50" cy="50" r="32" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="50" cy="50" r="22" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.7"/>
+          <circle cx="50" cy="50" r="12" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.9"/>
+          <circle cx="50" cy="50" r="5" fill="#ff6b6b"/>
+          <!-- Цифра 7 -->
+          <text x="50" y="88" text-anchor="middle" fill="#ff6b6b" font-size="14" font-weight="bold">7</text>
+        </svg>
+        <div>
+          <div class="icon-label">DOOMS 7-го уровня</div>
+          <div class="icon-desc">Высший уровень. Призыв и контроль Тварей, управление временным дождём, телепортация через Берег.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Как Хиггс призывает BT: Шов, DOOMS и маска</h2>
+        <p>
+          Механика призыва Тварей Хиггсом — это <strong>трёхступенчатый процесс</strong>, в котором работают три элемента: DOOMS, Шов (Seam) и золотая маска.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Этап</th>
+              <th>Что происходит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. DOOMS</strong></td>
+              <td>DOOMS 7-го уровня даёт Хиггсу прямой доступ к Берегу. Он не просто <em>чувствует</em> Тварей (как носители низких уровней) — он <strong>видит</strong> их, <strong>контролирует</strong> и может <strong>открывать канал</strong> между Берегом и реальным миром.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Шов (Seam)</strong></td>
+              <td>Шов — это <strong>промежуточное пространство</strong> между миром живых и Берегом. Через Шов души проходят на Берег, а Твари возвращаются обратно. Хиггс использует DOOMS, чтобы <strong>раскрыть Шов</strong> в нужной точке, создавая разрыв, через который Твари могут пройти из мира мёртвых в реальный мир.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Маска</strong></td>
+              <td>Золотая маска из хиралия — <strong>проводник и усилитель</strong>. Она канализирует связь Хиггса с Берегом, позволяя <strong>направленно</strong> вытягивать из смолы (тар-зоны) конкретных Тварей — не случайных, а <strong>Ловцов (Catchers)</strong> нужной формы и размера. Маска — не источник силы, а фокусирующая линза.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Как это выглядит на практике:</strong>
+        </p>
+        <ul>
+          <li>Хиггс снимает маску с лица и <strong>вытягивает руку</strong> — направляя её в сторону смолы (тар-зоны).</li>
+          <li>DOOMS раскрывает Шов — граница между Берегом и реальностью <strong>истончается</strong> в этой точке.</li>
+          <li>Маска работает как <strong>маяк и воронка</strong> — она фокусирует хиральную энергию, и из смолы поднимается Тварь.</li>
+          <li>Это не случайный BT, а <strong>Ловец (Catcher)</strong> — крупная, целенаправленно созданная Тварь определённого типа (осьминог, лев, титан).</li>
+          <li>Хиггс полностью <strong>контролирует</strong> призванную Тварь — она подчиняется его воле.</li>
+        </ul>
+
+        <div class="note-box">
+          <strong>Почему именно Шов?</strong> Шов — это не Берег и не реальный мир. Это <strong>трещина</strong> между ними. Души проходят через Шов на Берег, а Твари — обратно через Шов к своим телам. Хиггс с DOOMS 7-го уровня может <strong>вскрывать этот шов по желанию</strong>, открывая портал для Тварей. Без DOOMS Шов для живого человека непроходим. Без маски Хиггс не может сфокусировать призыв. <strong>DOOMS открывает дверь, маска направляет, Шов — сама дверь.</strong>
+        </div>
+      </section>
+
+      <section>
+        <h2>Способности Хиггса</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Способность</th>
+              <th>Источник</th>
+              <th>Описание</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Призыв BT</strong></td>
+              <td>DOOMS 7 + маска</td>
+              <td>Открывает Шов, вытягивает Ловцов из смолы. Контролирует их полностью.</td>
+            </tr>
+            <tr>
+              <td><strong>Управление временным дождём</strong></td>
+              <td>DOOMS 7</td>
+              <td>Создаёт, усиливает, направляет временной дождь. Сам не стареет от него.</td>
+            </tr>
+            <tr>
+              <td><strong>Телепортация</strong></td>
+              <td>DOOMS (через Берег)</td>
+              <td>Прыжки между точками через свой или Амелии Берег.</td>
+            </tr>
+            <tr>
+              <td><strong>Левитация / телекинез</strong></td>
+              <td>DOOMS 7</td>
+              <td>Парит в воздухе, притягивает и поднимает объекты.</td>
+            </tr>
+            <tr>
+              <td><strong>Создание из хиралия</strong></td>
+              <td>DOOMS 7</td>
+              <td>Материализует любое оружие и предметы из хиральных кристаллов.</td>
+            </tr>
+            <tr>
+              <td><strong>Управление смолой</strong></td>
+              <td>DOOMS 7</td>
+              <td>Создаёт нити из смолы, вытягивает из неё Ловцов.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note-box">
+          Все способности Хиггса — <strong>не его собственные</strong>. Их дала Амелия, и она же их отняла, когда Сэм победил его в финале DS1. DOOMS можно дать, повысить, понизить и <strong>забрать</strong> — по воле Фактора вымирания.
+        </div>
+      </section>
+
+      <!-- Иконка: Homo Demens -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Взрыв / пустота -->
+          <circle cx="50" cy="50" r="12" fill="#ff6b6b" opacity="0.9"/>
+          <circle cx="50" cy="50" r="25" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="50" cy="50" r="38" stroke="#ff6b6b" stroke-width="1.5" fill="none" opacity="0.3"/>
+          <!-- Лучи -->
+          <line x1="50" y1="5" x2="50" y2="20" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+          <line x1="50" y1="80" x2="50" y2="95" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+          <line x1="5" y1="50" x2="20" y2="50" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+          <line x1="80" y1="50" x2="95" y2="50" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18" y1="18" x2="28" y2="28" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="72" y1="18" x2="82" y2="28" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="18" y1="82" x2="28" y2="72" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="72" y1="82" x2="82" y2="72" stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">Homo Demens</div>
+          <div class="icon-desc">Террористическая группировка. Вызывают пустоты (voidout), уничтожают города, противостоят UCA.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Homo Demens и Питер Энглерт</h2>
+        <p>
+          <strong>Homo Demens</strong> — сепаратисты, желающие сохранить независимость Краевого Узла (Edge Knot City) от UCA. Их метод — <strong>пустоты</strong>: они намеренно создают условия для появления Тварей, которые поглощают живых и вызывают взрывы аннигиляции материи и антиматерии.
+        </p>
+        <p>
+          Параллельно Хиггс жил под именем <strong>Питер Энглерт</strong> — затворник, заказывавший пиццу с особыми требованиями. Сэм доставлял ему заказы, не зная, что клиент — его главный враг. После последней доставки пиццы комната Энглерта раскрывала правду: вырезки из газет о Хиггсе, записи на стенах, Memorabilia. Пицца была <strong>маской</strong> — как и золотая.
+        </p>
+      </section>
+
+      <section>
+        <h2>Амелия: соблазнение и падение</h2>
+        <div class="grid2">
+          <div class="mini-card">
+            <div class="mini-card-title">До Амелии</div>
+            <p>Курьер. DOOMS 2-го уровня — чувствует BT, но не видит. Работал с Фрэджайл. Верил в объединение Америки. Хотел строить, а не разрушать.</p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-title">После Амелии</div>
+            <p>DOOMS 7-го уровня. Контроль BT, временной дождь, телепортация. Лидер Homo Demens. Агент вымирания. Хочет уничтожить то, что хотел построить.</p>
+          </div>
+        </div>
+        <div class="note-box">
+          Амелия не просто усилила его — она <strong>сломала</strong> его. Хиггс верил, что она может объединить Америку. Вместо этого она превратила его в <strong>Агента вымирания</strong>. Кукла-марионетка, привязанная к Амелии, соединяла его с её волей — буквально устройство контроля сознания.
+        </div>
+      </section>
+
+      <section>
+        <h2>Фрэджайл: предательство</h2>
+        <p>
+          Хиггс и Фрэджайл были партнёрами — курьеры, строившие будущее. Когда Хиггс перешёл на сторону Амелии, он <strong>предал</strong> Фрэджайл: заставил её бежать под временным дождём без защиты, что состарило её тело. Он произнёс те же слова, что она later повторила Сэму: <em>«Я беру на себя урон и груз — меня не так легко сломать»</em>. С тех пор Фрэджайл носит зонт и молодую внешность как маску — под ней тело старухи.
+        </p>
+      </section>
+
+      <section>
+        <h2>Таймлайн DS1</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Событие</th>
+              <th>Что происходит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Порт-Узел</strong></td>
+              <td>Первая встреча с Сэмом. Хиггс призывает <strong>Осьминога-альфа</strong> — первого Ловца с золотым хиральным панцирем на голове.</td>
+            </tr>
+            <tr>
+              <td><strong>Лаборатория Мамы</strong></td>
+              <td>Хиггс призывает <strong>Льва-альфа</strong> — четырёхлапого Ловца с золотой гривой из щупалец.</td>
+            </tr>
+            <tr>
+              <td><strong>Краевой Узел</strong></td>
+              <td>Хиггс призывает <strong>Колосса-альфа</strong> — гигантского Ловца, в которого вмонтирована Амелия. Он сливается с Тварью, управляя ею как пилот.</td>
+            </tr>
+            <tr>
+              <td><strong>Берег Амелии</strong></td>
+              <td>Финальный бой. На Береге нет репатриации — убитый там умирает навсегда. Сэм побеждает Хиггса в кулачном бою.</td>
+            </tr>
+            <tr>
+              <td><strong>Изгнание</strong></td>
+              <td>Фрэджайл даёт Хиггсу выбор: смерть или изгнание на Берег. Он остаётся на Береге с винтовкой — и маской на лице.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Иконка: Гитара DS2 -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Электрогитара -->
+          <path d="M30 15 L30 35 Q25 38 25 50 Q25 65 40 70 L40 82 Q50 86 60 82 L60 70 Q75 65 75 50 Q75 38 70 35 L70 15" fill="#3a3f4a" stroke="#ff6b6b" stroke-width="2.5"/>
+          <circle cx="50" cy="55" r="12" fill="#2b2f36" stroke="#ff6b6b" stroke-width="2"/>
+          <circle cx="50" cy="55" r="4" fill="#ff6b6b"/>
+          <!-- Струны -->
+          <line x1="35" y1="15" x2="35" y2="75" stroke="#ff6b6b" stroke-width="0.8" opacity="0.5"/>
+          <line x1="42" y1="15" x2="42" y2="75" stroke="#ff6b6b" stroke-width="0.8" opacity="0.5"/>
+          <line x1="58" y1="15" x2="58" y2="75" stroke="#ff6b6b" stroke-width="0.8" opacity="0.5"/>
+          <line x1="65" y1="15" x2="65" y2="75" stroke="#ff6b6b" stroke-width="0.8" opacity="0.5"/>
+          <!-- Молнии -->
+          <path d="M75 25 L85 20 L80 30 L90 28" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M20 60 L10 55 L15 65 L5 63" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="icon-label">DS2: Возвращение</div>
+          <div class="icon-desc">Электрогитара, стреляющая молниями. Красный Самурай. Воскресший враг, жаждущий мести.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>DS2: On the Beach — Возвращение Хиггса</h2>
+        <p>
+          Хиггс вернулся с Берега — <strong>воскрес</strong>, обрёл силы, превосходящие все, что у него были в DS1. Теперь его DOOMS <strong>непостижимого уровня</strong> — он контролирует целые орды BT одновременно.
+        </p>
+        <ul>
+          <li><strong>Призрачные мехи</strong> — Хиггс управляет армией роботов-мехов с Берега, дистанционно пилотируя их.</li>
+          <li><strong>Красный Самурай</strong> — мех с катаной и Одрадеком вместо лица. Защищает Сэма — но кто внутри? Оказывается, <strong>Дедмен</strong>: его труп внутри меха, Ка управляет им с Берега. Позже Хиггс перехватывает контроль.</li>
+          <li><strong>Боевая гитара</strong> — электрогитара, стреляющая молниями и огнём, работает как топор в ближнем бою. Двухгрифная хиральная версия в финале.</li>
+          <li><strong>Завод оружия</strong> — Хиггс захватил оружейную фабрику и через автоматизированную хиральную сеть распространил оружие по континенту.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Финальный бой DS2</h2>
+        <p>
+          Сэм отправляется на Берег APAS 4000 — без снаряжения, только с боевой гитарой (бесконечный боезапас на Берегу). Три фазы:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Фаза</th>
+              <th>Описание</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Красный Самурай</strong></td>
+              <td>Хиггс пилотирует мех. Сэм отбивает заряженные выстрелы гитарой, оглушает — и бьёт в ответ.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Хиггс с гитарой</strong></td>
+              <td>Телепортация, огнемёт, метательные ножи. Сэм стреляет заряженными выстрелами из-за серверов.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Гитарная дуэль</strong></td>
+              <td>Соло на гитарах — QTE-перекличка. Победил — Хиггс даёт 1000 лайков. Проиграл — минус 100. Затем — бой на гитарах-топорах под BB's Theme.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note-box">
+          В финале DS2 Хиггс поёт <strong>BB's Theme — «I'll Stay With You»</strong>. Это не просто босс-файт — это <strong>дуэль двух раненых людей</strong>, которые несут разное: Сэм — связь, Хиггс — разрушение. Но оба потеряли всё.
+        </div>
+      </section>
+
+      <section>
+        <h2>Символизм</h2>
+        <div class="note-box">
+          <strong>Маска как личность.</strong> Хиггс без маски — травмированный ребёнок в бункере. С маской — бог, террорист, частичка смерти. Маска не скрывает его — она <strong>создаёт</strong> его. Когда Амелия отняла силы, маска стала просто предметом. Без силы маска — без маски нет Хиггса.
+        </div>
+        <div class="note-box">
+          <strong>Питер Энглерт и пицца.</strong> Затворник, заказывающий пиццу, — это <strong>человек под маской</strong>. Не злодей, а одинокий, сломанный человек, который через рутину доставки пытается почувствовать <strong>нормальность</strong>. Пицца — последняя связь с человечностью, которую он утратил. Последнее письмо с Берега: просьба о прощении за «единственное пятнышко» в их отношениях.
+        </div>
+        <div class="note-box">
+          <strong>Палка против нити.</strong> Хиггс принёс на финальный бой винтовку, гранаты, нож и телепортацию. Сэм принёс <strong>верёвку</strong>. Вся философия Death Stranding — в этом контрасте: оружие разрушает, связь спасает. Хиггс — <strong>человек палки</strong>, Сэм — <strong>человек нити</strong>.
+        </div>
+        <div class="note-box">
+          <strong>Бозон Хиггса («Частица Бога»):</strong> Физический подтекст имени отсылает к элементарной частице, которая наделяет материю массой и скрепляет вселенную. Во вселенной игры Хиггс манипулирует хиралием, буквально деформируя законы физики, искривляя пространство-время и призывая Тварей. Как бозон Хиггса «создает» массу, так и персонаж конструирует катастрофическую реальность Выхода Смерти. Кроме того, неофициальное название «Частица Бога» отлично рифмуется с его манией величия — он носит золотую маску и мнит себя судьей и божеством, способным запустить Шестой Выход Смерти.
+        </div>
+      </section>
+
+      <section>
+        <h2>Связи</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Персонаж</th>
+              <th>Отношение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Амелия</strong></td>
+              <td>Хозяйка. Дала силу, сломала волю, использовала как Агента вымирания. Потом отняла всё.</td>
+            </tr>
+            <tr>
+              <td><strong>Фрэджайл</strong></td>
+              <td>Бывшая партнёрша. Предал, изуродовал временным дождём. Она изгнала его на Берег.</td>
+            </tr>
+            <tr>
+              <td><strong>Сэм</strong></td>
+              <td>Антагонист-зеркало. Тот же мир, те же потери — но Сэм выбрал связь, а Хиггс — разрушение.</td>
+            </tr>
+            <tr>
+              <td><strong>Дедмен</strong></td>
+              <td>В DS2 — соперник за контроль над Красным Самураем. Дедмен защитник, Хиггс — агрессор.</td>
+            </tr>
+            <tr>
+              <td><strong>Дядя</strong></td>
+              <td>Единственный родственник. Источник травмы. Его убийство — точка рождения DOOMS.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Итог</h2>
+        <div class="note-box">
+          Хиггс Монаган — это <strong>травма, ставшая силой</strong>. Ребёнок из бункера, убивший дядю и получивший за это способность видеть мёртвых. Курьер, предавший партнёршу ради ложного обещания. Человек в маске, создающей бога из сломанного мальчика. Его DOOMS — не дар, а <strong>шрам</strong>, через который в мир хлынула смерть. Он открывал Шов, потому что сам был <strong>разорван</strong> — между человечностью и жестокостью, между желанием строить и жаждой разрушать. Маска не скрывала его лицо — она <strong>заменяяла</strong> его. Когда маска спала — остался Питер Энглерт, одинокий человек, заказывающий пиццу на краю мира.
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
