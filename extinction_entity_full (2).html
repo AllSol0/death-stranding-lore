@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Фактор вымирания в Death Stranding</title>
+    <style>
+      :root {
+        --bg-color: #2b2f36;
+        --card-bg: #3a3f4a;
+        --text-main: #e0e2e5;
+        --text-muted: #a1a5ad;
+        --accent: #ff6b6b;
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--text-main);
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        color: var(--accent);
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 3rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      .icon-card {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .icon-svg {
+        width: 80px;
+        height: 80px;
+        margin-right: 2rem;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      }
+
+      .icon-label {
+        font-weight: bold;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      .icon-desc {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      }
+
+      th, td {
+        padding: 1.2rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      th {
+        background: rgba(255, 107, 107, 0.1);
+        color: var(--accent);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      li::before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      .note-box {
+        background: rgba(255, 107, 107, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin: 2rem 0;
+        color: var(--text-main);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Фактор вымирания в Death Stranding</h1>
+
+      <!-- Иконка: Череп с пуповиной -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 25 Q50 15 70 25 Q80 40 75 55 Q70 65 65 68 L65 75 Q65 80 60 80 L55 80 L55 72 L45 72 L45 80 L40 80 Q35 80 35 75 L35 68 Q30 65 25 55 Q20 40 30 25Z" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+          <circle cx="40" cy="45" r="7" fill="#ff6b6b" opacity="0.8"/>
+          <circle cx="60" cy="45" r="7" fill="#ff6b6b" opacity="0.8"/>
+          <path d="M48 58 L50 64 L52 58" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+          <path d="M50 80 Q50 90 50 95" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+          <circle cx="50" cy="95" r="3" fill="#ff6b6b" opacity="0.6"/>
+        </svg>
+        <div>
+          <div class="icon-label">Фактор вымирания (Extinction Entity)</div>
+          <div class="icon-desc">Существо, встроенное в структуру вселенной. Его появление запускает механизм уничтожения доминирующего вида и перезагрузки биосферы.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Что это такое</h2>
+        <p>
+          Фактор вымирания (Extinction Entity, EE) — это не просто существо, которое <strong>вызывает</strong> вымирание. Это <strong>встроенный механизм</strong> вселенной Death Stranding, такой же закон природы, как гравитация или термодинамика. EE появляется, когда доминирующий вид достигает предела развития — и запускает процесс перезагрузки. Не месть, не наказание, не катастрофа по ошибке. <strong>Программа перезагрузки</strong>.
+        </p>
+        <p>
+          Каждый раз, когда жизнь на Земле заходила в тупик, появлялся свой Фактор вымирания. Пять раз это уже случалось. Шестой — текущий, человеческий. И каждый раз EE — не внешний враг, а <strong>часть самой системы</strong>, без которой вселенная не могла бы двигаться дальше.
+        </p>
+      </section>
+
+      <div class="note-box">
+        <strong>Entity vs Factor</strong> — в английском оригинале используется «Extinction Entity» (сущность вымирания), в русском переводе — «Фактор вымирания». Разница значимая: «сущность» подчёркивает, что EE — живое существо с волей и чувствами, а «фактор» звучит как безличный механизм. Амелия — не просто фактор, а <strong>существо, которое страдает</strong> от своей роли.
+      </div>
+
+      <section>
+        <h2>Для чего нужен Фактор вымирания</h2>
+        <p>
+          EE выполняет в метафизической системе мира четыре функции. Все четыре — разные грани одного механизма.
+        </p>
+        <ul>
+          <li><strong>Природный цикл перезагрузки.</strong> Жизнь на планете развивается, доминирующий вид заполняет все ниши, потребляет ресурсы, блокирует развитие других форм. Когда процесс заходит в тупик, EE запускает вымирание — не ради разрушения, а ради <strong>очищения поля для следующего цикла</strong>. Энтропия достигает предела → перезагрузка.</li>
+          <li><strong>Мост между измерениями.</strong> EE — единственное существо, которое одновременно существует в реальном мире (Ха) и на Берегу (Ка). Через эту связь Берег — мир мёртвых — <strong>прорывается в реальность</strong>. EE буквально открывает дверь между измерениями, и в этом смысле является не причиной, а <strong>каналом</strong>.</li>
+          <li><strong>Неизбежность с отсрочкой.</strong> Появление EE означает, что вымирание <strong>обязательно</strong> произойдёт. Вопрос — когда. Амелия могла отложить финал на тысячи лет, но не могла отменить его. Это не выбор EE — это закон вселенной, который EE лишь исполняет.</li>
+          <li><strong>Наказание за сопротивление.</strong> Чем больше человечество сопротивляется вымиранию — строит убежища, хиральную сеть, UCA — тем сильнее Берег давит на реальность. Попытки отсрочить конец <strong>усиливают</strong> сам механизм. Амелия говорит: «Тяните верёвку или перережьте петлю» — то есть помогите завершить цикл или отложите, но не пытайтесь остановить.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Шесть Факторов вымирания</h2>
+        <p>
+          Хартман в своих исследованиях пришёл к выводу, что вымирание — не разовое событие, а <strong>циклический процесс</strong>. Пять массовых вымираний уже произошло, каждое со своим EE. Шестое — текущее, и его Фактор — Амелия.
+        </p>
+<table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Фактор</th>
+              <th>Вид</th>
+              <th>Время</th>
+              <th>Событие</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>Трилобит</strong></td>
+              <td>Trilobita</td>
+              <td>251 млн лет</td>
+              <td>Пермско-триасовое (Big Five)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>Динозавр</strong></td>
+              <td>Parasaurolophus</td>
+              <td>75 млн лет</td>
+              <td>Позднемеловое (возможно, minor)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><strong>Аммонит</strong></td>
+              <td>Ammonoidea</td>
+              <td>66 млн лет</td>
+              <td>Меловое-палеогеновое (Big Five)</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><strong>Мамонт</strong></td>
+              <td>Mammuthus</td>
+              <td>10 000 лет</td>
+              <td>Позднеплейстоценовое (minor)</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><strong>Этци</strong></td>
+              <td>Homo sapiens</td>
+              <td>5 300 лет</td>
+              <td>Раннеголоценовое (возможно, minor)</td>
+            </tr>
+            <tr class="current-row">
+              <td>6</td>
+              <td><strong>Амелия / Бриджет</strong></td>
+              <td>Homo sapiens</td>
+              <td>настоящее время</td>
+              <td>Голоценовое (шестое, <strong>отсрочено</strong>)</td>
+            </tr>
+          </tbody>
+        </table>
+       
+
+      <section>
+        <h2>Шкала времени</h2>
+<div style="position: relative; margin: 3rem 0 5rem 0;">
+          <div style="height: 4px; background: linear-gradient(90deg, rgba(255,107,107,0.1), rgba(255,107,107,0.3), rgba(201,168,76,0.4)); border-radius: 2px;"></div>
+          <!-- Dots -->
+          <div style="position: absolute; left: 0%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #ff6b6b; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -30px; font-size: 0.75rem; color: #a1a5ad; width: 80px; text-align: center;">Трилобит<br>251 млн</div>
+          </div>
+          <div style="position: absolute; left: 25%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #ff6b6b; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -30px; font-size: 0.75rem; color: #a1a5ad; width: 80px; text-align: center;">Динозавр<br>75 млн</div>
+          </div>
+          <div style="position: absolute; left: 45%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #ff6b6b; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -30px; font-size: 0.75rem; color: #a1a5ad; width: 80px; text-align: center;">Аммонит<br>66 млн</div>
+          </div>
+          <div style="position: absolute; left: 70%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #ff6b6b; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -25px; font-size: 0.75rem; color: #a1a5ad; width: 70px; text-align: center;">Мамонт<br>10 000</div>
+          </div>
+          <div style="position: absolute; left: 82%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #ff6b6b; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -25px; font-size: 0.75rem; color: #a1a5ad; width: 70px; text-align: center;">Этци<br>5 300</div>
+          </div>
+          <div style="position: absolute; right: 0%; top: -8px;">
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: #c9a84c; border: 3px solid #2b2f36;"></div>
+            <div style="position: absolute; top: 25px; left: -25px; font-size: 0.75rem; color: #c9a84c; width: 70px; text-align: center; font-weight: bold;">Амелия<br>сейчас</div>
+          </div>
+        </div>
+
+ <div class="note-box">
+          Хартман нашёл археологические следы всех пяти предыдущих EE: <strong>хиралум</strong> (минерал, не существовавший до Выхода смерти, но обнаруженный в древних слоях), <strong>нераспадающиеся тела</strong> в геологических породах и <strong>пуповины</strong> — окаменевшие связи между Берегом и материей. Это доказывает, что Выход смерти — не уникальное событие, а <strong>повторяющийся механизм</strong>.
+        </div>
+
+      </section>
+
+<!-- Иконка: пять фигур -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="60" r="5" fill="#ff6b6b" opacity="0.6"/>
+          <circle cx="35" cy="45" r="5" fill="#ff6b6b" opacity="0.6"/>
+          <circle cx="50" cy="35" r="5" fill="#ff6b6b" opacity="0.6"/>
+          <circle cx="65" cy="45" r="5" fill="#ff6b6b" opacity="0.6"/>
+          <circle cx="80" cy="60" r="5" fill="#ff6b6b" opacity="0.6"/>
+          <path d="M20 60 L35 45 L50 35 L65 45 L80 60" stroke="#ff6b6b" stroke-width="1.5" opacity="0.3"/>
+          <path d="M10 75 L90 75" stroke="#4ecdc4" stroke-width="1" opacity="0.2" stroke-dasharray="3 3"/>
+        </svg>
+        <div>
+          <div class="icon-label">Пять фигур на Берегу</div>
+          <div class="icon-desc">Пять Факторов вымирания — прошлых и настоящего. Каждое — живое существо с пуповиной к Берегу.</div>
+        </div>
+      </div>
+
+
+
+      <section>
+        <h2>Где мы видим пять фигур в игре</h2>
+        <p>
+          Пять парящих человеческих фигур появляются в нескольких ключевых моментах:
+        </p>
+        <ul>
+          <li><strong>Начало игры</strong> — в пещере, когда Сэм и Фрэджайл укрываются от Timefall. После дождя в небе появляются пять силуэтов.</li>
+          <li><strong>Кошмары Сэма</strong> — в снах, связанных с DOOMS и Амелией. Фигуры появляются как предвестники.</li>
+          <li><strong>Берег Амелии (финал)</strong> — те же пять фигур парят над её Берегом, когда Сэм узнаёт правду.</li>
+        </ul>
+        <div class="note-box-2">
+          <p>
+            В лоре игры эти фигуры — <strong>пять предыдущих Факторов вымирания</strong>. Хотя сами EE были животными (трилобит, аммонит, динозавр, мамонт) и человеком (Лёдяной человек), на Берегу они принимают гуманоидную форму. Это художественный приём Кодзимы: силуэты людей в небе создают тревожную, загадочную атмосферу, чего плавающие динозавры и моллюски не достигли бы. 
+          </p>
+        </div>
+      </section>
+
+      <section>
+
+
+
+      <!-- Иконка: Расщепление Ха/Ка -->
+      <div class="icon-card">
+        <svg class="icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 20 Q20 40 25 60 Q30 75 35 80" stroke="#ff6b6b" stroke-width="3" fill="none"/>
+          <path d="M70 20 Q80 40 75 60 Q70 75 65 80" stroke="#ff6b6b" stroke-width="3" fill="none"/>
+          <circle cx="30" cy="20" r="8" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+          <circle cx="70" cy="20" r="8" stroke="#ff6b6b" stroke-width="3" fill="#3a3f4a"/>
+          <path d="M38 20 L62 20" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="22" y="24" font-size="10" fill="#ff6b6b" font-family="sans-serif" font-weight="bold">Ha</text>
+          <text x="66" y="24" font-size="10" fill="#ff6b6b" font-family="sans-serif" font-weight="bold">Ka</text>
+          <path d="M50 40 Q40 55 45 70 Q48 78 50 82" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5"/>
+          <path d="M50 40 Q60 55 55 70 Q52 78 50 82" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="icon-label">Расщепление Ха / Ка</div>
+          <div class="icon-desc">Бриджет (Ха, тело) остаётся в реальном мире и стареет. Амелия (Ка, душа) живёт на Берегу вечно. Вместе они — один Фактор вымирания.</div>
+        </div>
+      </div>
+
+      <section>
+        <h2>Как работает Бриджет / Амелия</h2>
+        <p>
+          Бриджет Стрэнд не была обычным человеком. Её Ка (душа) ещё при рождении оказалась <strong>напрямую связана с Берегом</strong> — настолько глубоко, что отделилась от Ха (тела) и стала самостоятельной сущностью. Так появились два существа: <strong>Бриджет</strong> — тело, живущее в реальном мире, стареющее, уязвимое; и <strong>Амелия</strong> — душа, живущая на Берегу, не стареющая, omnipotent в пределах своего измерения.
+        </p>
+        <p>
+          Вместе они — один Фактор вымирания. Бриджет в реальном мире <strong>истончала границу</strong> между измерениями через хиральную сеть: чем больше узлов подключалось к UCA, тем сильнее Берег проникал в реальность. Амелия на Берегу <strong>блокировала путь</strong> душам дальше, в мир мёртвых, удерживая их на Берегу — откуда они возвращались как BT.
+        </p>
+        <p>
+          Механизм запуска Последнего вымирания: полностью подключённая хиральная сеть = полностью стёртая граница между мирами = все Берега всех людей сливаются с реальностью = <strong>массовое вымирание</strong>. Амелия не нажимала кнопку — она <strong>была</strong> кнопкой.
+        </p>
+      </section>
+
+      <div class="note-box">
+        <strong>Почему Амелия сломалась.</strong> Её Ка отделилась от Ха в детстве. Бриджет жила, старела, умирала от рака — а Амелия оставалась <strong>вечно молодой на Берегу</strong>. Миллионы лет одиночества на пустом берегу, без прикосновения, без разговора, без старения. Она создала образ «тёти Сэма», чтобы хоть как-то быть с людьми. Она вербовала Хиггса, чтобы через него действовать в реальном мире. Она заставляла Сэма строить сеть — не ради человечества, а ради <strong>собственного освобождения</strong>. Одиночество на Берегу — не наказание, а <strong>пытка</strong>, и Амелия готова была уничтожить мир, чтобы закончить её.
+      </div>
+
+      <section>
+        <h2>Репатриант и DOOMS</h2>
+        <p>
+          Сэм — <strong>первый репатриант</strong>: младенец, которого Бриджет вернула из мёртвых. Это спасение стало побочным эффектом её природы как EE: её связь с Берегом настолько сильна, что она может вернуть Ка обратно в Ха. Но у спасения была цена.
+        </p>
+        <p>
+          Возвращение Сэма нарушило баланс между мирами. Бриджет <strong>запретила усыновление</strong>: репатриант — живой мертвец, ходячая аномалия. Шрам на груди Сэма — след пуповины, по которой его Ка вернулась. Из-за этого шрама Сэм получил <strong>DOOMS</strong> — способность чувствовать присутствие BT. Его ещё называют «нулевым пациентом»: он первый, кто вернулся с Берега, и его случай определил всё последующее развитие хиральной сети.
+        </p>
+      </section>
+
+      <section>
+        <h2>Финал Death Stranding</h2>
+        <ul>
+          <li><strong>Открытие:</strong> Сэм узнаёт, что Амелия — не отдельный человек, а Ка Бриджет, и что она — Фактор вымирания. Все экспедиции, все узлы хиральной сети, вся UCA — инструменты, которые <strong>приближают конец</strong>.</li>
+          <li><strong>Дилемма:</strong> Полностью подключённая сеть запустит Последнее вымирание. Сэм может отключить сеть и отложить конец — но не отменить. Или позволить Амелии завершить цикл.</li>
+          <li><strong>«Pull the rope or cut the noose»:</strong> Тяните верёвку (стройте связи, откладывайте неизбежное) или перережьте петлю (позвольте вымиранию завершиться). Амелия даёт Сэму выбор, которого сама никогда не имела.</li>
+          <li><strong>Решение Амелии:</strong> Сэм выбирает третье — не верёвку и не петлю. Он <strong>обнимает</strong> Амелию. Впервые за миллионы лет кто-то прикоснулся к ней по собственной воле. Амелия принимает решение: изолировать себя на Берегу, разорвать связь с реальностью и <strong>отложить</strong> Последнее вымирание. Не отменить — отложить.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>DS2: На берегу</h2>
+        <p>
+          В Death Stranding 2 Фактор вымирания вновь становится центром сюжета. <strong>Туморроу</strong> — девочка с Берега, которую Сэм выносит из хиральной сети, — обладает характеристиками EE: не стареет, связана с Берегом, способна влиять на границу между мирами. Но у неё <strong>нет пуповины</strong> — то есть она не привязана к циклу рождения-смерти-возвращения. Это делает её существование <strong>аномалией внутри аномалии</strong>.
+        </p>
+        <p>
+          Впервые в истории вселенной Death Stranding <strong>два Фактора вымирания существуют одновременно</strong>: Амелия, изолированная на Берегу, и Туморроу, живущая в реальном мире. Хартман в DS2 намекает, что Туморроу — не шестой EE, а <strong>нечто иное</strong>: возможно, первый случай, когда вселенная нашла способ <strong>обойти цикл</strong>, не разрушая его. Финал DS2 оставляет этот вопрос открытым.
+        </p>
+      </section>
+
+      <section>
+        <h2>Пять смыслов Фактора вымирания</h2>
+        <ul>
+          <li><strong>Механизм.</strong> EE — не персонаж с мотивацией, а <strong>закон вселенной</strong>. Как молния не «хочет» ударить, так и EE не «хочет» уничтожить вид. Он появляется, когда условия достигнуты.</li>
+          <li><strong>Мост.</strong> EE — единственное существо, существующее одновременно в обоих мирах. Через него Берег сообщается с реальностью. Без EE граница между мирами была бы непроницаемой.</li>
+          <li><strong>Цикл.</strong> Пять EE до Амелии, каждый со своим видом, каждый с перезагрузкой. EE — не конец, а <strong>переход</strong> между эпохами жизни на планете.</li>
+          <li><strong>Выбор.</strong> Амелия — первый EE, которому дали выбор. Сэм не отключил сеть и не запустил вымирание — он <strong>обнял</strong> её. Это третье, чего не было в предыдущих циклах.</li>
+          <li><strong>Наказание.</strong> Чем сильнее вид сопротивляется вымиранию, тем больнее процесс. Хиральная сеть — попытка человечества объединиться против конца — стала инструментом, который <strong>приближает</strong> этот конец.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Связи</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Персонаж</th>
+              <th>Отношение к Фактору вымирания</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Сэм Портер Бриджес</td>
+              <td>Репатриант — побочный продукт природы EE. Его существование нарушило баланс, но его объятие изменило исход.</td>
+            </tr>
+            <tr>
+              <td>Клифф Унгер</td>
+              <td>Пытался спасти BB от использования в хиральной сети — не зная, что сеть служит EE. Его Берег войны — отдельная зона, созданная его связью с Амелией.</td>
+            </tr>
+            <tr>
+              <td>Хартман</td>
+              <td>Единственный учёный, который понял цикличность EE. Его теория шести вымираний — основа всего знания о Факторе в мире игры.</td>
+            </tr>
+            <tr>
+              <td>Хиггс</td>
+              <td>Орудие Амелии — DOOMS 7-го уровня, через которое она ускоряла подключение сети и приближала Последнее вымирание.</td>
+            </tr>
+            <tr>
+              <td>Туморроу (DS2)</td>
+              <td>Возможный новый EE без пуповины. Аномалия, которая может означать конец цикла вымираний — или его продолжение в новой форме.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="note-box">
+        <strong>Что остаётся неизвестным.</strong> Кто или что <strong>назначает</strong> Фактор вымирания? Почему именно это существо? Можно ли стать EE, или им рождаются? Что значит наличие двух EE одновременно — конец программы или баг в системе? И главное: если Туморроу — EE без пуповины, значит ли это, что вселенная нашла способ перезагрузки <strong>без уничтожения</strong>? Игра не даёт ответов. Только вопрос, который Хартман задавал всю жизнь: что находится <strong>за Берегом</strong> — и кто стоит за самой системой.
+      </div>
+
+      <section>
+        <h2>Короткий итог</h2>
+        <p>
+          Фактор вымирания — встроенный механизм перезагрузки биосферы, появляющийся каждый раз, когда доминирующий вид заходит в тупик. Амелия — шестой EE, первая, кому дали выбор. Сэм изменил исход объятием вместо выстрела. Туморроу в DS2 — возможный седьмой EE, аномалия без пуповины, которая может означать, что цикл вымираний <strong>остановлен</strong>.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
